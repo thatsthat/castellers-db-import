@@ -355,7 +355,7 @@ Pde4 (Descarregat)
 Pde5s (Descarregat)
 Pde4 (Descarregat)
 15/07/2023
-18.00
+18:00
 Carrer Doctor Robert
 La Bisbal del Penedès
 Pde4 (Descarregat)
@@ -382,7 +382,7 @@ Pde4 (Descarregat)
 4de6p (Descarregat)
 Pde4 (Descarregat)
 14/05/2023
-12.00
+12:00
 Plaça Lluis Companys
 Sant Feliu de Llobregat
 Pde4 (Descarregat)
@@ -606,7 +606,7 @@ Pde4 (Descarregat)
 Pde4 (Descarregat)
 Pde4 (Descarregat)
 21/05/2022
-18.00
+18:00
 Plaça de l'Església
 Castelldefels
 Pde4 (Descarregat)
@@ -615,7 +615,7 @@ Pde4 (Descarregat)
 3de6 (Descarregat)
 Pde4 (Descarregat)
 08/05/2022
-12.00
+12:00
 Plaça de la Pagesia
 Esparreguera
 Pde4 (Descarregat)
@@ -818,7 +818,7 @@ Pde4 (Descarregat)
 3de7 (Descarregat)
 Pde5 (Descarregat)
 20/07/2019
-18.00
+18:00
 Carrer Doctor Robert
 La Bisbal del Penedès
 3de7 (Descarregat)
@@ -852,7 +852,7 @@ Pde4 (Descarregat)
 Pde4 (Descarregat)
 Pde4 (Descarregat)
 25/05/2019
-18.00
+18:00
 Castelldefels
 Pde4 (Descarregat)
 Pde4 (Descarregat)
@@ -902,7 +902,7 @@ Pde5 (Descarregat)
 Pde4 (Descarregat)
 Pde4 (Descarregat)
 06/04/2019
-18.00
+18:00
 Plaça Ajuntament
 Cornellà de Llobregat
 4de7 (Descarregat)
@@ -918,7 +918,7 @@ Terrassa
 3de6p (Descarregat)
 Pde5 (Descarregat)
 17/03/2019
-12.00
+12:00
 Antiga Fàbrica Estrella Damm
 Barcelona
 Pde4 (Descarregat)

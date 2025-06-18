@@ -15,10 +15,10 @@ datasource db {
 }
 
 model Actuacio {
-  id                Int         @unique
-  data              String
-  hora              String
-  lloc              String
+  id                Int         @id @default(autoincrement())
+  data              DateTime    @db.Date
+  dataHora          DateTime?
+  lloc              String?
   ciutat            String
   castells          Castell[]   @relation("castellsPortats")
 }

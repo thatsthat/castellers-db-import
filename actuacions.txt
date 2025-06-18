@@ -1,0 +1,3129 @@
+[
+  {
+    data: '17/11/2024',
+    id: 0,
+    hora: '12:00',
+    ciutat: 'Esparreguera',
+    lloc: 'Plaça de la Pagesia (Carrer dels Arbres)'
+  },
+  {
+    data: '10/11/2024',
+    id: 1,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: "Plaça de l'Església"
+  },
+  {
+    data: '09/11/2024',
+    id: 2,
+    hora: '18:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: "Plaça de l'Estació"
+  },
+  {
+    data: '26/10/2024',
+    id: 3,
+    hora: '17:30',
+    ciutat: 'Esplugues de Llobregat',
+    lloc: "Pista Vermella Parc Pou d'en Fèlix"
+  },
+  {
+    data: '12/10/2024',
+    id: 4,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Plaça Sant Ildefons'
+  },
+  {
+    data: '29/09/2024',
+    id: 5,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Plaça Àngel Guimerà'
+  },
+  {
+    data: '28/09/2024',
+    id: 6,
+    hora: '18:00',
+    ciutat: 'El Prat de Llobregat',
+    lloc: 'Plaça de la Vila'
+  },
+  {
+    data: '15/09/2024',
+    id: 7,
+    hora: '12:00',
+    ciutat: 'Sant Cugat del Vallès',
+    lloc: 'Plaça del Casal de Cultura'
+  },
+  {
+    data: '08/09/2024',
+    id: 8,
+    hora: '12:30',
+    ciutat: 'Vilanova del Camí',
+    lloc: "Plaça de l'Església"
+  },
+  {
+    data: '21/07/2024',
+    id: 9,
+    hora: '12:00',
+    ciutat: 'Mollet del Vallès',
+    lloc: 'Plaça de Baix'
+  },
+  {
+    data: '07/07/2024',
+    id: 10,
+    hora: '11:30',
+    ciutat: 'Barcelona',
+    lloc: 'Plaça del Rei'
+  },
+  {
+    data: '30/06/2024',
+    id: 11,
+    hora: '18:30',
+    ciutat: 'Sant Pere de Ribes',
+    lloc: 'Plaça de la Vila'
+  },
+  {
+    data: '16/06/2024',
+    id: 12,
+    hora: '12:00',
+    ciutat: 'Barcelona',
+    lloc: 'La Model (c/ Provença - c/ Entença)'
+  },
+  {
+    data: '08/06/2024',
+    id: 13,
+    hora: '18:00',
+    ciutat: 'Barcelona',
+    lloc: 'Plaça Sant Jaume'
+  },
+  {
+    data: '02/06/2024',
+    id: 14,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: "Plaça de l'Església"
+  },
+  {
+    data: '19/05/2024',
+    id: 15,
+    hora: '12:00',
+    ciutat: 'Sant Boi de Llobregat',
+    lloc: 'Plaça de l’Ajuntament'
+  },
+  {
+    data: '12/05/2024',
+    id: 16,
+    hora: '12:00',
+    ciutat: 'Sant Feliu de Llobregat',
+    lloc: 'Aparcament del casal de la gent gran'
+  },
+  {
+    data: '11/05/2024',
+    id: 17,
+    hora: '18:00',
+    ciutat: 'Terrassa',
+    lloc: 'Mare de Déu dels Àngels, 23'
+  },
+  {
+    data: '04/05/2024',
+    id: 18,
+    hora: '18:00',
+    ciutat: 'Cardedeu',
+    lloc: "Plaça de l'Església"
+  },
+  {
+    data: '21/04/2024',
+    id: 19,
+    hora: '12:30',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Parc Can Mercader'
+  },
+  {
+    data: '13/04/2024',
+    id: 20,
+    hora: '17:30',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Plaça de la _Torre de La Miranda'
+  },
+  {
+    data: '07/04/2024',
+    id: 21,
+    hora: '12:00',
+    ciutat: 'Castelldefels',
+    lloc: "Local de l'A.C.P.C."
+  },
+  {
+    data: '17/03/2024',
+    id: 22,
+    hora: '12:00',
+    ciutat: 'Barcelona',
+    lloc: 'Plaça Santa Madrona'
+  },
+  {
+    data: '12/11/2023',
+    id: 23,
+    hora: '12:00',
+    ciutat: 'Vilanova i la Geltrú',
+    lloc: 'Plaça de les Cols'
+  },
+  {
+    data: '05/11/2023',
+    id: 24,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: "Plaça de l'Església"
+  },
+  {
+    data: '04/11/2023',
+    id: 25,
+    hora: '18:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Centre Comercial Splau'
+  },
+  {
+    data: '21/10/2023',
+    id: 26,
+    hora: '17:30',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Plaça Catalunya'
+  },
+  {
+    data: '12/10/2023',
+    id: 27,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Plaça Sant Ildefons'
+  },
+  {
+    data: '01/10/2023',
+    id: 28,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Plaça del Trinquis'
+  },
+  {
+    data: '23/09/2023',
+    id: 29,
+    hora: '18:00',
+    ciutat: 'El Prat de Llobregat',
+    lloc: 'Plaça de la Vila'
+  },
+  {
+    data: '11/09/2023',
+    id: 30,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Plaça de l’Església'
+  },
+  {
+    data: '09/09/2023',
+    id: 31,
+    hora: '18:00',
+    ciutat: 'Guissona',
+    lloc: 'Plaça Major'
+  },
+  {
+    data: '23/07/2023',
+    id: 32,
+    hora: '12:00',
+    ciutat: 'Esplugues de Llobregat',
+    lloc: 'Plaça Robert Brillas'
+  },
+  {
+    data: '15/07/2023',
+    id: 33,
+    hora: '18.00',
+    ciutat: 'La Bisbal del Penedès',
+    lloc: 'Carrer Doctor Robert'
+  },
+  {
+    data: '25/06/2023',
+    id: 34,
+    hora: '19:00',
+    ciutat: 'Vilassar de Mar',
+    lloc: "Plaça de l'Ajuntament"
+  },
+  {
+    data: '18/06/2023',
+    id: 35,
+    hora: '12:00',
+    ciutat: 'Manresa',
+    lloc: 'Plaça Crist Rei'
+  },
+  {
+    data: '14/05/2023',
+    id: 36,
+    hora: '12.00',
+    ciutat: 'Sant Feliu de Llobregat',
+    lloc: 'Plaça Lluis Companys'
+  },
+  {
+    data: '07/05/2023',
+    id: 37,
+    hora: '11:30',
+    ciutat: 'Cardedeu',
+    lloc: "Plaça de l'Església"
+  },
+  {
+    data: '07/05/2023',
+    id: 38,
+    hora: '18:00',
+    ciutat: 'Barcelona',
+    lloc: 'Camp RCD Espanyol'
+  },
+  {
+    data: '23/04/2023',
+    id: 39,
+    hora: '13:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Parc Can Mercader'
+  },
+  {
+    data: '15/04/2023',
+    id: 40,
+    hora: '18:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Mercat Marsans'
+  },
+  {
+    data: '25/03/2023',
+    id: 41,
+    hora: '11:30',
+    ciutat: 'Barcelona',
+    lloc: "c/ de Creu Coberta (davant del Mercat d'Hostafrancs)"
+  },
+  {
+    data: '19/03/2023',
+    id: 42,
+    hora: '12:00',
+    ciutat: 'Gironella',
+    lloc: "Pl. de l'Estació"
+  },
+  {
+    data: '13/11/2022',
+    id: 43,
+    hora: '11:30',
+    ciutat: 'Barcelona',
+    lloc: 'Plaça Masadas'
+  },
+  {
+    data: '06/11/2022',
+    id: 44,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: "Plaça de l'Església"
+  },
+  {
+    data: '05/11/2022',
+    id: 45,
+    hora: '17:30',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Centre Comercial Splau'
+  },
+  {
+    data: '15/10/2022',
+    id: 46,
+    hora: '18:00',
+    ciutat: 'Castelldefels',
+    lloc: 'Plaça Teresa Claramunt'
+  },
+  {
+    data: '12/10/2022',
+    id: 47,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Plaça Sant Ildefons'
+  },
+  {
+    data: '01/10/2022',
+    id: 48,
+    hora: '16:30',
+    ciutat: 'Tarragona',
+    lloc: 'Tarraco Arena Plaça'
+  },
+  {
+    data: '25/09/2022',
+    id: 49,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Plaça del Trinquis'
+  },
+  {
+    data: '24/09/2022',
+    id: 50,
+    hora: '18:00',
+    ciutat: 'El Prat de Llobregat',
+    lloc: 'Plaça de la Vila'
+  },
+  {
+    data: '18/09/2022',
+    id: 51,
+    hora: '12:00',
+    ciutat: 'Sant Cugat del Vallès',
+    lloc: 'Plaça del Casal de Cultura'
+  },
+  {
+    data: '11/09/2022',
+    id: 52,
+    hora: '12:00',
+    ciutat: 'Badalona',
+    lloc: 'Plaça de la Plana'
+  },
+  {
+    data: '16/07/2022',
+    id: 53,
+    hora: '17:00',
+    ciutat: 'Barcelona',
+    lloc: 'Plaça de la Gardunya'
+  },
+  {
+    data: '02/07/2022',
+    id: 54,
+    hora: '18:00',
+    ciutat: 'Caldes de Montbui',
+    lloc: 'Plaça Moreu'
+  },
+  {
+    data: '19/06/2022',
+    id: 55,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: "Plaça de l'Església"
+  },
+  {
+    data: '28/05/2022',
+    id: 56,
+    hora: '18:00',
+    ciutat: 'Esplugues de Llobregat',
+    lloc: 'Plaça Catalunya'
+  },
+  {
+    data: '22/05/2022',
+    id: 57,
+    hora: '12:00',
+    ciutat: 'Sant Boi de Llobregat',
+    lloc: 'Plaça de l’Ajuntament'
+  },
+  {
+    data: '21/05/2022',
+    id: 58,
+    hora: '18.00',
+    ciutat: 'Castelldefels',
+    lloc: "Plaça de l'Església"
+  },
+  {
+    data: '08/05/2022',
+    id: 59,
+    hora: '12.00',
+    ciutat: 'Esparreguera',
+    lloc: 'Plaça de la Pagesia'
+  },
+  {
+    data: '24/04/2022',
+    id: 60,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Parc del Canal de la Infanta'
+  },
+  {
+    data: '02/04/2022',
+    id: 61,
+    hora: '17:30',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: "Plaça de l'Església"
+  },
+  {
+    data: '02/04/2022',
+    id: 62,
+    hora: '11:30',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Plaça de la Sardana'
+  },
+  {
+    data: '20/03/2022',
+    id: 63,
+    hora: '12:00',
+    ciutat: 'Barcelona',
+    lloc: 'Carrer de Santa Carolina, 69'
+  },
+  {
+    data: '12/03/2022',
+    id: 64,
+    hora: '17:30',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Plaça Catalunya'
+  },
+  {
+    data: '06/03/2022',
+    id: 65,
+    hora: '12:00',
+    ciutat: 'Barberà del Vallès',
+    lloc: 'Plaça de la Unitat'
+  },
+  {
+    data: '20/11/2021',
+    id: 66,
+    hora: '18:00',
+    ciutat: 'El Prat de Llobregat',
+    lloc: 'Carrer Riu Anoia, 42-54'
+  },
+  {
+    data: '07/11/2021',
+    id: 67,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: "Plaça de l'Església"
+  },
+  {
+    data: '06/11/2021',
+    id: 68,
+    hora: '19:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Centre Comercial Splau'
+  },
+  {
+    data: '23/10/2021',
+    id: 69,
+    hora: '13:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Parc Esportiu Llobregat'
+  },
+  {
+    data: '12/10/2021',
+    id: 70,
+    hora: '13:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Plaça Verge del Pilar'
+  },
+  {
+    data: '25/09/2021',
+    id: 71,
+    hora: '19:00',
+    ciutat: 'El Prat de Llobregat',
+    lloc: "Plaça de l'Estació"
+  },
+  {
+    data: '25/09/2021',
+    id: 72,
+    hora: '21:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: "Plaça de l'Àngel Guimerà"
+  },
+  { data: '01/03/2020', id: 73, ciutat: 'El Prat de Llobregat' },
+  {
+    data: '10/11/2019',
+    id: 74,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: "Plaça de l'Església"
+  },
+  {
+    data: '09/11/2019',
+    id: 75,
+    hora: '18:30',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Centre Comercial Splau'
+  },
+  {
+    data: '27/10/2019',
+    id: 76,
+    hora: '12:00',
+    ciutat: 'Mollet del Vallès',
+    lloc: 'Plaça Prat de la Riba'
+  },
+  {
+    data: '20/10/2019',
+    id: 77,
+    hora: '12:00',
+    ciutat: 'Sant Just Desvern',
+    lloc: 'Can Ginestar'
+  },
+  {
+    data: '13/10/2019',
+    id: 78,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Plaça de Sant Ildefons'
+  },
+  {
+    data: '12/10/2019',
+    id: 79,
+    hora: '17:00',
+    ciutat: 'El Prat de Llobregat',
+    lloc: 'Plaça Catalunya'
+  },
+  {
+    data: '29/09/2019',
+    id: 80,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Plaça del Trinquis'
+  },
+  {
+    data: '28/09/2019',
+    id: 81,
+    hora: '18:00',
+    ciutat: 'El Prat de Llobregat',
+    lloc: 'Plaça de la Vila'
+  },
+  {
+    data: '15/09/2019',
+    id: 82,
+    hora: '12:00',
+    ciutat: 'Sant Feliu de Llobregat',
+    lloc: 'Plaça de la Vila'
+  },
+  {
+    data: '07/09/2019',
+    id: 83,
+    hora: '18:00',
+    ciutat: 'Castellar del Vallès',
+    lloc: 'Plaça Mirador'
+  },
+  {
+    data: '20/07/2019',
+    id: 84,
+    hora: '18.00',
+    ciutat: 'La Bisbal del Penedès',
+    lloc: 'Carrer Doctor Robert'
+  },
+  { data: '29/06/2019', id: 85, ciutat: 'El Prat de Llobregat' },
+  {
+    data: '23/06/2019',
+    id: 86,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: "Plaça de l'Església"
+  },
+  {
+    data: '09/06/2019',
+    id: 87,
+    hora: '11:30',
+    ciutat: 'Barcelona',
+    lloc: 'Plaça Bonanova'
+  },
+  {
+    data: '25/05/2019',
+    id: 88,
+    hora: '18.00',
+    ciutat: 'Castelldefels'
+  },
+  {
+    data: '19/05/2019',
+    id: 89,
+    hora: '12:00',
+    ciutat: 'Sant Boi de Llobregat',
+    lloc: 'Plaça de l’Ajuntament'
+  },
+  { data: '12/05/2019', id: 90, ciutat: 'Cardedeu' },
+  {
+    data: '11/05/2019',
+    id: 91,
+    hora: '18:00',
+    ciutat: 'Sant Cugat del Vallès',
+    lloc: 'Plaça Lluís Millet'
+  },
+  {
+    data: '05/05/2019',
+    id: 92,
+    hora: '12:30',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Can Mercader'
+  },
+  {
+    data: '06/04/2019',
+    id: 93,
+    hora: '18.00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Plaça Ajuntament'
+  },
+  {
+    data: '24/03/2019',
+    id: 94,
+    hora: '12:00',
+    ciutat: 'Terrassa',
+    lloc: 'c/ Colom amb c/ Albinyana'
+  },
+  {
+    data: '17/03/2019',
+    id: 95,
+    hora: '12.00',
+    ciutat: 'Barcelona',
+    lloc: 'Antiga Fàbrica Estrella Damm'
+  },
+  {
+    data: '18/11/2018',
+    id: 96,
+    hora: '11:00',
+    ciutat: 'Gavà',
+    lloc: 'Plaça de Jaume Balmes'
+  },
+  {
+    data: '04/11/2018',
+    id: 97,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: "Plaça de l'Església"
+  },
+  {
+    data: '03/11/2018',
+    id: 98,
+    hora: '18:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: "Plaça de l'Església"
+  },
+  {
+    data: '27/10/2018',
+    id: 99,
+    hora: '18:00',
+    ciutat: 'Tarragona',
+    lloc: 'Plaça de Corsini'
+  },
+  {
+    data: '20/10/2018',
+    id: 100,
+    hora: '18:30',
+    ciutat: 'Cerdanyola del Vallès',
+    lloc: 'Plaça Abat Oliba'
+  },
+  {
+    data: '14/10/2018',
+    id: 101,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Plaça de Sant Ildefons'
+  },
+  {
+    data: '30/09/2018',
+    id: 102,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Plaça del Trinquis'
+  },
+  {
+    data: '29/09/2018',
+    id: 103,
+    hora: '18:00',
+    ciutat: 'El Prat de Llobregat',
+    lloc: 'Plaça de la Vila'
+  },
+  {
+    data: '15/09/2018',
+    id: 104,
+    hora: '18:30',
+    ciutat: 'Collbató',
+    lloc: "Plaça de l'Era"
+  },
+  {
+    data: '11/09/2018',
+    id: 105,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: "Plaça de l'Església"
+  },
+  {
+    data: '08/09/2018',
+    id: 106,
+    hora: '17:30',
+    ciutat: 'Guissona',
+    lloc: 'Plaça Major'
+  },
+  {
+    data: '30/06/2018',
+    id: 107,
+    hora: '18:00',
+    ciutat: 'Molins de Rei',
+    lloc: 'Plaça de la Creu'
+  },
+  {
+    data: '17/06/2018',
+    id: 108,
+    hora: '12:00',
+    ciutat: 'Badalona',
+    lloc: 'Plaça del Mag Li-Chang'
+  },
+  {
+    data: '03/06/2018',
+    id: 109,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: "Plaça de l'Església"
+  },
+  {
+    data: '20/05/2018',
+    id: 110,
+    hora: '12:00',
+    ciutat: 'Sant Boi de Llobregat',
+    lloc: "Plaça de l'Ajuntament"
+  },
+  {
+    data: '13/05/2018',
+    id: 111,
+    hora: '11:00',
+    ciutat: 'Baó',
+    lloc: "Plaça de l'Església"
+  },
+  {
+    data: '06/05/2018',
+    id: 112,
+    hora: '12:00',
+    ciutat: 'Torredembarra',
+    lloc: 'Parc de Cal Llovet'
+  },
+  {
+    data: '05/05/2018',
+    id: 113,
+    hora: '13:00',
+    ciutat: 'Barcelona',
+    lloc: "Passeig de la Vall d'Hebron, 258"
+  },
+  {
+    data: '22/04/2018',
+    id: 114,
+    hora: '12:30',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Parc de Can Mercader'
+  },
+  {
+    data: '14/04/2018',
+    id: 115,
+    hora: '18:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: "Plaça de l'Església"
+  },
+  {
+    data: '18/03/2018',
+    id: 116,
+    hora: '12:00',
+    ciutat: 'Barberà del Vallès',
+    lloc: 'Plaça de la Vila'
+  },
+  {
+    data: '12/11/2017',
+    id: 117,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Mirador de les Caves'
+  },
+  {
+    data: '05/11/2017',
+    id: 118,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: "Plaça de l'Església"
+  },
+  {
+    data: '04/11/2017',
+    id: 119,
+    hora: '18:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: "Plaça de l'Església"
+  },
+  {
+    data: '15/10/2017',
+    id: 120,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Plaça de Sant Ildefons'
+  },
+  {
+    data: '23/09/2017',
+    id: 121,
+    hora: '18:00',
+    ciutat: 'El Prat de Llobregat',
+    lloc: 'Plaça de la Vila'
+  },
+  {
+    data: '11/09/2017',
+    id: 122,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: "Plaça de l'Església"
+  },
+  {
+    data: '09/09/2017',
+    id: 123,
+    hora: '17:30',
+    ciutat: 'Guissona',
+    lloc: 'Plaça Major'
+  },
+  {
+    data: '23/07/2017',
+    id: 124,
+    hora: '12:00',
+    ciutat: 'Esplugues de Llobregat',
+    lloc: 'Plaça Robert Brillas'
+  },
+  {
+    data: '08/07/2017',
+    id: 125,
+    hora: '18:00',
+    ciutat: 'Molins de Rei',
+    lloc: 'Plaça del Pati del Palau'
+  },
+  {
+    data: '18/06/2017',
+    id: 126,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: "Plaça de l'Església"
+  },
+  {
+    data: '17/06/2017',
+    id: 127,
+    hora: '18:30',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: "Plaça de l'Església"
+  },
+  {
+    data: '10/06/2017',
+    id: 128,
+    hora: '20:30',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Plaça de la Sardana'
+  },
+  {
+    data: '28/05/2017',
+    id: 129,
+    hora: '12:00',
+    ciutat: 'Vilafranca del Penedès',
+    lloc: 'Plaça de Milà i Fontanals'
+  },
+  {
+    data: '27/05/2017',
+    id: 130,
+    hora: '19:00',
+    ciutat: 'Vacarisses',
+    lloc: 'Carrer Pau Casals'
+  },
+  {
+    data: '21/05/2017',
+    id: 131,
+    hora: '12:00',
+    ciutat: 'Sant Boi de Llobregat',
+    lloc: "Plaça de l'Ajuntament"
+  },
+  {
+    data: '14/05/2017',
+    id: 132,
+    hora: '12:00',
+    ciutat: 'Sant Feliu de Llobregat',
+    lloc: "Plaça de l'Estació"
+  },
+  {
+    data: '30/04/2017',
+    id: 133,
+    hora: '12:00',
+    ciutat: 'Barcelona',
+    lloc: 'Carrer de la Marina'
+  },
+  {
+    data: '23/04/2017',
+    id: 134,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Parc de Can Mercader'
+  },
+  {
+    data: '08/04/2017',
+    id: 135,
+    hora: '18:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: "Plaça de l'Església"
+  },
+  {
+    data: '01/04/2017',
+    id: 136,
+    hora: '18:00',
+    ciutat: 'Lleida',
+    lloc: 'Plaça de la Paeria'
+  },
+  {
+    data: '12/03/2017',
+    id: 137,
+    hora: '11:30',
+    ciutat: 'Les Franqueses del Vallès',
+    lloc: "Avinguda de l'Ajuntament"
+  },
+  {
+    data: '06/11/2016',
+    id: 138,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: "Plaça de l'Església"
+  },
+  {
+    data: '05/11/2016',
+    id: 139,
+    hora: '18:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: "Plaça de l'Església"
+  },
+  {
+    data: '30/10/2016',
+    id: 140,
+    hora: '12:00',
+    ciutat: 'Mollet del Vallès',
+    lloc: 'Plaça Prat de la Riba'
+  },
+  {
+    data: '22/10/2016',
+    id: 141,
+    hora: '18:00',
+    ciutat: 'Sitges',
+    lloc: 'Plaça Cap de la Vila'
+  },
+  {
+    data: '12/10/2016',
+    id: 142,
+    hora: '12:30',
+    ciutat: 'Sant Feliu de Llobregat',
+    lloc: 'Plaça Lluis Companys'
+  },
+  {
+    data: '09/10/2016',
+    id: 143,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Plaça de Sant Ildefons'
+  },
+  {
+    data: '25/09/2016',
+    id: 144,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Plaça del Trinquis'
+  },
+  {
+    data: '24/09/2016',
+    id: 145,
+    hora: '18:00',
+    ciutat: 'El Prat de Llobregat',
+    lloc: 'Plaça de la Vila'
+  },
+  {
+    data: '11/09/2016',
+    id: 146,
+    hora: '13:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: "Plaça de l'Església"
+  },
+  {
+    data: '10/09/2016',
+    id: 147,
+    hora: '18:00',
+    ciutat: 'Castellar del Vallès',
+    lloc: 'Plaça Major'
+  },
+  {
+    data: '14/08/2016',
+    id: 148,
+    hora: '17:00',
+    ciutat: 'Praza Sobrado Dos Monxes'
+  },
+  {
+    data: '24/07/2016',
+    id: 149,
+    hora: '18:00',
+    ciutat: 'Sant Vicenç dels Horts',
+    lloc: 'Plaça de la Vila'
+  },
+  {
+    data: '02/07/2016',
+    id: 150,
+    hora: '18:00',
+    ciutat: 'Molins de Rei',
+    lloc: 'Plaça del Pati del Palau de Molins de Rei'
+  },
+  {
+    data: '26/06/2016',
+    id: 151,
+    hora: '19:00',
+    ciutat: 'Sant Joan Despí',
+    lloc: "Plaça de l'Ermita"
+  },
+  {
+    data: '18/06/2016',
+    id: 152,
+    hora: '18:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: "Plaça de l'Església"
+  },
+  {
+    data: '12/06/2016',
+    id: 153,
+    hora: '12:00',
+    ciutat: 'Esplugues de Llobregat',
+    lloc: 'Rambla Verge de la Mercè'
+  },
+  {
+    data: '11/06/2016',
+    id: 154,
+    hora: '18:00',
+    ciutat: 'Barcelona',
+    lloc: 'Plaça del Rei'
+  },
+  {
+    data: '29/05/2016',
+    id: 155,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: "Plaça de l'Església"
+  },
+  {
+    data: '22/05/2016',
+    id: 156,
+    hora: '12:00',
+    ciutat: 'Sant Boi de Llobregat',
+    lloc: "Plaça de l'Ajuntament"
+  },
+  {
+    data: '08/05/2016',
+    id: 157,
+    hora: '12:00',
+    ciutat: 'Esparreguera',
+    lloc: 'Plaça de la Pagesia (Carrer dels Arbres)'
+  },
+  {
+    data: '24/04/2016',
+    id: 158,
+    hora: '12:30',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Parc de Can Mercader'
+  },
+  {
+    data: '16/04/2016',
+    id: 159,
+    hora: '18:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: "Plaça de l'Església"
+  },
+  {
+    data: '03/04/2016',
+    id: 160,
+    hora: '12:00',
+    ciutat: 'Terrassa',
+    lloc: 'Raval de Montserrat'
+  },
+  {
+    data: '20/03/2016',
+    id: 161,
+    hora: '12:00',
+    ciutat: 'Guissona',
+    lloc: 'Plaça del Bisbe Benlloch'
+  },
+  {
+    data: '06/03/2016',
+    id: 162,
+    hora: '11:30',
+    ciutat: 'Granollers',
+    lloc: 'Plaça Maluquer i Salvador'
+  },
+  {
+    data: '08/11/2015',
+    id: 163,
+    hora: '12:00',
+    ciutat: 'Badalona',
+    lloc: 'Plaça de la Vila'
+  },
+  {
+    data: '01/11/2015',
+    id: 164,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: "Plaça de l'Església"
+  },
+  {
+    data: '31/10/2015',
+    id: 165,
+    hora: '19:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Plaça de la Sardana'
+  },
+  {
+    data: '18/10/2015',
+    id: 166,
+    hora: '12:00',
+    ciutat: 'Molins de Rei',
+    lloc: "Plaça de l'Ajuntament"
+  },
+  {
+    data: '17/10/2015',
+    id: 167,
+    hora: '18:30',
+    ciutat: 'Cerdanyola del Vallès',
+    lloc: 'Plaça Francesc Layret'
+  },
+  {
+    data: '11/10/2015',
+    id: 168,
+    hora: '12:30',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Plaça de Sant Ildefons'
+  },
+  {
+    data: '27/09/2015',
+    id: 169,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Plaça del Trinquis'
+  },
+  {
+    data: '26/09/2015',
+    id: 170,
+    hora: '18:00',
+    ciutat: 'El Prat de Llobregat',
+    lloc: 'Plaça de la Vila'
+  },
+  {
+    data: '13/09/2015',
+    id: 171,
+    hora: '12:30',
+    ciutat: 'Els Hostalets de Pierola',
+    lloc: 'Plaça Doctor Conde'
+  },
+  {
+    data: '11/09/2015',
+    id: 172,
+    ciutat: 'Barcelona',
+    lloc: 'Avinguda Meridiana'
+  },
+  {
+    data: '05/09/2015',
+    id: 173,
+    hora: '17:30',
+    ciutat: 'Guissona',
+    lloc: 'Plaça Major'
+  },
+  {
+    data: '19/07/2015',
+    id: 174,
+    hora: '13:00',
+    ciutat: 'Esplugues de Llobregat'
+  },
+  {
+    data: '05/07/2015',
+    id: 175,
+    hora: '11:00',
+    ciutat: 'Esparreguera',
+    lloc: 'Carrer Baix'
+  },
+  { data: '28/06/2015', id: 176, ciutat: 'Gavà' },
+  {
+    data: '27/06/2015',
+    id: 177,
+    hora: '11:30',
+    ciutat: 'El Prat de Llobregat',
+    lloc: 'Plaça de la Vila'
+  },
+  {
+    data: '24/06/2015',
+    id: 178,
+    hora: '18:00',
+    ciutat: 'Sant Joan Despí'
+  },
+  {
+    data: '14/06/2015',
+    id: 179,
+    hora: '12:00',
+    ciutat: 'Barcelona',
+    lloc: 'Sant Gervasi'
+  },
+  {
+    data: '13/06/2015',
+    id: 180,
+    hora: '18:00',
+    ciutat: 'Barcelona',
+    lloc: 'Born Centre Cultural'
+  },
+  {
+    data: '07/06/2015',
+    id: 181,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: "Plaça de l'Església"
+  },
+  {
+    data: '17/05/2015',
+    id: 182,
+    hora: '12:00',
+    ciutat: 'Sant Boi de Llobregat',
+    lloc: "Plaça de l'Ajuntament"
+  },
+  {
+    data: '10/05/2015',
+    id: 183,
+    hora: '12:00',
+    ciutat: 'Tarragona',
+    lloc: 'Plaça del Rei'
+  },
+  {
+    data: '26/04/2015',
+    id: 184,
+    hora: '12:30',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Parc de Can Mercader'
+  },
+  {
+    data: '11/04/2015',
+    id: 185,
+    hora: '17:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: "Plaça de l'Església"
+  },
+  {
+    data: '22/03/2015',
+    id: 186,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Carrer de la Verge de Montserrat, 51'
+  },
+  {
+    data: '15/03/2015',
+    id: 187,
+    hora: '11:30',
+    ciutat: 'Granollers',
+    lloc: 'Plaça Maluquer i Salvador'
+  },
+  {
+    data: '08/03/2015',
+    id: 188,
+    hora: '12:00',
+    ciutat: 'Esparreguera',
+    lloc: 'Carrer Llobregat, 2'
+  },
+  {
+    data: '16/11/2014',
+    id: 189,
+    hora: '12:00',
+    ciutat: 'Viladecans',
+    lloc: 'Plaça de la Vila'
+  },
+  {
+    data: '15/11/2014',
+    id: 190,
+    hora: '17:30',
+    ciutat: 'Terrassa',
+    lloc: 'Plaça Vella'
+  },
+  {
+    data: '02/11/2014',
+    id: 191,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: "Plaça de l'Església"
+  },
+  {
+    data: '01/11/2014',
+    id: 192,
+    hora: '18:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: "Plaça de l'Església"
+  },
+  {
+    data: '26/10/2014',
+    id: 193,
+    hora: '12:00',
+    ciutat: 'Molins de Rei',
+    lloc: 'Plaça de Catalunya (Ajuntament)'
+  },
+  {
+    data: '12/10/2014',
+    id: 194,
+    hora: '13:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Plaça de la Verge del Pilar'
+  },
+  { data: '12/10/2014', id: 195, hora: '19:00', ciutat: 'Barcelona' },
+  {
+    data: '28/09/2014',
+    id: 196,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Plaça Pallars'
+  },
+  {
+    data: '27/09/2014',
+    id: 197,
+    hora: '18:00',
+    ciutat: 'El Prat de Llobregat',
+    lloc: 'Plaça de la Vila'
+  },
+  {
+    data: '20/09/2014',
+    id: 198,
+    hora: '18:00',
+    ciutat: 'Calella',
+    lloc: 'Plaça de la Constitució (Ajuntament)'
+  },
+  {
+    data: '14/09/2014',
+    id: 199,
+    hora: '12:00',
+    ciutat: 'Caldes de Montbui',
+    lloc: 'Plaça de la Font del Lleó'
+  },
+  {
+    data: '06/09/2014',
+    id: 200,
+    hora: '18:00',
+    ciutat: 'Barcelona',
+    lloc: 'Plaça del Fènix'
+  },
+  {
+    data: '31/07/2014',
+    id: 201,
+    ciutat: 'Sant Boi de Llobregat',
+    lloc: 'Parc de la Muntanyeta'
+  },
+  {
+    data: '13/07/2014',
+    id: 202,
+    hora: '19:00',
+    ciutat: 'Sant Cugat del Vallès',
+    lloc: 'Carrer Mallorca'
+  },
+  {
+    data: '24/06/2014',
+    id: 203,
+    hora: '19:00',
+    ciutat: 'Sant Joan Despí',
+    lloc: "Plaça de l'Ermita"
+  },
+  {
+    data: '22/06/2014',
+    id: 204,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: "Plaça de l'Església"
+  },
+  {
+    data: '08/06/2014',
+    id: 205,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Parc de Can Mercader'
+  },
+  {
+    data: '01/06/2014',
+    id: 206,
+    hora: '12:00',
+    ciutat: 'Santa Coloma de Cervelló',
+    lloc: 'Plaça Pi Tallat'
+  },
+  {
+    data: '31/05/2014',
+    id: 207,
+    hora: '18:00',
+    ciutat: 'Sant Vicenç dels Horts',
+    lloc: 'Parc de la Foneria'
+  },
+  {
+    data: '18/05/2014',
+    id: 208,
+    hora: '12:00',
+    ciutat: 'Sant Boi de Llobregat',
+    lloc: "Plaça de l'Ajuntament"
+  },
+  {
+    data: '17/05/2014',
+    id: 209,
+    hora: '19:30',
+    ciutat: 'Barcelona',
+    lloc: 'Av. de la Catedral'
+  },
+  {
+    data: '11/05/2014',
+    id: 210,
+    hora: '12:00',
+    ciutat: 'Esparreguera',
+    lloc: 'Plaça de la Pagesia'
+  },
+  {
+    data: '01/05/2014',
+    id: 211,
+    hora: '12:00',
+    ciutat: 'Barcelona',
+    lloc: 'Avinguda Litoral, 86'
+  },
+  {
+    data: '27/04/2014',
+    id: 212,
+    hora: '12:30',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Parc de Can Mercader'
+  },
+  {
+    data: '26/04/2014',
+    id: 213,
+    hora: '17:00',
+    ciutat: 'Gavà',
+    lloc: 'Plaça de Jaume Balmes'
+  },
+  {
+    data: '13/04/2014',
+    id: 214,
+    ciutat: 'Barcelona',
+    lloc: 'Tibidabo'
+  },
+  {
+    data: '06/04/2014',
+    id: 215,
+    hora: '12:00',
+    ciutat: 'Terrassa',
+    lloc: 'Raval de Montserrat'
+  },
+  {
+    data: '05/04/2014',
+    id: 216,
+    hora: '18:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: "Plaça de l'Església"
+  },
+  {
+    data: '22/03/2014',
+    id: 217,
+    hora: '12:30',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Carrer de la Verge de Montserrat'
+  },
+  {
+    data: '15/12/2013',
+    id: 218,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: "Plaça de l'Església"
+  },
+  {
+    data: '06/12/2013',
+    id: 219,
+    hora: '12:00',
+    ciutat: 'Sant Boi de Llobregat',
+    lloc: 'Biblioteca Jordi Rubió'
+  },
+  {
+    data: '24/11/2013',
+    id: 220,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat'
+  },
+  {
+    data: '16/11/2013',
+    id: 221,
+    hora: '18:30',
+    ciutat: 'Terrassa',
+    lloc: 'Plaça Vella'
+  },
+  {
+    data: '10/11/2013',
+    id: 222,
+    hora: '11:30',
+    ciutat: 'Figueres',
+    lloc: "Plaça de l'Ajuntament"
+  },
+  {
+    data: '03/11/2013',
+    id: 223,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: "Plaça de l'Església"
+  },
+  {
+    data: '02/11/2013',
+    id: 224,
+    hora: '18:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: "Plaça de l'Església"
+  },
+  {
+    data: '26/10/2013',
+    id: 225,
+    hora: '13:00',
+    ciutat: 'Sant Joan Despí',
+    lloc: 'Carrer de John F. Kennedy'
+  },
+  {
+    data: '19/10/2013',
+    id: 226,
+    hora: '19:00',
+    ciutat: 'Manresa',
+    lloc: "Local dels Tirallongues (Carrer Verge de l'Alba)"
+  },
+  { data: '15/10/2013', id: 227, ciutat: 'Cornellà de Llobregat' },
+  {
+    data: '13/10/2013',
+    id: 228,
+    hora: '17:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Av. Salvador Allende'
+  },
+  {
+    data: '12/10/2013',
+    id: 229,
+    hora: '13:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Plaça de la Verge del Pilar'
+  },
+  {
+    data: '29/09/2013',
+    id: 230,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: "Plaça d'Àngel Guimerà"
+  },
+  {
+    data: '28/09/2013',
+    id: 231,
+    hora: '18:00',
+    ciutat: 'El Prat de Llobregat',
+    lloc: 'Plaça de la Vila'
+  },
+  {
+    data: '22/09/2013',
+    id: 232,
+    hora: '18:00',
+    ciutat: 'Cervera',
+    lloc: 'Plaça Major'
+  },
+  {
+    data: '21/09/2013',
+    id: 233,
+    hora: '18:00',
+    ciutat: 'Esplugues de Llobregat',
+    lloc: 'Carrer Àngel Guimerà (Casal de Cultura Robert Brillas)'
+  },
+  {
+    data: '11/09/2013',
+    id: 234,
+    hora: '11:30',
+    ciutat: 'Llinars del Vallès',
+    lloc: 'Plaça de la Vila'
+  },
+  {
+    data: '01/09/2013',
+    id: 235,
+    hora: '12:00',
+    ciutat: 'Barcelona',
+    lloc: 'Plaça del Fènix'
+  },
+  {
+    data: '27/07/2013',
+    id: 236,
+    hora: '19:30',
+    ciutat: 'Barcelona',
+    lloc: 'Avinguda de la Catedral'
+  },
+  {
+    data: '07/07/2013',
+    id: 237,
+    hora: '12:00',
+    ciutat: 'Castelldefels',
+    lloc: "Plaça de l'Església"
+  },
+  {
+    data: '30/06/2013',
+    id: 238,
+    hora: '19:00',
+    ciutat: 'Vilanova i la Geltrú',
+    lloc: 'Passeig Marítim (monument Francesc Macià)'
+  },
+  {
+    data: '24/06/2013',
+    id: 239,
+    hora: '19:30',
+    ciutat: 'Sant Joan Despí',
+    lloc: 'Plaça de la Constitució'
+  },
+  {
+    data: '15/06/2013',
+    id: 240,
+    hora: '18:00',
+    ciutat: 'Esplugues de Llobregat',
+    lloc: "Parc Pou d'en Fèlix"
+  },
+  {
+    data: '02/06/2013',
+    id: 241,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: "Plaça de l'Església"
+  },
+  { data: '01/06/2013', id: 242, ciutat: 'Cornellà de Llobregat' },
+  {
+    data: '26/05/2013',
+    id: 243,
+    hora: '13:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Passatge de la Plàsmica'
+  },
+  {
+    data: '19/05/2013',
+    id: 244,
+    hora: '12:00',
+    ciutat: 'Sant Boi de Llobregat',
+    lloc: "Plaça de l'Ajuntament"
+  },
+  {
+    data: '18/05/2013',
+    id: 245,
+    hora: '18:00',
+    ciutat: 'Gavà',
+    lloc: 'Restaurant Masia Ribas'
+  },
+  {
+    data: '12/05/2013',
+    id: 246,
+    hora: '12:00',
+    ciutat: 'Sant Feliu de Llobregat',
+    lloc: 'Plaça de la Vila'
+  },
+  {
+    data: '04/05/2013',
+    id: 247,
+    hora: '19:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Av. Sant Ferran'
+  },
+  {
+    data: '21/04/2013',
+    id: 248,
+    hora: '12:30',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Parc de Can Mercader'
+  },
+  {
+    data: '06/04/2013',
+    id: 249,
+    hora: '18:30',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: "Plaça de l'Església"
+  },
+  {
+    data: '10/03/2013',
+    id: 250,
+    hora: '12:30',
+    ciutat: 'Sant Boi de Llobregat',
+    lloc: 'Ermita de Sant Ramon'
+  },
+  {
+    data: '16/02/2013',
+    id: 251,
+    hora: '14:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: "Estadi Municipal d'Atletisme"
+  },
+  {
+    data: '02/01/2013',
+    id: 252,
+    hora: '19:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Estadi de Cornellà - El Prat'
+  },
+  {
+    data: '11/11/2012',
+    id: 253,
+    hora: '12:00',
+    ciutat: 'Barcelona',
+    lloc: 'Plaça Valentí Almirall'
+  },
+  {
+    data: '04/11/2012',
+    id: 254,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: "Plaça de l'Església"
+  },
+  {
+    data: '03/11/2012',
+    id: 255,
+    hora: '18:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Local dels  (Eduard Gibert, 29)'
+  },
+  {
+    data: '27/10/2012',
+    id: 256,
+    hora: '18:00',
+    ciutat: 'Palma',
+    lloc: 'Plaça de Cort'
+  },
+  {
+    data: '21/10/2012',
+    id: 257,
+    hora: '12:00',
+    ciutat: 'Badalona',
+    lloc: 'Plaça de Pomar'
+  },
+  {
+    data: '12/10/2012',
+    id: 258,
+    hora: '13:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Plaça del Pilar'
+  },
+  {
+    data: '30/09/2012',
+    id: 259,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Plaça de Pallars'
+  },
+  {
+    data: '30/09/2012',
+    id: 260,
+    hora: '18:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Parc de la Infanta'
+  },
+  {
+    data: '27/09/2012',
+    id: 261,
+    hora: '20:00',
+    ciutat: 'Barcelona',
+    lloc: 'Masia Can Tibidabo'
+  },
+  {
+    data: '22/09/2012',
+    id: 262,
+    hora: '18:30',
+    ciutat: 'Esplugues de Llobregat',
+    lloc: 'Casal de Cultura Robert Brillas (C/Àngel Guimerà)'
+  },
+  {
+    data: '16/09/2012',
+    id: 263,
+    hora: '18:00',
+    ciutat: 'Caldes de Montbui',
+    lloc: 'Plaça Font del Lleó'
+  },
+  {
+    data: '11/09/2012',
+    id: 264,
+    hora: '11:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: "Plaça de l'Església"
+  },
+  {
+    data: '02/09/2012',
+    id: 265,
+    hora: '12:00',
+    ciutat: 'Barcelona',
+    lloc: 'Plaça Súria'
+  },
+  { data: '30/06/2012', id: 266, hora: '18:00', ciutat: 'àger' },
+  {
+    data: '24/06/2012',
+    id: 267,
+    hora: '19:00',
+    ciutat: 'Sant Joan Despí',
+    lloc: "Plaça de l'Ermita"
+  },
+  {
+    data: '10/06/2012',
+    id: 268,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: "Plaça de l'Església"
+  },
+  {
+    data: '09/06/2012',
+    id: 269,
+    hora: '18:00',
+    ciutat: 'Cornellà de Llobregat'
+  },
+  {
+    data: '02/06/2012',
+    id: 270,
+    hora: '18:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Plaça de Catalunya'
+  },
+  {
+    data: '20/05/2012',
+    id: 271,
+    hora: '12:30',
+    ciutat: 'Sant Boi de Llobregat',
+    lloc: "Plaça de l'Ajuntament"
+  },
+  {
+    data: '13/05/2012',
+    id: 272,
+    hora: '12:00',
+    ciutat: 'Barcelona',
+    lloc: 'C/ Trinxant amb c/ Joan de Garay'
+  },
+  {
+    data: '06/05/2012',
+    id: 273,
+    hora: '12:00',
+    ciutat: 'Figueres',
+    lloc: "Plaça de l'Ajuntament"
+  },
+  {
+    data: '22/04/2012',
+    id: 274,
+    hora: '12:30',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Parc de Can Mercader'
+  },
+  {
+    data: '14/04/2012',
+    id: 275,
+    hora: '18:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: "Plaça de l'Església"
+  },
+  {
+    data: '25/03/2012',
+    id: 276,
+    hora: '12:30',
+    ciutat: 'Barcelona',
+    lloc: 'Plaça del Raspall'
+  },
+  {
+    data: '12/02/2012',
+    id: 277,
+    hora: '12:00',
+    ciutat: 'Esparreguera',
+    lloc: "Plaça de l'Església"
+  },
+  {
+    data: '13/11/2011',
+    id: 278,
+    hora: '12:00',
+    ciutat: 'Barcelona',
+    lloc: 'Carrer Blai'
+  },
+  {
+    data: '06/11/2011',
+    id: 279,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: "Plaça de l'Església"
+  },
+  {
+    data: '05/11/2011',
+    id: 280,
+    hora: '18:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: "Plaça de l'Església"
+  },
+  {
+    data: '23/10/2011',
+    id: 281,
+    hora: '12:00',
+    ciutat: 'Molins de Rei',
+    lloc: "Plaça de l'Ajuntament"
+  },
+  { data: '16/10/2011', id: 282, hora: '12:00', ciutat: 'Barcelona' },
+  {
+    data: '12/10/2011',
+    id: 283,
+    hora: '13:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Plaça del Pilar'
+  },
+  {
+    data: '26/09/2011',
+    id: 284,
+    hora: '18:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Museu de les Aigües'
+  },
+  {
+    data: '25/09/2011',
+    id: 285,
+    hora: '12:30',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Plaça Trinquis'
+  },
+  {
+    data: '24/09/2011',
+    id: 286,
+    hora: '18:00',
+    ciutat: 'El Prat de Llobregat',
+    lloc: 'Plaça de la Vila'
+  },
+  {
+    data: '11/09/2011',
+    id: 287,
+    hora: '12:00',
+    ciutat: 'Llinars del Vallès'
+  },
+  {
+    data: '10/09/2011',
+    id: 288,
+    hora: '17:30',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Biblioteca Central'
+  },
+  {
+    data: '04/09/2011',
+    id: 289,
+    hora: '12:30',
+    ciutat: 'Rubí',
+    lloc: 'Plaça Pere Aguilera'
+  },
+  {
+    data: '03/07/2011',
+    id: 290,
+    hora: '19:00',
+    ciutat: 'Barberà del Vallès',
+    lloc: 'Plaça de la Vila'
+  },
+  {
+    data: '26/06/2011',
+    id: 291,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: "Plaça de l'Església"
+  },
+  { data: '25/06/2011', id: 292, ciutat: 'Cornellà de Llobregat' },
+  {
+    data: '18/06/2011',
+    id: 293,
+    hora: '12:00',
+    ciutat: 'Barcelona',
+    lloc: 'Avinguda Paral.lel'
+  },
+  {
+    data: '04/06/2011',
+    id: 294,
+    hora: '18:00',
+    ciutat: 'Molins de Rei',
+    lloc: "Plaça de l'Ajuntament"
+  },
+  {
+    data: '22/05/2011',
+    id: 295,
+    hora: '12:00',
+    ciutat: 'Manresa',
+    lloc: 'Crist Rei - Plaça de Sant Doménec'
+  },
+  {
+    data: '06/05/2011',
+    id: 296,
+    hora: '22:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Plaça Can Suris'
+  },
+  {
+    data: '01/05/2011',
+    id: 297,
+    hora: '12:30',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Can Mercader'
+  },
+  {
+    data: '30/04/2011',
+    id: 298,
+    hora: '18:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: "Plaça de l'Església"
+  },
+  {
+    data: '09/04/2011',
+    id: 299,
+    hora: '19:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: "Plaça de l'Església"
+  },
+  {
+    data: '20/03/2011',
+    id: 300,
+    hora: '12:00',
+    ciutat: 'Badalona',
+    lloc: 'Plaça del Pou del Greix'
+  },
+  {
+    data: '30/01/2011',
+    id: 301,
+    hora: '10:00',
+    ciutat: 'Valls',
+    lloc: 'Plaça del Blat i Font de la Manxa'
+  },
+  {
+    data: '07/11/2010',
+    id: 302,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: "Plaça de l'Església"
+  },
+  {
+    data: '23/10/2010',
+    id: 303,
+    hora: '18:00',
+    ciutat: 'Reus',
+    lloc: 'Plaça del Castell'
+  },
+  {
+    data: '26/09/2010',
+    id: 304,
+    hora: '12:30',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Plaça del Trinquis'
+  },
+  {
+    data: '25/09/2010',
+    id: 305,
+    hora: '18:00',
+    ciutat: 'El Prat de Llobregat',
+    lloc: 'Plaça de la Vila'
+  },
+  {
+    data: '11/09/2010',
+    id: 306,
+    hora: '12:00',
+    ciutat: 'Badalona',
+    lloc: 'Plaça de la Plana'
+  },
+  {
+    data: '05/09/2010',
+    id: 307,
+    hora: '18:30',
+    ciutat: 'Cambrils',
+    lloc: 'Plaça Espanya'
+  },
+  {
+    data: '25/07/2010',
+    id: 308,
+    hora: '12:00',
+    ciutat: 'Esplugues de Llobregat',
+    lloc: "Parc del Pou d'en Fèlix"
+  },
+  {
+    data: '04/07/2010',
+    id: 309,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: "Plaça de l'Esglèsia"
+  },
+  {
+    data: '06/06/2010',
+    id: 310,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: "Plaça de l'Església"
+  },
+  {
+    data: '30/05/2010',
+    id: 311,
+    hora: '12:00',
+    ciutat: 'Sant Llorenç Savall'
+  },
+  {
+    data: '15/05/2010',
+    id: 312,
+    hora: '19:00',
+    ciutat: 'Algemesí',
+    lloc: 'Plaça Major'
+  },
+  {
+    data: '01/05/2010',
+    id: 313,
+    hora: '18:00',
+    ciutat: "L'Hospitalet de Llobregat",
+    lloc: "Plaça de l'Ajuntament"
+  },
+  {
+    data: '18/04/2010',
+    id: 314,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Parc Can Mercader'
+  },
+  {
+    data: '10/04/2010',
+    id: 315,
+    hora: '18:30',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: "Plaça de l'Esglèsia"
+  },
+  {
+    data: '21/03/2010',
+    id: 316,
+    hora: '12:00',
+    ciutat: 'Barcelona',
+    lloc: 'Plaça Comes'
+  },
+  { data: '14/03/2010', id: 317, hora: '12:00', ciutat: 'Seva' },
+  {
+    data: '01/11/2009',
+    id: 318,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: "Plaça de l'Església"
+  },
+  {
+    data: '31/10/2009',
+    id: 319,
+    hora: '19:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: "Davant d'El Corte Inglés"
+  },
+  {
+    data: '25/10/2009',
+    id: 320,
+    hora: '12:00',
+    ciutat: 'Igualada',
+    lloc: 'Plaça Pius XII'
+  },
+  {
+    data: '12/10/2009',
+    id: 321,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Plaça del Pilar'
+  },
+  {
+    data: '03/10/2009',
+    id: 322,
+    hora: '17:30',
+    ciutat: 'Castelldefels',
+    lloc: "Plaça de l'Església"
+  },
+  {
+    data: '26/09/2009',
+    id: 323,
+    hora: '18:00',
+    ciutat: 'El Prat de Llobregat',
+    lloc: 'Plaça de la Vila'
+  },
+  {
+    data: '19/09/2009',
+    id: 324,
+    hora: '18:00',
+    ciutat: 'Esplugues de Llobregat',
+    lloc: 'Plaça Robert Brillas'
+  },
+  {
+    data: '06/09/2009',
+    id: 325,
+    ciutat: 'Cambrils',
+    lloc: 'Plaça Mossén Joan Batalla'
+  },
+  {
+    data: '12/07/2009',
+    id: 326,
+    hora: '18:00',
+    ciutat: 'Sant Cugat del Vallès',
+    lloc: 'Casa de Cultura (districte de Mira-sol)'
+  },
+  {
+    data: '20/06/2009',
+    id: 327,
+    hora: '18:00',
+    ciutat: 'Barcelona',
+    lloc: 'Passeig del Born'
+  },
+  {
+    data: '14/06/2009',
+    id: 328,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: "Plaça de l'Església"
+  },
+  {
+    data: '17/05/2009',
+    id: 329,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Plaça de la Vila'
+  },
+  {
+    data: '10/05/2009',
+    id: 330,
+    hora: '12:00',
+    ciutat: 'Esparreguera',
+    lloc: 'Plaça de la Pagesia'
+  },
+  {
+    data: '26/04/2009',
+    id: 331,
+    hora: '12:00',
+    ciutat: 'Salt',
+    lloc: 'Plaça Lluís Companys'
+  },
+  {
+    data: '19/04/2009',
+    id: 332,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Parc Can Mercader'
+  },
+  {
+    data: '28/03/2009',
+    id: 333,
+    hora: '19:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: "Plaça de l'Eglésia"
+  },
+  {
+    data: '15/03/2009',
+    id: 334,
+    hora: '12:00',
+    ciutat: 'El Papiol',
+    lloc: 'El Papiol'
+  },
+  {
+    data: '09/11/2008',
+    id: 335,
+    hora: '12:00',
+    ciutat: 'Granollers',
+    lloc: 'Plaça de la Porxada'
+  },
+  {
+    data: '02/11/2008',
+    id: 336,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: "Plaça de l'Església"
+  },
+  {
+    data: '01/11/2008',
+    id: 337,
+    hora: '19:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Davant del Patronat'
+  },
+  {
+    data: '25/10/2008',
+    id: 338,
+    hora: '18:00',
+    ciutat: 'Reus',
+    lloc: 'Plaça del Castell'
+  },
+  {
+    data: '12/10/2008',
+    id: 339,
+    hora: '12:30',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Plaça del Pilar'
+  },
+  {
+    data: '11/10/2008',
+    id: 340,
+    ciutat: 'Sant Feliu de Llobregat',
+    lloc: 'Plaça de la Vila'
+  },
+  {
+    data: '28/09/2008',
+    id: 341,
+    hora: '12:30',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Plaça Pallars'
+  },
+  {
+    data: '27/09/2008',
+    id: 342,
+    hora: '18:00',
+    ciutat: 'El Prat de Llobregat',
+    lloc: "Plaça de l'Ajuntament"
+  },
+  {
+    data: '13/09/2008',
+    id: 343,
+    hora: '18:00',
+    ciutat: 'Bellpuig',
+    lloc: 'Plaça Major'
+  },
+  {
+    data: '11/09/2008',
+    id: 344,
+    hora: '18:00',
+    ciutat: 'Argentona',
+    lloc: 'Plaça Nova'
+  },
+  {
+    data: '13/07/2008',
+    id: 345,
+    hora: '18:00',
+    ciutat: 'Palafrugell',
+    lloc: "Plaça de l'Ajuntament"
+  },
+  {
+    data: '29/06/2008',
+    id: 346,
+    hora: '12:00',
+    ciutat: 'Sabadell',
+    lloc: 'Plaça del Doctor Robert'
+  },
+  {
+    data: '14/06/2008',
+    id: 347,
+    hora: '18:00',
+    ciutat: 'Barcelona',
+    lloc: 'Passeig del Born'
+  },
+  {
+    data: '18/05/2008',
+    id: 348,
+    hora: '12:00',
+    ciutat: 'Mollerussa',
+    lloc: "Plaça de l'Ajuntament"
+  },
+  {
+    data: '11/05/2008',
+    id: 349,
+    hora: '12:00',
+    ciutat: 'El Vendrell',
+    lloc: 'Plaça Vella'
+  },
+  {
+    data: '27/04/2008',
+    id: 350,
+    hora: '12:30',
+    ciutat: 'Guissona',
+    lloc: 'Plaça Major'
+  },
+  {
+    data: '20/04/2008',
+    id: 351,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Parc Can Mercader'
+  },
+  {
+    data: '12/04/2008',
+    id: 352,
+    hora: '18:30',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: "Plaça de l'Esglèsia"
+  },
+  {
+    data: '30/03/2008',
+    id: 353,
+    hora: '12:00',
+    ciutat: 'Monistrol de Montserrat',
+    lloc: 'Plaça del Monestir'
+  },
+  {
+    data: '10/11/2007',
+    id: 354,
+    hora: '12:00',
+    ciutat: 'Lleida',
+    lloc: 'Plaça de la Paeria'
+  },
+  {
+    data: '04/11/2007',
+    id: 355,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: "Plaça de l'Església"
+  },
+  {
+    data: '03/11/2007',
+    id: 356,
+    hora: '18:00',
+    ciutat: 'Cornellà de Llobregat'
+  },
+  {
+    data: '20/10/2007',
+    id: 357,
+    hora: '18:00',
+    ciutat: 'Esplugues de Llobregat',
+    lloc: "Plaça de l'Ajuntament"
+  },
+  { data: '12/10/2007', id: 358, ciutat: 'Cornellà de Llobregat' },
+  {
+    data: '30/09/2007',
+    id: 359,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Plaça del Trinquis'
+  },
+  {
+    data: '29/09/2007',
+    id: 360,
+    hora: '18:00',
+    ciutat: 'El Prat de Llobregat',
+    lloc: 'Plaça de la Vila'
+  },
+  {
+    data: '23/09/2007',
+    id: 361,
+    hora: '12:00',
+    ciutat: 'Esplugues de Llobregat',
+    lloc: 'Plaça Robert Brillas'
+  },
+  { data: '11/09/2007', id: 362, ciutat: 'Cornellà de Llobregat' },
+  { data: '11/09/2007', id: 363, hora: '12:00', ciutat: 'Roquetes' },
+  { data: '09/09/2007', id: 364, ciutat: 'Guissona' },
+  { data: '02/09/2007', id: 365, ciutat: 'Santa Perpètua de Mogoda' },
+  { data: '22/07/2007', id: 366, ciutat: 'Barcelona' },
+  {
+    data: '21/07/2007',
+    id: 367,
+    hora: '12:00',
+    ciutat: 'Esplugues de Llobregat',
+    lloc: "Parc del Pou d'en Fèlix"
+  },
+  { data: '01/07/2007', id: 368, ciutat: 'Abrera' },
+  {
+    data: '24/06/2007',
+    id: 369,
+    hora: '19:00',
+    ciutat: 'Vilassar de Mar',
+    lloc: 'Plaça de la Vila'
+  },
+  {
+    data: '10/06/2007',
+    id: 370,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: "Plaça de l'Església"
+  },
+  { data: '20/05/2007', id: 371, ciutat: 'Sant Boi de Llobregat' },
+  {
+    data: '06/05/2007',
+    id: 372,
+    hora: '12:00',
+    ciutat: 'Barcelona',
+    lloc: 'Plaça de la Vila de Gràcia'
+  },
+  {
+    data: '22/04/2007',
+    id: 373,
+    hora: '12:30',
+    ciutat: 'Cornellà de Llobregat',
+    lloc: 'Parc de Can Mercader'
+  },
+  { data: '14/04/2007', id: 374, ciutat: 'Cornellà de Llobregat' },
+  {
+    data: '25/03/2007',
+    id: 375,
+    hora: '12:00',
+    ciutat: 'Sabadell',
+    lloc: 'Rambla Sant Jordi'
+  },
+  { data: '18/03/2007', id: 376, ciutat: 'Aiguamúrcia' },
+  {
+    data: '12/11/2006',
+    id: 377,
+    hora: '12:00',
+    ciutat: 'Cerdanyola del Vallès'
+  },
+  {
+    data: '05/11/2006',
+    id: 378,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat'
+  },
+  { data: '04/11/2006', id: 379, ciutat: 'Cornellà de Llobregat' },
+  { data: '29/10/2006', id: 380, ciutat: 'Molins de Rei' },
+  { data: '15/10/2006', id: 381, ciutat: 'Barcelona' },
+  { data: '08/10/2006', id: 382, ciutat: 'Cornellà de Llobregat' },
+  {
+    data: '24/09/2006',
+    id: 383,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat'
+  },
+  { data: '23/09/2006', id: 384, ciutat: 'El Prat de Llobregat' },
+  { data: '17/09/2006', id: 385, hora: '12:00', ciutat: 'Barcelona' },
+  { data: '11/09/2006', id: 386, ciutat: 'Cornellà de Llobregat' },
+  { data: '02/09/2006', id: 387, ciutat: 'Sant Andreu de la Barca' },
+  { data: '23/07/2006', id: 388, ciutat: 'Font-romeu' },
+  { data: '15/07/2006', id: 389, ciutat: 'Barcelona' },
+  { data: '01/07/2006', id: 390, ciutat: 'Sant Cugat del Vallès' },
+  {
+    data: '18/06/2006',
+    id: 391,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat'
+  },
+  { data: '11/06/2006', id: 392, hora: '12:00', ciutat: 'Santpedor' },
+  { data: '27/05/2006', id: 393, ciutat: 'Cornellà de Llobregat' },
+  { data: '21/05/2006', id: 394, ciutat: 'Salt' },
+  { data: '14/05/2006', id: 395, hora: '12:30', ciutat: 'Cardedeu' },
+  { data: '05/05/2006', id: 396, ciutat: 'Cornellà de Llobregat' },
+  { data: '23/04/2006', id: 397, ciutat: 'Cornellà de Llobregat' },
+  { data: '08/04/2006', id: 398, ciutat: 'Cornellà de Llobregat' },
+  { data: '19/03/2006', id: 399, hora: '12:00', ciutat: 'Badalona' },
+  { data: '13/11/2005', id: 400, hora: '12:00', ciutat: 'Sabadell' },
+  {
+    data: '06/11/2005',
+    id: 401,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat'
+  },
+  { data: '05/11/2005', id: 402, ciutat: 'Cornellà de Llobregat' },
+  {
+    data: '22/10/2005',
+    id: 403,
+    hora: '17:00',
+    ciutat: 'Sant Andreu de la Barca'
+  },
+  { data: '12/10/2005', id: 404, ciutat: 'Cornellà de Llobregat' },
+  {
+    data: '09/10/2005',
+    id: 405,
+    hora: '12:00',
+    ciutat: 'Caldes de Montbui'
+  },
+  { data: '25/09/2005', id: 406, ciutat: 'Cornellà de Llobregat' },
+  {
+    data: '24/09/2005',
+    id: 407,
+    hora: '18:30',
+    ciutat: 'El Prat de Llobregat'
+  },
+  { data: '18/09/2005', id: 408, ciutat: 'Barcelona' },
+  { data: '11/09/2005', id: 409, ciutat: 'Barcelona' },
+  { data: '11/09/2005', id: 410, ciutat: 'Barcelona' },
+  { data: '11/09/2005', id: 411, ciutat: 'Barcelona' },
+  { data: '11/09/2005', id: 412, ciutat: 'Cornellà de Llobregat' },
+  { data: '11/09/2005', id: 413, ciutat: 'Barcelona' },
+  { data: '17/07/2005', id: 414, ciutat: 'Ripollet' },
+  { data: '09/07/2005', id: 415, hora: '12:00', ciutat: 'Barcelona' },
+  { data: '24/06/2005', id: 416, ciutat: 'Vilassar de Mar' },
+  { data: '11/06/2005', id: 417, hora: '19:30', ciutat: 'Reus' },
+  {
+    data: '29/05/2005',
+    id: 418,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat'
+  },
+  { data: '28/05/2005', id: 419, ciutat: 'Cornellà de Llobregat' },
+  { data: '15/05/2005', id: 420, hora: '12:00', ciutat: 'Sabadell' },
+  { data: '24/04/2005', id: 421, ciutat: 'Cornellà de Llobregat' },
+  { data: '16/04/2005', id: 422, ciutat: 'Cornellà de Llobregat' },
+  { data: '16/04/2005', id: 423, ciutat: 'Cornellà de Llobregat' },
+  { data: '03/04/2005', id: 424, ciutat: 'Bigues i riells' },
+  { data: '13/03/2005', id: 425, hora: '12:00', ciutat: 'Barcelona' },
+  { data: '21/11/2004', id: 426, ciutat: 'Molins de Rei' },
+  { data: '20/11/2004', id: 427, ciutat: 'Terrassa' },
+  { data: '14/11/2004', id: 428, hora: '12:30', ciutat: 'Lleida' },
+  {
+    data: '07/11/2004',
+    id: 429,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat'
+  },
+  { data: '06/11/2004', id: 430, ciutat: 'Cornellà de Llobregat' },
+  { data: '31/10/2004', id: 431, hora: '12:30', ciutat: 'Sitges' },
+  { data: '18/10/2004', id: 432, ciutat: 'Barcelona' },
+  { data: '17/10/2004', id: 433, ciutat: 'Barcelona' },
+  {
+    data: '12/10/2004',
+    id: 434,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat'
+  },
+  { data: '09/10/2004', id: 435, ciutat: 'Cornellà de Llobregat' },
+  {
+    data: '26/09/2004',
+    id: 436,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat'
+  },
+  { data: '25/09/2004', id: 437, ciutat: 'El Prat de Llobregat' },
+  {
+    data: '19/09/2004',
+    id: 438,
+    hora: '12:00',
+    ciutat: 'Esplugues de Llobregat'
+  },
+  { data: '11/09/2004', id: 439, ciutat: 'Cornellà de Llobregat' },
+  { data: '05/09/2004', id: 440, hora: '12:00', ciutat: 'Barcelona' },
+  { data: '05/09/2004', id: 441, hora: '18:00', ciutat: 'Barcelona' },
+  { data: '04/09/2004', id: 442, ciutat: 'Sant Andreu de la Barca' },
+  { data: '25/07/2004', id: 443, hora: '19:00', ciutat: 'Salt' },
+  { data: '11/07/2004', id: 444, ciutat: 'Cornellà de Llobregat' },
+  { data: '10/07/2004', id: 445, hora: '18:30', ciutat: 'Barcelona' },
+  { data: '20/06/2004', id: 446, ciutat: 'Mollet del Vallès' },
+  { data: '14/06/2004', id: 447, ciutat: 'Barcelona' },
+  {
+    data: '13/06/2004',
+    id: 448,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat'
+  },
+  { data: '12/06/2004', id: 449, ciutat: 'Cornellà de Llobregat' },
+  { data: '06/06/2004', id: 450, ciutat: 'Barcelona' },
+  { data: '06/06/2004', id: 451, ciutat: 'Barcelona' },
+  { data: '06/06/2004', id: 452, ciutat: 'Cubelles' },
+  { data: '23/05/2004', id: 453, hora: '11:00', ciutat: 'Baó' },
+  {
+    data: '09/05/2004',
+    id: 454,
+    hora: '12:00',
+    ciutat: 'Sant Feliu de Llobregat'
+  },
+  {
+    data: '25/04/2004',
+    id: 455,
+    hora: '12:30',
+    ciutat: 'Cornellà de Llobregat'
+  },
+  {
+    data: '17/04/2004',
+    id: 456,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat'
+  },
+  { data: '21/03/2004', id: 457, hora: '12:00', ciutat: 'Badalona' },
+  { data: '07/03/2004', id: 458, ciutat: 'Sant quintí de mediona' },
+  {
+    data: '23/11/2003',
+    id: 459,
+    hora: '12:00',
+    ciutat: "L'Hospitalet de Llobregat"
+  },
+  { data: '09/11/2003', id: 460, hora: '12:00', ciutat: 'Granollers' },
+  {
+    data: '02/11/2003',
+    id: 461,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat'
+  },
+  { data: '01/11/2003', id: 462, ciutat: 'Cornellà de Llobregat' },
+  {
+    data: '19/10/2003',
+    id: 463,
+    hora: '12:00',
+    ciutat: 'Molins de Rei'
+  },
+  {
+    data: '12/10/2003',
+    id: 464,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat'
+  },
+  {
+    data: '28/09/2003',
+    id: 465,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat'
+  },
+  {
+    data: '27/09/2003',
+    id: 466,
+    hora: '18:30',
+    ciutat: 'El Prat de Llobregat'
+  },
+  {
+    data: '14/09/2003',
+    id: 467,
+    hora: '12:00',
+    ciutat: 'Sant Cugat del Vallès'
+  },
+  { data: '11/09/2003', id: 468, ciutat: 'La Llagosta' },
+  { data: '27/07/2003', id: 469, ciutat: 'Prats de lluçanès' },
+  { data: '19/07/2003', id: 470, hora: '12:00', ciutat: 'Barcelona' },
+  { data: '19/07/2003', id: 471, ciutat: 'Barcelona' },
+  {
+    data: '22/06/2003',
+    id: 472,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat'
+  },
+  { data: '08/06/2003', id: 473, ciutat: 'Reus' },
+  { data: '01/06/2003', id: 474, hora: '12:00', ciutat: 'Mataró' },
+  { data: '11/05/2003', id: 475, ciutat: 'Sant Feliu de Llobregat' },
+  {
+    data: '27/04/2003',
+    id: 476,
+    hora: '13:00',
+    ciutat: 'Cornellà de Llobregat'
+  },
+  {
+    data: '05/04/2003',
+    id: 477,
+    hora: '19:00',
+    ciutat: 'Cornellà de Llobregat'
+  },
+  { data: '30/03/2003', id: 478, ciutat: 'Talamanca' },
+  { data: '01/12/2002', id: 479, ciutat: 'Sant Feliu de Llobregat' },
+  { data: '17/11/2002', id: 480, ciutat: 'Barcelona' },
+  { data: '03/11/2002', id: 481, ciutat: 'Cornellà de Llobregat' },
+  { data: '02/11/2002', id: 482, ciutat: 'Cornellà de Llobregat' },
+  { data: '27/10/2002', id: 483, ciutat: 'Molins de Rei' },
+  { data: '12/10/2002', id: 484, ciutat: 'Cornellà de Llobregat' },
+  { data: '29/09/2002', id: 485, ciutat: 'Cornellà de Llobregat' },
+  { data: '28/09/2002', id: 486, ciutat: 'El Prat de Llobregat' },
+  { data: '21/09/2002', id: 487, ciutat: 'Barcelona' },
+  { data: '21/09/2002', id: 488, ciutat: 'Cornellà de Llobregat' },
+  { data: '15/09/2002', id: 489, ciutat: 'Sant Cugat del Vallès' },
+  { data: '11/09/2002', id: 490, ciutat: 'Cornellà de Llobregat' },
+  { data: '28/07/2002', id: 491, ciutat: 'Salt' },
+  { data: '07/07/2002', id: 492, ciutat: 'Barcelona' },
+  { data: '07/07/2002', id: 493, ciutat: 'Barcelona' },
+  { data: '06/07/2002', id: 494, ciutat: 'Santa Coloma de Gramenet' },
+  { data: '30/06/2002', id: 495, ciutat: 'Sant Pere de Vilamajor' },
+  { data: '15/06/2002', id: 496, ciutat: 'Vilafranca del Penedès' },
+  { data: '02/06/2002', id: 497, ciutat: 'Cornellà de Llobregat' },
+  { data: '31/05/2002', id: 498, ciutat: 'Cornellà de Llobregat' },
+  { data: '25/05/2002', id: 499, ciutat: 'Barcelona' },
+  { data: '25/05/2002', id: 500, ciutat: 'Barcelona' },
+  { data: '25/05/2002', id: 501, ciutat: 'Barcelona' },
+  { data: '25/05/2002', id: 502, ciutat: 'Barcelona' },
+  { data: '25/05/2002', id: 503, ciutat: 'Cornellà de Llobregat' },
+  { data: '12/05/2002', id: 504, ciutat: 'Sant Feliu de Llobregat' },
+  { data: '05/05/2002', id: 505, ciutat: 'Esparreguera' },
+  { data: '21/04/2002', id: 506, ciutat: 'Cornellà de Llobregat' },
+  { data: '13/04/2002', id: 507, ciutat: 'Cornellà de Llobregat' },
+  { data: '30/03/2002', id: 508, ciutat: 'Almachar (malaga)' },
+  { data: '29/03/2002', id: 509, ciutat: 'Almachar (malaga)' },
+  { data: '17/03/2002', id: 510, ciutat: "Sant Sadurní d'Anoia" },
+  { data: '25/11/2001', id: 511, ciutat: "L'Hospitalet de Llobregat" },
+  { data: '24/11/2001', id: 512, ciutat: 'Cornellà de Llobregat' },
+  { data: '17/11/2001', id: 513, ciutat: 'Terrassa' },
+  { data: '11/11/2001', id: 514, ciutat: 'Figueres' },
+  { data: '04/11/2001', id: 515, ciutat: 'Cornellà de Llobregat' },
+  { data: '03/11/2001', id: 516, ciutat: 'Cornellà de Llobregat' },
+  { data: '20/10/2001', id: 517, ciutat: 'Santa Coloma de Gramenet' },
+  { data: '12/10/2001', id: 518, ciutat: 'Cornellà de Llobregat' },
+  { data: '07/10/2001', id: 519, ciutat: 'Gavà' },
+  { data: '30/09/2001', id: 520, ciutat: 'Cornellà de Llobregat' },
+  { data: '29/09/2001', id: 521, ciutat: 'El Prat de Llobregat' },
+  { data: '23/09/2001', id: 522, ciutat: 'Molins de Rei' },
+  { data: '16/09/2001', id: 523, ciutat: 'Sant Cugat del Vallès' },
+  { data: '11/09/2001', id: 524, ciutat: 'Cornellà de Llobregat' },
+  { data: '07/09/2001', id: 525, ciutat: 'Cornellà de Llobregat' },
+  { data: '08/07/2001', id: 526, ciutat: 'Aiguafreda' },
+  { data: '01/07/2001', id: 527, ciutat: 'Calafell' },
+  { data: '30/06/2001', id: 528, ciutat: 'Sant Andreu de la Barca' },
+  { data: '17/06/2001', id: 529, ciutat: 'Cornellà de Llobregat' },
+  { data: '15/06/2001', id: 530, ciutat: 'Cornellà de Llobregat' },
+  { data: '09/06/2001', id: 531, ciutat: 'Cornellà de Llobregat' },
+  { data: '02/06/2001', id: 532, ciutat: 'Cornellà de Llobregat' },
+  { data: '20/05/2001', id: 533, ciutat: 'Cornellà de Llobregat' },
+  { data: '20/05/2001', id: 534, ciutat: 'Sant Boi de Llobregat' },
+  { data: '13/05/2001', id: 535, ciutat: 'Cornellà de Llobregat' },
+  { data: '12/05/2001', id: 536, ciutat: 'El Prat de Llobregat' },
+  { data: '06/05/2001', id: 537, ciutat: 'Barcelona' },
+  { data: '06/05/2001', id: 538, ciutat: 'Barcelona' },
+  { data: '29/04/2001', id: 539, ciutat: "L'Hospitalet de Llobregat" },
+  { data: '22/04/2001', id: 540, ciutat: 'Cornellà de Llobregat' },
+  { data: '18/03/2001', id: 541, ciutat: 'Collbató' },
+  { data: '28/01/2001', id: 542, ciutat: 'Valls' },
+  { data: '26/11/2000', id: 543, ciutat: 'Sant Boi de Llobregat' },
+  { data: '12/11/2000', id: 544, ciutat: 'Cerdanyola del Vallès' },
+  { data: '11/11/2000', id: 545, ciutat: 'Cornellà de Llobregat' },
+  { data: '05/11/2000', id: 546, ciutat: 'Cornellà de Llobregat' },
+  { data: '04/11/2000', id: 547, ciutat: 'Cornellà de Llobregat' },
+  { data: '29/10/2000', id: 548, ciutat: 'Igualada' },
+  { data: '12/10/2000', id: 549, ciutat: 'Cornellà de Llobregat' },
+  { data: '01/10/2000', id: 550, ciutat: 'Cornellà de Llobregat' },
+  { data: '23/09/2000', id: 551, ciutat: 'El Prat de Llobregat' },
+  { data: '17/09/2000', id: 552, ciutat: 'Sant Cugat del Vallès' },
+  { data: '09/07/2000', id: 553, ciutat: "L'Hospitalet de Llobregat" },
+  { data: '25/06/2000', id: 554, ciutat: 'Cornellà de Llobregat' },
+  { data: '17/06/2000', id: 555, ciutat: 'Cornellà de Llobregat' },
+  { data: '04/06/2000', id: 556, ciutat: 'Manresa' },
+  {
+    data: '21/05/2000',
+    id: 557,
+    ciutat: 'Barcelona',
+    lloc: 'Escola Santa Caterina'
+  },
+  { data: '14/05/2000', id: 558, ciutat: 'Barcelona' },
+  { data: '14/05/2000', id: 559, ciutat: 'Barcelona' },
+  { data: '14/05/2000', id: 560, ciutat: 'Barcelona' },
+  { data: '14/05/2000', id: 561, ciutat: 'Barcelona' },
+  { data: '13/05/2000', id: 562, ciutat: 'El Prat de Llobregat' },
+  { data: '07/05/2000', id: 563, ciutat: 'Barcelona' },
+  { data: '07/05/2000', id: 564, ciutat: 'Barcelona' },
+  { data: '30/04/2000', id: 565, ciutat: 'Cornellà de Llobregat' },
+  { data: '26/03/2000', id: 566, ciutat: "L'Hospitalet de Llobregat" },
+  { data: '28/11/1999', id: 567, ciutat: 'Esplugues de Llobregat' },
+  { data: '07/11/1999', id: 568, ciutat: 'Cornellà de Llobregat' },
+  { data: '06/11/1999', id: 569, ciutat: 'Cornellà de Llobregat' },
+  { data: '31/10/1999', id: 570, ciutat: 'Mollet del Vallès' },
+  { data: '24/10/1999', id: 571, ciutat: 'Cornellà de Llobregat' },
+  { data: '23/10/1999', id: 572, ciutat: 'Cornellà de Llobregat' },
+  { data: '12/10/1999', id: 573, ciutat: 'Cornellà de Llobregat' },
+  { data: '03/10/1999', id: 574, ciutat: 'Barcelona' },
+  { data: '26/09/1999', id: 575, ciutat: 'Cornellà de Llobregat' },
+  { data: '25/09/1999', id: 576, ciutat: 'El Prat de Llobregat' },
+  { data: '11/09/1999', id: 577, ciutat: 'Cornellà de Llobregat' },
+  { data: '05/09/1999', id: 578, ciutat: 'Vila-seca' },
+  { data: '25/07/1999', id: 579, ciutat: 'Esplugues de Llobregat' },
+  { data: '11/07/1999', id: 580, ciutat: 'Pallejà' },
+  { data: '04/07/1999', id: 581, ciutat: 'Mataró' },
+  { data: '04/07/1999', id: 582, ciutat: 'Mataró' },
+  { data: '27/06/1999', id: 583, ciutat: 'Gavà' },
+  { data: '19/06/1999', id: 584, ciutat: 'Cornellà de Llobregat' },
+  { data: '06/06/1999', id: 585, ciutat: 'Cornellà de Llobregat' },
+  { data: '23/05/1999', id: 586, ciutat: 'Montcada i Reixac' },
+  { data: '15/05/1999', id: 587, ciutat: 'El Prat de Llobregat' },
+  { data: '18/04/1999', id: 588, ciutat: 'Cornellà de Llobregat' },
+  { data: '29/11/1998', id: 589, ciutat: 'Gavà' },
+  { data: '22/11/1998', id: 590, ciutat: 'Esparreguera' },
+  { data: '15/11/1998', id: 591, ciutat: 'Barcelona' },
+  { data: '08/11/1998', id: 592, ciutat: 'La Jonquera' },
+  { data: '18/10/1998', id: 593, ciutat: 'Cornellà de Llobregat' },
+  { data: '17/10/1998', id: 594, ciutat: 'Cornellà de Llobregat' },
+  { data: '12/10/1998', id: 595, ciutat: 'Cornellà de Llobregat' },
+  { data: '04/10/1998', id: 596, ciutat: 'Tarragona' },
+  { data: '27/09/1998', id: 597, ciutat: 'Lleida' },
+  { data: '26/09/1998', id: 598, ciutat: 'El Prat de Llobregat' },
+  { data: '20/09/1998', id: 599, ciutat: 'Cornellà de Llobregat' },
+  { data: '13/09/1998', id: 600, ciutat: 'Sant Cugat del Vallès' },
+  { data: '06/09/1998', id: 601, ciutat: 'Sant Andreu de la Barca' },
+  { data: '26/07/1998', id: 602, ciutat: 'Salt' },
+  { data: '19/07/1998', id: 603, ciutat: 'Vila-seca' },
+  { data: '12/07/1998', id: 604, ciutat: 'Pallejà' },
+  { data: '04/07/1998', id: 605, ciutat: 'Innsbruck' },
+  { data: '04/07/1998', id: 606, ciutat: 'Innsbruck' },
+  { data: '03/07/1998', id: 607, ciutat: 'Innsbruck' },
+  { data: '03/07/1998', id: 608, ciutat: 'Innsbruck' },
+  { data: '28/06/1998', id: 609, ciutat: 'El Masnou' },
+  { data: '24/06/1998', id: 610, ciutat: 'Sant Joan Despí' },
+  { data: '20/06/1998', id: 611, ciutat: 'Reus' },
+  { data: '14/06/1998', id: 612, ciutat: 'Cornellà de Llobregat' },
+  { data: '07/06/1998', id: 613, ciutat: 'El Papiol' },
+  { data: '17/05/1998', id: 614, ciutat: 'Prada' },
+  {
+    data: '16/05/1998',
+    id: 615,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat'
+  },
+  {
+    data: '16/05/1998',
+    id: 616,
+    hora: '18:00',
+    ciutat: 'El Prat de Llobregat'
+  },
+  { data: '09/05/1998', id: 617, ciutat: 'Sant Feliu de Llobregat' },
+  { data: '26/04/1998', id: 618, ciutat: 'Sabadell' },
+  { data: '19/04/1998', id: 619, ciutat: 'Cornellà de Llobregat' },
+  { data: '29/03/1998', id: 620, ciutat: 'Cornellà de Llobregat' },
+  { data: '30/11/1997', id: 621, ciutat: 'Cornellà de Llobregat' },
+  { data: '23/11/1997', id: 622, hora: '12:00', ciutat: 'Barcelona' },
+  { data: '23/11/1997', id: 623, hora: '12:00', ciutat: 'Barcelona' },
+  { data: '09/11/1997', id: 624, ciutat: 'Cornellà de Llobregat' },
+  {
+    data: '08/11/1997',
+    id: 625,
+    hora: '18:00',
+    ciutat: 'Cornellà de Llobregat'
+  },
+  { data: '02/11/1997', id: 626, ciutat: 'Terrassa' },
+  { data: '26/10/1997', id: 627, ciutat: 'Manresa' },
+  { data: '12/10/1997', id: 628, ciutat: 'Cornellà de Llobregat' },
+  { data: '29/09/1997', id: 629, ciutat: 'El Prat de Llobregat' },
+  { data: '28/09/1997', id: 630, ciutat: 'Lleida' },
+  { data: '21/09/1997', id: 631, ciutat: 'Cornellà de Llobregat' },
+  { data: '14/09/1997', id: 632, ciutat: 'Sant Cugat del Vallès' },
+  { data: '13/09/1997', id: 633, ciutat: 'Cornellà de Llobregat' },
+  { data: '11/09/1997', id: 634, ciutat: 'Cornellà de Llobregat' },
+  { data: '31/08/1997', id: 635, ciutat: 'Granollers' },
+  { data: '27/07/1997', id: 636, ciutat: 'Arrigorriaga (Biscaia)' },
+  { data: '26/07/1997', id: 637, ciutat: 'Etxevarri (Biskaia)' },
+  { data: '13/07/1997', id: 638, ciutat: 'Pallejà' },
+  { data: '12/07/1997', id: 639, hora: '19:00', ciutat: 'Tarragona' },
+  { data: '29/06/1997', id: 640, ciutat: 'Gavà' },
+  { data: '22/06/1997', id: 641, ciutat: "L'Hospitalet de Llobregat" },
+  { data: '08/06/1997', id: 642, ciutat: 'Barcelona' },
+  { data: '08/06/1997', id: 643, ciutat: 'Barcelona' },
+  { data: '08/06/1997', id: 644, ciutat: 'Barcelona' },
+  { data: '06/06/1997', id: 645, ciutat: 'Torrelles de Foix' },
+  { data: '01/06/1997', id: 646, ciutat: 'Cornellà de Llobregat' },
+  { data: '25/05/1997', id: 647, ciutat: 'Sant Boi de Llobregat' },
+  { data: '24/05/1997', id: 648, ciutat: 'El Prat de Llobregat' },
+  { data: '11/05/1997', id: 649, ciutat: 'Barcelona' },
+  { data: '04/05/1997', id: 650, ciutat: 'Martorell' },
+  { data: '20/04/1997', id: 651, ciutat: 'Cornellà de Llobregat' },
+  { data: '06/04/1997', id: 652, hora: '12:00', ciutat: 'Perpinyà' },
+  { data: '16/03/1997', id: 653, ciutat: 'Subirats' },
+  {
+    data: '01/12/1996',
+    id: 654,
+    hora: '12:00',
+    ciutat: 'Castelldefels'
+  },
+  { data: '24/11/1996', id: 655, hora: '12:15', ciutat: 'Terrassa' },
+  {
+    data: '10/11/1996',
+    id: 656,
+    hora: '12:00',
+    ciutat: 'Cornellà de Llobregat'
+  },
+  {
+    data: '09/11/1996',
+    id: 657,
+    hora: '19:00',
+    ciutat: 'Cornellà de Llobregat'
+  },
+  { data: '20/10/1996', id: 658, ciutat: 'Vilanova i la Geltrú' },
+  { data: '13/10/1996', id: 659, hora: '12:00', ciutat: 'Barcelona' },
+  { data: '12/10/1996', id: 660, ciutat: 'Cornellà de Llobregat' },
+  { data: '06/10/1996', id: 661, hora: '10:00', ciutat: 'Tarragona' },
+  { data: '29/09/1996', id: 662, ciutat: 'Lleida' },
+  {
+    data: '28/09/1996',
+    id: 663,
+    hora: '17:30',
+    ciutat: 'Cornellà de Llobregat'
+  },
+  { data: '22/09/1996', id: 664, ciutat: 'Sitges' },
+  { data: '22/09/1996', id: 665, ciutat: 'Sitges' },
+  {
+    data: '14/09/1996',
+    id: 666,
+    hora: '20:00',
+    ciutat: 'Cornellà de Llobregat'
+  },
+  {
+    data: '11/09/1996',
+    id: 667,
+    hora: '13:00',
+    ciutat: 'Cornellà de Llobregat'
+  },
+  { data: '21/07/1996', id: 668, ciutat: 'Esplugues de Llobregat' },
+  { data: '07/07/1996', id: 669, ciutat: 'Sant Andreu de la Barca' },
+  { data: '06/07/1996', id: 670, ciutat: 'Premià de Mar' },
+  { data: '30/06/1996', id: 671, ciutat: 'El Masnou' },
+  { data: '29/06/1996', id: 672, ciutat: 'Cambrils' },
+  { data: '16/06/1996', id: 673, ciutat: 'Sant Joan Despí' },
+  { data: '09/06/1996', id: 674, ciutat: 'Cornellà de Llobregat' },
+  { data: '02/06/1996', id: 675, ciutat: 'Cornellà de Llobregat' },
+  { data: '26/05/1996', id: 676, ciutat: 'Sabadell' },
+  { data: '19/05/1996', id: 677, ciutat: 'Sant Boi de Llobregat' },
+  { data: '18/05/1996', id: 678, ciutat: 'Cornellà de Llobregat' },
+  { data: '05/05/1996', id: 679, ciutat: 'Sant Feliu de Llobregat' },
+  { data: '21/04/1996', id: 680, ciutat: 'Cornellà de Llobregat' },
+  { data: '20/04/1996', id: 681, ciutat: 'Barcelona' },
+  {
+    data: '16/03/1996',
+    id: 682,
+    hora: '13:00',
+    ciutat: 'Sant Cugat del Vallès'
+  },
+  { data: '03/12/1995', id: 683, ciutat: 'Espinelves' },
+  { data: '02/12/1995', id: 684, ciutat: 'Sant Andreu de la Barca' },
+  { data: '26/11/1995', id: 685, ciutat: 'Esparreguera' },
+  { data: '12/11/1995', id: 686, ciutat: 'Manresa' },
+  { data: '05/11/1995', id: 687, ciutat: 'Cornellà de Llobregat' },
+  { data: '04/11/1995', id: 688, ciutat: 'Cornellà de Llobregat' },
+  { data: '21/10/1995', id: 689, ciutat: 'Cornellà de Llobregat' },
+  { data: '12/10/1995', id: 690, ciutat: 'Cornellà de Llobregat' },
+  { data: '08/10/1995', id: 691, ciutat: 'Gelida' },
+  { data: '01/10/1995', id: 692, ciutat: 'Lleida' },
+  { data: '30/09/1995', id: 693, ciutat: 'Cornellà de Llobregat' },
+  { data: '24/09/1995', id: 694, ciutat: 'Barcelona' },
+  { data: '11/09/1995', id: 695, ciutat: 'Cornellà de Llobregat' },
+  { data: '10/09/1995', id: 696, ciutat: 'Cornellà de Llobregat' },
+  { data: '03/09/1995', id: 697, ciutat: 'Granollers' },
+  { data: '06/08/1995', id: 698, ciutat: 'Gijon (asturies)' },
+  { data: '06/08/1995', id: 699, ciutat: 'Gijon (asturies)' },
+  { data: '05/08/1995', id: 700, ciutat: 'Gijon (asturies)' },
+  { data: '27/07/1995', id: 701, ciutat: 'Mataró' },
+  { data: '09/07/1995', id: 702, ciutat: 'Barcelona' },
+  { data: '02/07/1995', id: 703, ciutat: 'Palamós' },
+  { data: '18/06/1995', id: 704, ciutat: 'Cornellà de Llobregat' },
+  { data: '10/06/1995', id: 705, ciutat: 'Reus' },
+  { data: '27/05/1995', id: 706, ciutat: 'Sant Boi de Llobregat' },
+  { data: '20/05/1995', id: 707, ciutat: 'Cornellà de Llobregat' },
+  { data: '14/05/1995', id: 708, ciutat: 'Barcelona' },
+  { data: '07/05/1995', id: 709, ciutat: 'Sant Feliu de Llobregat' },
+  { data: '23/04/1995', id: 710, ciutat: 'Cornellà de Llobregat' },
+  { data: '09/04/1995', id: 711, ciutat: 'Sant Joan Despí' },
+  { data: '26/03/1995', id: 712, ciutat: 'Pineda de Mar' },
+  { data: '30/11/1994', id: 713, ciutat: 'Cornellà de Llobregat' },
+  { data: '27/11/1994', id: 714, ciutat: 'Sant Andreu de la Barca' },
+  { data: '20/11/1994', id: 715, ciutat: 'Terrassa' },
+  { data: '13/11/1994', id: 716, ciutat: 'Granollers' },
+  { data: '06/11/1994', id: 717, ciutat: 'Cornellà de Llobregat' },
+  { data: '05/11/1994', id: 718, ciutat: 'Cornellà de Llobregat' },
+  { data: '09/10/1994', id: 719, ciutat: 'Barcelona' },
+  { data: '09/10/1994', id: 720, ciutat: 'Barcelona' },
+  { data: '02/10/1994', id: 721, ciutat: 'Tarragona' },
+  { data: '25/09/1994', id: 722, ciutat: 'Cornellà de Llobregat' },
+  { data: '18/09/1994', id: 723, ciutat: 'Sant Cugat del Vallès' },
+  { data: '17/09/1994', id: 724, ciutat: 'Esplugues de Llobregat' },
+  { data: '11/09/1994', id: 725, ciutat: 'Cornellà de Llobregat' },
+  { data: '04/09/1994', id: 726, ciutat: 'Santa Perpètua de Mogoda' },
+  { data: '03/09/1994', id: 727, ciutat: 'Torrefarrera' },
+  { data: '26/07/1994', id: 728, ciutat: 'Cornellà de Llobregat' },
+  { data: '17/07/1994', id: 729, ciutat: 'Tarragona' },
+  { data: '17/07/1994', id: 730, ciutat: 'Tarragona' },
+  { data: '17/07/1994', id: 731, ciutat: 'Tarragona' },
+  { data: '17/07/1994', id: 732, ciutat: 'Santa Maria de Corcó' },
+  { data: '03/07/1994', id: 733, ciutat: 'Gavà' },
+  { data: '24/06/1994', id: 734, ciutat: "L'Hospitalet de Llobregat" },
+  { data: '12/06/1994', id: 735, ciutat: 'Torrelles de Llobregat' },
+  { data: '05/06/1994', id: 736, ciutat: 'Cornellà de Llobregat' },
+  { data: '15/05/1994', id: 737, ciutat: 'Granollers' },
+  { data: '08/05/1994', id: 738, ciutat: 'El Vendrell' },
+  { data: '23/04/1994', id: 739, ciutat: "L'Hospitalet de Llobregat" },
+  { data: '17/04/1994', id: 740, ciutat: 'Cornellà de Llobregat' },
+  { data: '10/04/1994', id: 741, ciutat: 'Cardona' },
+  { data: '24/03/1994', id: 742, ciutat: 'Cornellà de Llobregat' },
+  { data: '08/12/1993', id: 743, ciutat: 'Castelldefels' },
+  { data: '28/11/1993', id: 744, ciutat: 'Vilanova i la Geltrú' },
+  { data: '21/11/1993', id: 745, ciutat: 'Cornellà de Llobregat' },
+  { data: '14/11/1993', id: 746, ciutat: 'Barcelona' },
+  { data: '14/11/1993', id: 747, ciutat: 'Barcelona' },
+  { data: '07/11/1993', id: 748, ciutat: 'Cornellà de Llobregat' },
+  { data: '06/11/1993', id: 749, ciutat: 'Cornellà de Llobregat' },
+  { data: '01/11/1993', id: 750, ciutat: 'Vilafranca del Penedès' },
+  { data: '23/10/1993', id: 751, ciutat: 'Cornellà de Llobregat' },
+  { data: '10/10/1993', id: 752, ciutat: 'Alcover' },
+  { data: '10/10/1993', id: 753, ciutat: 'Cornellà de Llobregat' },
+  { data: '26/09/1993', id: 754, ciutat: 'Cornellà de Llobregat' },
+  { data: '19/09/1993', id: 755, ciutat: 'Sant Cugat del Vallès' },
+  { data: '19/09/1993', id: 756, ciutat: 'Torelló' },
+  { data: '11/09/1993', id: 757, ciutat: 'Cornellà de Llobregat' },
+  { data: '10/09/1993', id: 758, ciutat: 'Cornellà de Llobregat' },
+  { data: '05/09/1993', id: 759, ciutat: 'Terrassa' },
+  { data: '20/07/1993', id: 760, ciutat: 'Tuïr' },
+  { data: '18/07/1993', id: 761, ciutat: 'Santa Maria de Corcó' },
+  { data: '11/07/1993', id: 762, ciutat: 'Peníscola' },
+  { data: '10/07/1993', id: 763, ciutat: 'Peníscola' },
+  { data: '03/07/1993', id: 764, ciutat: 'Santa Coloma de Gramenet' },
+  { data: '27/06/1993', id: 765, ciutat: 'Sant Joan Despí' },
+  { data: '26/06/1993', id: 766, ciutat: 'Sant Pere de Vilamajor' },
+  { data: '19/06/1993', id: 767, ciutat: 'Barcelona' },
+  { data: '19/06/1993', id: 768, ciutat: 'Barcelona' },
+  { data: '19/06/1993', id: 769, ciutat: 'Barcelona' },
+  { data: '13/06/1993', id: 770, ciutat: 'Cornellà de Llobregat' },
+  { data: '16/05/1993', id: 771, ciutat: 'Vilafranca del Penedès' },
+  { data: '09/05/1993', id: 772, ciutat: 'Barcelona' },
+  { data: '25/04/1993', id: 773, ciutat: 'Vilanova i la Geltrú' },
+  { data: '18/04/1993', id: 774, ciutat: 'Cornellà de Llobregat' },
+  { data: '14/03/1993', id: 775, ciutat: 'Cornellà de Llobregat' },
+  { data: '15/11/1992', id: 776, ciutat: 'Gelida' },
+  { data: '08/11/1992', id: 777, ciutat: 'Cornellà de Llobregat' },
+  { data: '07/11/1992', id: 778, ciutat: 'Cornellà de Llobregat' },
+  { data: '18/10/1992', id: 779, ciutat: 'Montcada i Reixac' },
+  { data: '17/10/1992', id: 780, ciutat: 'Sant Joan Despí' },
+  { data: '11/10/1992', id: 781, ciutat: 'Vilafranca del Penedès' },
+  { data: '10/10/1992', id: 782, ciutat: 'Granollers' },
+  { data: '04/10/1992', id: 783, ciutat: 'Tarragona' },
+  { data: '27/09/1992', id: 784, ciutat: 'Cornellà de Llobregat' },
+  { data: '26/09/1992', id: 785, ciutat: 'Cornellà de Llobregat' },
+  { data: '11/09/1992', id: 786, ciutat: 'Cornellà de Llobregat' },
+  { data: '06/08/1992', id: 787, ciutat: 'Sant Andreu de la Barca' },
+  { data: '05/08/1992', id: 788, ciutat: 'Montcada i Reixac' },
+  { data: '26/07/1992', id: 789, ciutat: 'Montcada i Reixac' },
+  { data: '25/07/1992', id: 790, ciutat: 'Barcelona' },
+  { data: '23/07/1992', id: 791, ciutat: 'Barcelona' },
+  { data: '19/07/1992', id: 792, ciutat: 'Santa Maria de Corcó' },
+  { data: '18/07/1992', id: 793, ciutat: 'Barcelona' },
+  { data: '05/07/1992', id: 794, ciutat: 'Viladecans' },
+  { data: '04/07/1992', id: 795, ciutat: 'Santa Coloma de Gramenet' },
+  { data: '24/06/1992', id: 796, ciutat: 'Sant Joan Despí' },
+  { data: '24/06/1992', id: 797, ciutat: 'Sant Joan Despí' },
+  { data: '14/06/1992', id: 798, ciutat: 'Castelldefels' },
+  { data: '07/06/1992', id: 799, ciutat: 'Montcada i Reixac' },
+  { data: '24/05/1992', id: 800, ciutat: "L'Hospitalet de Llobregat" },
+  { data: '17/05/1992', id: 801, ciutat: 'Vilafranca del Penedès' },
+  { data: '16/05/1992', id: 802, ciutat: 'Barcelona' },
+  { data: '10/05/1992', id: 803, ciutat: 'Sant Feliu de Llobregat' },
+  { data: '26/04/1992', id: 804, ciutat: 'Olesa de Montserrat' },
+  { data: '16/11/1991', id: 805, ciutat: 'Barcelona' },
+  { data: '10/11/1991', id: 806, ciutat: 'Cornellà de Llobregat' },
+  { data: '19/10/1991', id: 807, ciutat: 'Terrassa' },
+  { data: '06/10/1991', id: 808, ciutat: 'Vilanova i la Geltrú' },
+  { data: '22/09/1991', id: 809, ciutat: 'Sant Feliu de Llobregat' },
+  { data: '11/09/1991', id: 810, ciutat: 'Cornellà de Llobregat' },
+  { data: '08/09/1991', id: 811, ciutat: 'Montcada i Reixac' },
+  { data: '29/06/1991', id: 812, ciutat: 'Cornellà de Llobregat' },
+  { data: '24/06/1991', id: 813, ciutat: 'Cornellà de Llobregat' },
+  { data: '09/06/1991', id: 814, ciutat: 'Cornellà de Llobregat' }
+]
