@@ -1,9 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
   output   = "../generated/client"
@@ -15,25 +9,65 @@ datasource db {
 }
 
 model Actuacio {
-  id                Int         @id @default(autoincrement())
-  data              DateTime    @db.Date
-  dataHora          DateTime?
-  lloc              String?
-  ciutat            String
-  castells          Castell[]   @relation("castellsPortats")
+  id            Int       @id @default(autoincrement())
+  data          DateTime  @db.Date
+  dataHora      DateTime?
+  lloc          String?
+  ciutat        String
+  nom           String
+  castells      Castell[] @relation("castellsActuacio")
+  fotos         Foto[]    @relation("fotosActuacio")
+  temporada     Temporada @relation("actuacionsTemporada", fields: [temporadaId], references: [id])
+  temporadaId   Int
+  cronica       Cronica?   @relation("cronicaActuacio")
+  cronicaId     Int?
+}
+
+model Cronica {
+  id            Int      @id @default(autoincrement())
+  created       DateTime @default(now())
+  Titol         String   @db.VarChar(255)
+  Text          String
+  autor         Usuari   @relation("croniquesAfegides", fields: [autorId], references: [id])
+  autorId       Int
+  actuacio      Actuacio @relation("cronicaActuacio", fields: [actuacioId], references: [id])
+  actuacioId    Int      @unique
 }
 
 model Castell {
-  id            Int         @id @default(autoincrement())
-  nom           String
-  actuacio      Actuacio    @relation("castellsPortats", fields: [actuacioId], references: [id])
-  actuacioId    Int
-  resultat      String
+  id         Int      @id @default(autoincrement())
+  nom        String
+  actuacioId Int
+  resultat   String
+  actuacio   Actuacio @relation("castellsActuacio", fields: [actuacioId], references: [id])
+  fotos      Foto[]   @relation("fotosCastell")
 }
 
-enum Resultat {
-  Carregat
-  Descarregat
-  Intent
-  IntentDesmuntat
+model Usuari {
+  id                Int         @id @default(autoincrement())
+  correu            String      @unique
+  contrassenya      String
+  nom               String
+  fotos             Foto[]      @relation("fotosAfegides")
+  croniques         Cronica[]   @relation("croniquesAfegides")
+}
+
+model Foto {
+  id            Int      @id @default(autoincrement())
+  created       DateTime @default(now())
+  name          String   @db.VarChar(255)
+  url           String?
+  autor         Usuari   @relation("fotosAfegides", fields: [autorId], references: [id])
+  autorId       Int
+  mainFoto      Boolean  @default(false)
+  actuacio      Actuacio @relation("fotosActuacio", fields: [actuacioId], references: [id])
+  actuacioId    Int
+  castell       Castell? @relation("fotosCastell", fields: [castellId], references: [id])
+  castellId     Int
+}
+
+model Temporada {
+ id            Int          @id @default(autoincrement())
+ year          Int          @unique
+ actuacions    Actuacio[]   @relation("actuacionsTemporada")
 }

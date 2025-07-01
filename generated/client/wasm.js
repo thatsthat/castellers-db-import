@@ -125,7 +125,19 @@ exports.Prisma.ActuacioScalarFieldEnum = {
   data: 'data',
   dataHora: 'dataHora',
   lloc: 'lloc',
-  ciutat: 'ciutat'
+  ciutat: 'ciutat',
+  nom: 'nom',
+  temporadaId: 'temporadaId',
+  cronicaId: 'cronicaId'
+};
+
+exports.Prisma.CronicaScalarFieldEnum = {
+  id: 'id',
+  created: 'created',
+  Titol: 'Titol',
+  Text: 'Text',
+  autorId: 'autorId',
+  actuacioId: 'actuacioId'
 };
 
 exports.Prisma.CastellScalarFieldEnum = {
@@ -133,6 +145,29 @@ exports.Prisma.CastellScalarFieldEnum = {
   nom: 'nom',
   actuacioId: 'actuacioId',
   resultat: 'resultat'
+};
+
+exports.Prisma.UsuariScalarFieldEnum = {
+  id: 'id',
+  correu: 'correu',
+  contrassenya: 'contrassenya',
+  nom: 'nom'
+};
+
+exports.Prisma.FotoScalarFieldEnum = {
+  id: 'id',
+  created: 'created',
+  name: 'name',
+  url: 'url',
+  autorId: 'autorId',
+  mainFoto: 'mainFoto',
+  actuacioId: 'actuacioId',
+  castellId: 'castellId'
+};
+
+exports.Prisma.TemporadaScalarFieldEnum = {
+  id: 'id',
+  year: 'year'
 };
 
 exports.Prisma.SortOrder = {
@@ -153,7 +188,11 @@ exports.Prisma.NullsOrder = {
 
 exports.Prisma.ModelName = {
   Actuacio: 'Actuacio',
-  Castell: 'Castell'
+  Cronica: 'Cronica',
+  Castell: 'Castell',
+  Usuari: 'Usuari',
+  Foto: 'Foto',
+  Temporada: 'Temporada'
 };
 
 /**
