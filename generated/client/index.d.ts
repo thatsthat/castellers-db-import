@@ -43,6 +43,11 @@ export type Foto = $Result.DefaultSelection<Prisma.$FotoPayload>
  * 
  */
 export type Temporada = $Result.DefaultSelection<Prisma.$TemporadaPayload>
+/**
+ * Model Colla
+ * 
+ */
+export type Colla = $Result.DefaultSelection<Prisma.$CollaPayload>
 
 /**
  * ##  Prisma Client ʲˢ
@@ -228,6 +233,16 @@ export class PrismaClient<
     * ```
     */
   get temporada(): Prisma.TemporadaDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.colla`: Exposes CRUD operations for the **Colla** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Collas
+    * const collas = await prisma.colla.findMany()
+    * ```
+    */
+  get colla(): Prisma.CollaDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -673,7 +688,8 @@ export namespace Prisma {
     Castell: 'Castell',
     Usuari: 'Usuari',
     Foto: 'Foto',
-    Temporada: 'Temporada'
+    Temporada: 'Temporada',
+    Colla: 'Colla'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -692,7 +708,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "actuacio" | "cronica" | "castell" | "usuari" | "foto" | "temporada"
+      modelProps: "actuacio" | "cronica" | "castell" | "usuari" | "foto" | "temporada" | "colla"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -1140,6 +1156,80 @@ export namespace Prisma {
           }
         }
       }
+      Colla: {
+        payload: Prisma.$CollaPayload<ExtArgs>
+        fields: Prisma.CollaFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.CollaFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CollaPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.CollaFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CollaPayload>
+          }
+          findFirst: {
+            args: Prisma.CollaFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CollaPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.CollaFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CollaPayload>
+          }
+          findMany: {
+            args: Prisma.CollaFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CollaPayload>[]
+          }
+          create: {
+            args: Prisma.CollaCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CollaPayload>
+          }
+          createMany: {
+            args: Prisma.CollaCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.CollaCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CollaPayload>[]
+          }
+          delete: {
+            args: Prisma.CollaDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CollaPayload>
+          }
+          update: {
+            args: Prisma.CollaUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CollaPayload>
+          }
+          deleteMany: {
+            args: Prisma.CollaDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.CollaUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.CollaUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CollaPayload>[]
+          }
+          upsert: {
+            args: Prisma.CollaUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CollaPayload>
+          }
+          aggregate: {
+            args: Prisma.CollaAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateColla>
+          }
+          groupBy: {
+            args: Prisma.CollaGroupByArgs<ExtArgs>
+            result: $Utils.Optional<CollaGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.CollaCountArgs<ExtArgs>
+            result: $Utils.Optional<CollaCountAggregateOutputType> | number
+          }
+        }
+      }
     }
   } & {
     other: {
@@ -1230,6 +1320,7 @@ export namespace Prisma {
     usuari?: UsuariOmit
     foto?: FotoOmit
     temporada?: TemporadaOmit
+    colla?: CollaOmit
   }
 
   /* Types for Logging */
@@ -1326,11 +1417,13 @@ export namespace Prisma {
   export type ActuacioCountOutputType = {
     castells: number
     fotos: number
+    colles: number
   }
 
   export type ActuacioCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     castells?: boolean | ActuacioCountOutputTypeCountCastellsArgs
     fotos?: boolean | ActuacioCountOutputTypeCountFotosArgs
+    colles?: boolean | ActuacioCountOutputTypeCountCollesArgs
   }
 
   // Custom InputTypes
@@ -1356,6 +1449,13 @@ export namespace Prisma {
    */
   export type ActuacioCountOutputTypeCountFotosArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: FotoWhereInput
+  }
+
+  /**
+   * ActuacioCountOutputType without action
+   */
+  export type ActuacioCountOutputTypeCountCollesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: CollaWhereInput
   }
 
 
@@ -1395,13 +1495,13 @@ export namespace Prisma {
    */
 
   export type UsuariCountOutputType = {
-    fotos: number
     croniques: number
+    fotos: number
   }
 
   export type UsuariCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    fotos?: boolean | UsuariCountOutputTypeCountFotosArgs
     croniques?: boolean | UsuariCountOutputTypeCountCroniquesArgs
+    fotos?: boolean | UsuariCountOutputTypeCountFotosArgs
   }
 
   // Custom InputTypes
@@ -1418,15 +1518,15 @@ export namespace Prisma {
   /**
    * UsuariCountOutputType without action
    */
-  export type UsuariCountOutputTypeCountFotosArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: FotoWhereInput
+  export type UsuariCountOutputTypeCountCroniquesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: CronicaWhereInput
   }
 
   /**
    * UsuariCountOutputType without action
    */
-  export type UsuariCountOutputTypeCountCroniquesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: CronicaWhereInput
+  export type UsuariCountOutputTypeCountFotosArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: FotoWhereInput
   }
 
 
@@ -1457,6 +1557,55 @@ export namespace Prisma {
    * TemporadaCountOutputType without action
    */
   export type TemporadaCountOutputTypeCountActuacionsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ActuacioWhereInput
+  }
+
+
+  /**
+   * Count Type CollaCountOutputType
+   */
+
+  export type CollaCountOutputType = {
+    castells: number
+    fotos: number
+    actuacions: number
+  }
+
+  export type CollaCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    castells?: boolean | CollaCountOutputTypeCountCastellsArgs
+    fotos?: boolean | CollaCountOutputTypeCountFotosArgs
+    actuacions?: boolean | CollaCountOutputTypeCountActuacionsArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * CollaCountOutputType without action
+   */
+  export type CollaCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CollaCountOutputType
+     */
+    select?: CollaCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * CollaCountOutputType without action
+   */
+  export type CollaCountOutputTypeCountCastellsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: CastellWhereInput
+  }
+
+  /**
+   * CollaCountOutputType without action
+   */
+  export type CollaCountOutputTypeCountFotosArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: FotoWhereInput
+  }
+
+  /**
+   * CollaCountOutputType without action
+   */
+  export type CollaCountOutputTypeCountActuacionsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: ActuacioWhereInput
   }
 
@@ -1695,10 +1844,11 @@ export namespace Prisma {
     nom?: boolean
     temporadaId?: boolean
     cronicaId?: boolean
-    castells?: boolean | Actuacio$castellsArgs<ExtArgs>
-    fotos?: boolean | Actuacio$fotosArgs<ExtArgs>
     temporada?: boolean | TemporadaDefaultArgs<ExtArgs>
+    castells?: boolean | Actuacio$castellsArgs<ExtArgs>
     cronica?: boolean | Actuacio$cronicaArgs<ExtArgs>
+    fotos?: boolean | Actuacio$fotosArgs<ExtArgs>
+    colles?: boolean | Actuacio$collesArgs<ExtArgs>
     _count?: boolean | ActuacioCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["actuacio"]>
 
@@ -1739,10 +1889,11 @@ export namespace Prisma {
 
   export type ActuacioOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "data" | "dataHora" | "lloc" | "ciutat" | "nom" | "temporadaId" | "cronicaId", ExtArgs["result"]["actuacio"]>
   export type ActuacioInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    castells?: boolean | Actuacio$castellsArgs<ExtArgs>
-    fotos?: boolean | Actuacio$fotosArgs<ExtArgs>
     temporada?: boolean | TemporadaDefaultArgs<ExtArgs>
+    castells?: boolean | Actuacio$castellsArgs<ExtArgs>
     cronica?: boolean | Actuacio$cronicaArgs<ExtArgs>
+    fotos?: boolean | Actuacio$fotosArgs<ExtArgs>
+    colles?: boolean | Actuacio$collesArgs<ExtArgs>
     _count?: boolean | ActuacioCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type ActuacioIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -1755,10 +1906,11 @@ export namespace Prisma {
   export type $ActuacioPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Actuacio"
     objects: {
-      castells: Prisma.$CastellPayload<ExtArgs>[]
-      fotos: Prisma.$FotoPayload<ExtArgs>[]
       temporada: Prisma.$TemporadaPayload<ExtArgs>
+      castells: Prisma.$CastellPayload<ExtArgs>[]
       cronica: Prisma.$CronicaPayload<ExtArgs> | null
+      fotos: Prisma.$FotoPayload<ExtArgs>[]
+      colles: Prisma.$CollaPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
@@ -2163,10 +2315,11 @@ export namespace Prisma {
    */
   export interface Prisma__ActuacioClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    castells<T extends Actuacio$castellsArgs<ExtArgs> = {}>(args?: Subset<T, Actuacio$castellsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CastellPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    fotos<T extends Actuacio$fotosArgs<ExtArgs> = {}>(args?: Subset<T, Actuacio$fotosArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FotoPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     temporada<T extends TemporadaDefaultArgs<ExtArgs> = {}>(args?: Subset<T, TemporadaDefaultArgs<ExtArgs>>): Prisma__TemporadaClient<$Result.GetResult<Prisma.$TemporadaPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    castells<T extends Actuacio$castellsArgs<ExtArgs> = {}>(args?: Subset<T, Actuacio$castellsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CastellPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     cronica<T extends Actuacio$cronicaArgs<ExtArgs> = {}>(args?: Subset<T, Actuacio$cronicaArgs<ExtArgs>>): Prisma__CronicaClient<$Result.GetResult<Prisma.$CronicaPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    fotos<T extends Actuacio$fotosArgs<ExtArgs> = {}>(args?: Subset<T, Actuacio$fotosArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FotoPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    colles<T extends Actuacio$collesArgs<ExtArgs> = {}>(args?: Subset<T, Actuacio$collesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CollaPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2624,6 +2777,25 @@ export namespace Prisma {
   }
 
   /**
+   * Actuacio.cronica
+   */
+  export type Actuacio$cronicaArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Cronica
+     */
+    select?: CronicaSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Cronica
+     */
+    omit?: CronicaOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CronicaInclude<ExtArgs> | null
+    where?: CronicaWhereInput
+  }
+
+  /**
    * Actuacio.fotos
    */
   export type Actuacio$fotosArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -2648,22 +2820,27 @@ export namespace Prisma {
   }
 
   /**
-   * Actuacio.cronica
+   * Actuacio.colles
    */
-  export type Actuacio$cronicaArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Actuacio$collesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Cronica
+     * Select specific fields to fetch from the Colla
      */
-    select?: CronicaSelect<ExtArgs> | null
+    select?: CollaSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Cronica
+     * Omit specific fields from the Colla
      */
-    omit?: CronicaOmit<ExtArgs> | null
+    omit?: CollaOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: CronicaInclude<ExtArgs> | null
-    where?: CronicaWhereInput
+    include?: CollaInclude<ExtArgs> | null
+    where?: CollaWhereInput
+    orderBy?: CollaOrderByWithRelationInput | CollaOrderByWithRelationInput[]
+    cursor?: CollaWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: CollaScalarFieldEnum | CollaScalarFieldEnum[]
   }
 
   /**
@@ -2899,8 +3076,8 @@ export namespace Prisma {
     Text?: boolean
     autorId?: boolean
     actuacioId?: boolean
-    autor?: boolean | UsuariDefaultArgs<ExtArgs>
     actuacio?: boolean | ActuacioDefaultArgs<ExtArgs>
+    autor?: boolean | UsuariDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["cronica"]>
 
   export type CronicaSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -2910,8 +3087,8 @@ export namespace Prisma {
     Text?: boolean
     autorId?: boolean
     actuacioId?: boolean
-    autor?: boolean | UsuariDefaultArgs<ExtArgs>
     actuacio?: boolean | ActuacioDefaultArgs<ExtArgs>
+    autor?: boolean | UsuariDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["cronica"]>
 
   export type CronicaSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -2921,8 +3098,8 @@ export namespace Prisma {
     Text?: boolean
     autorId?: boolean
     actuacioId?: boolean
-    autor?: boolean | UsuariDefaultArgs<ExtArgs>
     actuacio?: boolean | ActuacioDefaultArgs<ExtArgs>
+    autor?: boolean | UsuariDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["cronica"]>
 
   export type CronicaSelectScalar = {
@@ -2936,23 +3113,23 @@ export namespace Prisma {
 
   export type CronicaOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "created" | "Titol" | "Text" | "autorId" | "actuacioId", ExtArgs["result"]["cronica"]>
   export type CronicaInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    autor?: boolean | UsuariDefaultArgs<ExtArgs>
     actuacio?: boolean | ActuacioDefaultArgs<ExtArgs>
+    autor?: boolean | UsuariDefaultArgs<ExtArgs>
   }
   export type CronicaIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    autor?: boolean | UsuariDefaultArgs<ExtArgs>
     actuacio?: boolean | ActuacioDefaultArgs<ExtArgs>
+    autor?: boolean | UsuariDefaultArgs<ExtArgs>
   }
   export type CronicaIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    autor?: boolean | UsuariDefaultArgs<ExtArgs>
     actuacio?: boolean | ActuacioDefaultArgs<ExtArgs>
+    autor?: boolean | UsuariDefaultArgs<ExtArgs>
   }
 
   export type $CronicaPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Cronica"
     objects: {
-      autor: Prisma.$UsuariPayload<ExtArgs>
       actuacio: Prisma.$ActuacioPayload<ExtArgs>
+      autor: Prisma.$UsuariPayload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
@@ -3355,8 +3532,8 @@ export namespace Prisma {
    */
   export interface Prisma__CronicaClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    autor<T extends UsuariDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UsuariDefaultArgs<ExtArgs>>): Prisma__UsuariClient<$Result.GetResult<Prisma.$UsuariPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     actuacio<T extends ActuacioDefaultArgs<ExtArgs> = {}>(args?: Subset<T, ActuacioDefaultArgs<ExtArgs>>): Prisma__ActuacioClient<$Result.GetResult<Prisma.$ActuacioPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    autor<T extends UsuariDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UsuariDefaultArgs<ExtArgs>>): Prisma__UsuariClient<$Result.GetResult<Prisma.$UsuariPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -3821,11 +3998,13 @@ export namespace Prisma {
   export type CastellAvgAggregateOutputType = {
     id: number | null
     actuacioId: number | null
+    collaId: number | null
   }
 
   export type CastellSumAggregateOutputType = {
     id: number | null
     actuacioId: number | null
+    collaId: number | null
   }
 
   export type CastellMinAggregateOutputType = {
@@ -3833,6 +4012,7 @@ export namespace Prisma {
     nom: string | null
     actuacioId: number | null
     resultat: string | null
+    collaId: number | null
   }
 
   export type CastellMaxAggregateOutputType = {
@@ -3840,6 +4020,7 @@ export namespace Prisma {
     nom: string | null
     actuacioId: number | null
     resultat: string | null
+    collaId: number | null
   }
 
   export type CastellCountAggregateOutputType = {
@@ -3847,6 +4028,7 @@ export namespace Prisma {
     nom: number
     actuacioId: number
     resultat: number
+    collaId: number
     _all: number
   }
 
@@ -3854,11 +4036,13 @@ export namespace Prisma {
   export type CastellAvgAggregateInputType = {
     id?: true
     actuacioId?: true
+    collaId?: true
   }
 
   export type CastellSumAggregateInputType = {
     id?: true
     actuacioId?: true
+    collaId?: true
   }
 
   export type CastellMinAggregateInputType = {
@@ -3866,6 +4050,7 @@ export namespace Prisma {
     nom?: true
     actuacioId?: true
     resultat?: true
+    collaId?: true
   }
 
   export type CastellMaxAggregateInputType = {
@@ -3873,6 +4058,7 @@ export namespace Prisma {
     nom?: true
     actuacioId?: true
     resultat?: true
+    collaId?: true
   }
 
   export type CastellCountAggregateInputType = {
@@ -3880,6 +4066,7 @@ export namespace Prisma {
     nom?: true
     actuacioId?: true
     resultat?: true
+    collaId?: true
     _all?: true
   }
 
@@ -3974,6 +4161,7 @@ export namespace Prisma {
     nom: string
     actuacioId: number
     resultat: string
+    collaId: number
     _count: CastellCountAggregateOutputType | null
     _avg: CastellAvgAggregateOutputType | null
     _sum: CastellSumAggregateOutputType | null
@@ -4000,7 +4188,9 @@ export namespace Prisma {
     nom?: boolean
     actuacioId?: boolean
     resultat?: boolean
+    collaId?: boolean
     actuacio?: boolean | ActuacioDefaultArgs<ExtArgs>
+    colla?: boolean | CollaDefaultArgs<ExtArgs>
     fotos?: boolean | Castell$fotosArgs<ExtArgs>
     _count?: boolean | CastellCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["castell"]>
@@ -4010,7 +4200,9 @@ export namespace Prisma {
     nom?: boolean
     actuacioId?: boolean
     resultat?: boolean
+    collaId?: boolean
     actuacio?: boolean | ActuacioDefaultArgs<ExtArgs>
+    colla?: boolean | CollaDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["castell"]>
 
   export type CastellSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -4018,7 +4210,9 @@ export namespace Prisma {
     nom?: boolean
     actuacioId?: boolean
     resultat?: boolean
+    collaId?: boolean
     actuacio?: boolean | ActuacioDefaultArgs<ExtArgs>
+    colla?: boolean | CollaDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["castell"]>
 
   export type CastellSelectScalar = {
@@ -4026,25 +4220,30 @@ export namespace Prisma {
     nom?: boolean
     actuacioId?: boolean
     resultat?: boolean
+    collaId?: boolean
   }
 
-  export type CastellOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nom" | "actuacioId" | "resultat", ExtArgs["result"]["castell"]>
+  export type CastellOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nom" | "actuacioId" | "resultat" | "collaId", ExtArgs["result"]["castell"]>
   export type CastellInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     actuacio?: boolean | ActuacioDefaultArgs<ExtArgs>
+    colla?: boolean | CollaDefaultArgs<ExtArgs>
     fotos?: boolean | Castell$fotosArgs<ExtArgs>
     _count?: boolean | CastellCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type CastellIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     actuacio?: boolean | ActuacioDefaultArgs<ExtArgs>
+    colla?: boolean | CollaDefaultArgs<ExtArgs>
   }
   export type CastellIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     actuacio?: boolean | ActuacioDefaultArgs<ExtArgs>
+    colla?: boolean | CollaDefaultArgs<ExtArgs>
   }
 
   export type $CastellPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Castell"
     objects: {
       actuacio: Prisma.$ActuacioPayload<ExtArgs>
+      colla: Prisma.$CollaPayload<ExtArgs>
       fotos: Prisma.$FotoPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
@@ -4052,6 +4251,7 @@ export namespace Prisma {
       nom: string
       actuacioId: number
       resultat: string
+      collaId: number
     }, ExtArgs["result"]["castell"]>
     composites: {}
   }
@@ -4447,6 +4647,7 @@ export namespace Prisma {
   export interface Prisma__CastellClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     actuacio<T extends ActuacioDefaultArgs<ExtArgs> = {}>(args?: Subset<T, ActuacioDefaultArgs<ExtArgs>>): Prisma__ActuacioClient<$Result.GetResult<Prisma.$ActuacioPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    colla<T extends CollaDefaultArgs<ExtArgs> = {}>(args?: Subset<T, CollaDefaultArgs<ExtArgs>>): Prisma__CollaClient<$Result.GetResult<Prisma.$CollaPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     fotos<T extends Castell$fotosArgs<ExtArgs> = {}>(args?: Subset<T, Castell$fotosArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FotoPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -4481,6 +4682,7 @@ export namespace Prisma {
     readonly nom: FieldRef<"Castell", 'String'>
     readonly actuacioId: FieldRef<"Castell", 'Int'>
     readonly resultat: FieldRef<"Castell", 'String'>
+    readonly collaId: FieldRef<"Castell", 'Int'>
   }
     
 
@@ -5109,8 +5311,8 @@ export namespace Prisma {
     correu?: boolean
     contrassenya?: boolean
     nom?: boolean
-    fotos?: boolean | Usuari$fotosArgs<ExtArgs>
     croniques?: boolean | Usuari$croniquesArgs<ExtArgs>
+    fotos?: boolean | Usuari$fotosArgs<ExtArgs>
     _count?: boolean | UsuariCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["usuari"]>
 
@@ -5137,8 +5339,8 @@ export namespace Prisma {
 
   export type UsuariOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "correu" | "contrassenya" | "nom", ExtArgs["result"]["usuari"]>
   export type UsuariInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    fotos?: boolean | Usuari$fotosArgs<ExtArgs>
     croniques?: boolean | Usuari$croniquesArgs<ExtArgs>
+    fotos?: boolean | Usuari$fotosArgs<ExtArgs>
     _count?: boolean | UsuariCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type UsuariIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
@@ -5147,8 +5349,8 @@ export namespace Prisma {
   export type $UsuariPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Usuari"
     objects: {
-      fotos: Prisma.$FotoPayload<ExtArgs>[]
       croniques: Prisma.$CronicaPayload<ExtArgs>[]
+      fotos: Prisma.$FotoPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
@@ -5549,8 +5751,8 @@ export namespace Prisma {
    */
   export interface Prisma__UsuariClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    fotos<T extends Usuari$fotosArgs<ExtArgs> = {}>(args?: Subset<T, Usuari$fotosArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FotoPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     croniques<T extends Usuari$croniquesArgs<ExtArgs> = {}>(args?: Subset<T, Usuari$croniquesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CronicaPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    fotos<T extends Usuari$fotosArgs<ExtArgs> = {}>(args?: Subset<T, Usuari$fotosArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FotoPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -5972,30 +6174,6 @@ export namespace Prisma {
   }
 
   /**
-   * Usuari.fotos
-   */
-  export type Usuari$fotosArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Foto
-     */
-    select?: FotoSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Foto
-     */
-    omit?: FotoOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: FotoInclude<ExtArgs> | null
-    where?: FotoWhereInput
-    orderBy?: FotoOrderByWithRelationInput | FotoOrderByWithRelationInput[]
-    cursor?: FotoWhereUniqueInput
-    take?: number
-    skip?: number
-    distinct?: FotoScalarFieldEnum | FotoScalarFieldEnum[]
-  }
-
-  /**
    * Usuari.croniques
    */
   export type Usuari$croniquesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -6017,6 +6195,30 @@ export namespace Prisma {
     take?: number
     skip?: number
     distinct?: CronicaScalarFieldEnum | CronicaScalarFieldEnum[]
+  }
+
+  /**
+   * Usuari.fotos
+   */
+  export type Usuari$fotosArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Foto
+     */
+    select?: FotoSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Foto
+     */
+    omit?: FotoOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FotoInclude<ExtArgs> | null
+    where?: FotoWhereInput
+    orderBy?: FotoOrderByWithRelationInput | FotoOrderByWithRelationInput[]
+    cursor?: FotoWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: FotoScalarFieldEnum | FotoScalarFieldEnum[]
   }
 
   /**
@@ -6055,6 +6257,7 @@ export namespace Prisma {
     autorId: number | null
     actuacioId: number | null
     castellId: number | null
+    collaId: number | null
   }
 
   export type FotoSumAggregateOutputType = {
@@ -6062,6 +6265,7 @@ export namespace Prisma {
     autorId: number | null
     actuacioId: number | null
     castellId: number | null
+    collaId: number | null
   }
 
   export type FotoMinAggregateOutputType = {
@@ -6073,6 +6277,7 @@ export namespace Prisma {
     mainFoto: boolean | null
     actuacioId: number | null
     castellId: number | null
+    collaId: number | null
   }
 
   export type FotoMaxAggregateOutputType = {
@@ -6084,6 +6289,7 @@ export namespace Prisma {
     mainFoto: boolean | null
     actuacioId: number | null
     castellId: number | null
+    collaId: number | null
   }
 
   export type FotoCountAggregateOutputType = {
@@ -6095,6 +6301,7 @@ export namespace Prisma {
     mainFoto: number
     actuacioId: number
     castellId: number
+    collaId: number
     _all: number
   }
 
@@ -6104,6 +6311,7 @@ export namespace Prisma {
     autorId?: true
     actuacioId?: true
     castellId?: true
+    collaId?: true
   }
 
   export type FotoSumAggregateInputType = {
@@ -6111,6 +6319,7 @@ export namespace Prisma {
     autorId?: true
     actuacioId?: true
     castellId?: true
+    collaId?: true
   }
 
   export type FotoMinAggregateInputType = {
@@ -6122,6 +6331,7 @@ export namespace Prisma {
     mainFoto?: true
     actuacioId?: true
     castellId?: true
+    collaId?: true
   }
 
   export type FotoMaxAggregateInputType = {
@@ -6133,6 +6343,7 @@ export namespace Prisma {
     mainFoto?: true
     actuacioId?: true
     castellId?: true
+    collaId?: true
   }
 
   export type FotoCountAggregateInputType = {
@@ -6144,6 +6355,7 @@ export namespace Prisma {
     mainFoto?: true
     actuacioId?: true
     castellId?: true
+    collaId?: true
     _all?: true
   }
 
@@ -6242,6 +6454,7 @@ export namespace Prisma {
     mainFoto: boolean
     actuacioId: number
     castellId: number
+    collaId: number
     _count: FotoCountAggregateOutputType | null
     _avg: FotoAvgAggregateOutputType | null
     _sum: FotoSumAggregateOutputType | null
@@ -6272,9 +6485,11 @@ export namespace Prisma {
     mainFoto?: boolean
     actuacioId?: boolean
     castellId?: boolean
-    autor?: boolean | UsuariDefaultArgs<ExtArgs>
+    collaId?: boolean
     actuacio?: boolean | ActuacioDefaultArgs<ExtArgs>
-    castell?: boolean | Foto$castellArgs<ExtArgs>
+    autor?: boolean | UsuariDefaultArgs<ExtArgs>
+    castell?: boolean | CastellDefaultArgs<ExtArgs>
+    colla?: boolean | CollaDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["foto"]>
 
   export type FotoSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -6286,9 +6501,11 @@ export namespace Prisma {
     mainFoto?: boolean
     actuacioId?: boolean
     castellId?: boolean
-    autor?: boolean | UsuariDefaultArgs<ExtArgs>
+    collaId?: boolean
     actuacio?: boolean | ActuacioDefaultArgs<ExtArgs>
-    castell?: boolean | Foto$castellArgs<ExtArgs>
+    autor?: boolean | UsuariDefaultArgs<ExtArgs>
+    castell?: boolean | CastellDefaultArgs<ExtArgs>
+    colla?: boolean | CollaDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["foto"]>
 
   export type FotoSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -6300,9 +6517,11 @@ export namespace Prisma {
     mainFoto?: boolean
     actuacioId?: boolean
     castellId?: boolean
-    autor?: boolean | UsuariDefaultArgs<ExtArgs>
+    collaId?: boolean
     actuacio?: boolean | ActuacioDefaultArgs<ExtArgs>
-    castell?: boolean | Foto$castellArgs<ExtArgs>
+    autor?: boolean | UsuariDefaultArgs<ExtArgs>
+    castell?: boolean | CastellDefaultArgs<ExtArgs>
+    colla?: boolean | CollaDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["foto"]>
 
   export type FotoSelectScalar = {
@@ -6314,31 +6533,36 @@ export namespace Prisma {
     mainFoto?: boolean
     actuacioId?: boolean
     castellId?: boolean
+    collaId?: boolean
   }
 
-  export type FotoOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "created" | "name" | "url" | "autorId" | "mainFoto" | "actuacioId" | "castellId", ExtArgs["result"]["foto"]>
+  export type FotoOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "created" | "name" | "url" | "autorId" | "mainFoto" | "actuacioId" | "castellId" | "collaId", ExtArgs["result"]["foto"]>
   export type FotoInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    autor?: boolean | UsuariDefaultArgs<ExtArgs>
     actuacio?: boolean | ActuacioDefaultArgs<ExtArgs>
-    castell?: boolean | Foto$castellArgs<ExtArgs>
+    autor?: boolean | UsuariDefaultArgs<ExtArgs>
+    castell?: boolean | CastellDefaultArgs<ExtArgs>
+    colla?: boolean | CollaDefaultArgs<ExtArgs>
   }
   export type FotoIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    autor?: boolean | UsuariDefaultArgs<ExtArgs>
     actuacio?: boolean | ActuacioDefaultArgs<ExtArgs>
-    castell?: boolean | Foto$castellArgs<ExtArgs>
+    autor?: boolean | UsuariDefaultArgs<ExtArgs>
+    castell?: boolean | CastellDefaultArgs<ExtArgs>
+    colla?: boolean | CollaDefaultArgs<ExtArgs>
   }
   export type FotoIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    autor?: boolean | UsuariDefaultArgs<ExtArgs>
     actuacio?: boolean | ActuacioDefaultArgs<ExtArgs>
-    castell?: boolean | Foto$castellArgs<ExtArgs>
+    autor?: boolean | UsuariDefaultArgs<ExtArgs>
+    castell?: boolean | CastellDefaultArgs<ExtArgs>
+    colla?: boolean | CollaDefaultArgs<ExtArgs>
   }
 
   export type $FotoPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Foto"
     objects: {
-      autor: Prisma.$UsuariPayload<ExtArgs>
       actuacio: Prisma.$ActuacioPayload<ExtArgs>
-      castell: Prisma.$CastellPayload<ExtArgs> | null
+      autor: Prisma.$UsuariPayload<ExtArgs>
+      castell: Prisma.$CastellPayload<ExtArgs>
+      colla: Prisma.$CollaPayload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
@@ -6349,6 +6573,7 @@ export namespace Prisma {
       mainFoto: boolean
       actuacioId: number
       castellId: number
+      collaId: number
     }, ExtArgs["result"]["foto"]>
     composites: {}
   }
@@ -6743,9 +6968,10 @@ export namespace Prisma {
    */
   export interface Prisma__FotoClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    autor<T extends UsuariDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UsuariDefaultArgs<ExtArgs>>): Prisma__UsuariClient<$Result.GetResult<Prisma.$UsuariPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     actuacio<T extends ActuacioDefaultArgs<ExtArgs> = {}>(args?: Subset<T, ActuacioDefaultArgs<ExtArgs>>): Prisma__ActuacioClient<$Result.GetResult<Prisma.$ActuacioPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-    castell<T extends Foto$castellArgs<ExtArgs> = {}>(args?: Subset<T, Foto$castellArgs<ExtArgs>>): Prisma__CastellClient<$Result.GetResult<Prisma.$CastellPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    autor<T extends UsuariDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UsuariDefaultArgs<ExtArgs>>): Prisma__UsuariClient<$Result.GetResult<Prisma.$UsuariPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    castell<T extends CastellDefaultArgs<ExtArgs> = {}>(args?: Subset<T, CastellDefaultArgs<ExtArgs>>): Prisma__CastellClient<$Result.GetResult<Prisma.$CastellPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    colla<T extends CollaDefaultArgs<ExtArgs> = {}>(args?: Subset<T, CollaDefaultArgs<ExtArgs>>): Prisma__CollaClient<$Result.GetResult<Prisma.$CollaPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -6783,6 +7009,7 @@ export namespace Prisma {
     readonly mainFoto: FieldRef<"Foto", 'Boolean'>
     readonly actuacioId: FieldRef<"Foto", 'Int'>
     readonly castellId: FieldRef<"Foto", 'Int'>
+    readonly collaId: FieldRef<"Foto", 'Int'>
   }
     
 
@@ -7176,25 +7403,6 @@ export namespace Prisma {
      * Limit how many Fotos to delete.
      */
     limit?: number
-  }
-
-  /**
-   * Foto.castell
-   */
-  export type Foto$castellArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Castell
-     */
-    select?: CastellSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Castell
-     */
-    omit?: CastellOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: CastellInclude<ExtArgs> | null
-    where?: CastellWhereInput
   }
 
   /**
@@ -8286,6 +8494,1127 @@ export namespace Prisma {
 
 
   /**
+   * Model Colla
+   */
+
+  export type AggregateColla = {
+    _count: CollaCountAggregateOutputType | null
+    _avg: CollaAvgAggregateOutputType | null
+    _sum: CollaSumAggregateOutputType | null
+    _min: CollaMinAggregateOutputType | null
+    _max: CollaMaxAggregateOutputType | null
+  }
+
+  export type CollaAvgAggregateOutputType = {
+    id: number | null
+  }
+
+  export type CollaSumAggregateOutputType = {
+    id: number | null
+  }
+
+  export type CollaMinAggregateOutputType = {
+    id: number | null
+    name: string | null
+  }
+
+  export type CollaMaxAggregateOutputType = {
+    id: number | null
+    name: string | null
+  }
+
+  export type CollaCountAggregateOutputType = {
+    id: number
+    name: number
+    _all: number
+  }
+
+
+  export type CollaAvgAggregateInputType = {
+    id?: true
+  }
+
+  export type CollaSumAggregateInputType = {
+    id?: true
+  }
+
+  export type CollaMinAggregateInputType = {
+    id?: true
+    name?: true
+  }
+
+  export type CollaMaxAggregateInputType = {
+    id?: true
+    name?: true
+  }
+
+  export type CollaCountAggregateInputType = {
+    id?: true
+    name?: true
+    _all?: true
+  }
+
+  export type CollaAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Colla to aggregate.
+     */
+    where?: CollaWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Collas to fetch.
+     */
+    orderBy?: CollaOrderByWithRelationInput | CollaOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: CollaWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Collas from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Collas.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned Collas
+    **/
+    _count?: true | CollaCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: CollaAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: CollaSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: CollaMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: CollaMaxAggregateInputType
+  }
+
+  export type GetCollaAggregateType<T extends CollaAggregateArgs> = {
+        [P in keyof T & keyof AggregateColla]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateColla[P]>
+      : GetScalarType<T[P], AggregateColla[P]>
+  }
+
+
+
+
+  export type CollaGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: CollaWhereInput
+    orderBy?: CollaOrderByWithAggregationInput | CollaOrderByWithAggregationInput[]
+    by: CollaScalarFieldEnum[] | CollaScalarFieldEnum
+    having?: CollaScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: CollaCountAggregateInputType | true
+    _avg?: CollaAvgAggregateInputType
+    _sum?: CollaSumAggregateInputType
+    _min?: CollaMinAggregateInputType
+    _max?: CollaMaxAggregateInputType
+  }
+
+  export type CollaGroupByOutputType = {
+    id: number
+    name: string
+    _count: CollaCountAggregateOutputType | null
+    _avg: CollaAvgAggregateOutputType | null
+    _sum: CollaSumAggregateOutputType | null
+    _min: CollaMinAggregateOutputType | null
+    _max: CollaMaxAggregateOutputType | null
+  }
+
+  type GetCollaGroupByPayload<T extends CollaGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<CollaGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof CollaGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], CollaGroupByOutputType[P]>
+            : GetScalarType<T[P], CollaGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type CollaSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+    castells?: boolean | Colla$castellsArgs<ExtArgs>
+    fotos?: boolean | Colla$fotosArgs<ExtArgs>
+    actuacions?: boolean | Colla$actuacionsArgs<ExtArgs>
+    _count?: boolean | CollaCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["colla"]>
+
+  export type CollaSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+  }, ExtArgs["result"]["colla"]>
+
+  export type CollaSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    name?: boolean
+  }, ExtArgs["result"]["colla"]>
+
+  export type CollaSelectScalar = {
+    id?: boolean
+    name?: boolean
+  }
+
+  export type CollaOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name", ExtArgs["result"]["colla"]>
+  export type CollaInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    castells?: boolean | Colla$castellsArgs<ExtArgs>
+    fotos?: boolean | Colla$fotosArgs<ExtArgs>
+    actuacions?: boolean | Colla$actuacionsArgs<ExtArgs>
+    _count?: boolean | CollaCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type CollaIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+  export type CollaIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+
+  export type $CollaPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Colla"
+    objects: {
+      castells: Prisma.$CastellPayload<ExtArgs>[]
+      fotos: Prisma.$FotoPayload<ExtArgs>[]
+      actuacions: Prisma.$ActuacioPayload<ExtArgs>[]
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      name: string
+    }, ExtArgs["result"]["colla"]>
+    composites: {}
+  }
+
+  type CollaGetPayload<S extends boolean | null | undefined | CollaDefaultArgs> = $Result.GetResult<Prisma.$CollaPayload, S>
+
+  type CollaCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<CollaFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: CollaCountAggregateInputType | true
+    }
+
+  export interface CollaDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Colla'], meta: { name: 'Colla' } }
+    /**
+     * Find zero or one Colla that matches the filter.
+     * @param {CollaFindUniqueArgs} args - Arguments to find a Colla
+     * @example
+     * // Get one Colla
+     * const colla = await prisma.colla.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends CollaFindUniqueArgs>(args: SelectSubset<T, CollaFindUniqueArgs<ExtArgs>>): Prisma__CollaClient<$Result.GetResult<Prisma.$CollaPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Colla that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {CollaFindUniqueOrThrowArgs} args - Arguments to find a Colla
+     * @example
+     * // Get one Colla
+     * const colla = await prisma.colla.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends CollaFindUniqueOrThrowArgs>(args: SelectSubset<T, CollaFindUniqueOrThrowArgs<ExtArgs>>): Prisma__CollaClient<$Result.GetResult<Prisma.$CollaPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Colla that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CollaFindFirstArgs} args - Arguments to find a Colla
+     * @example
+     * // Get one Colla
+     * const colla = await prisma.colla.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends CollaFindFirstArgs>(args?: SelectSubset<T, CollaFindFirstArgs<ExtArgs>>): Prisma__CollaClient<$Result.GetResult<Prisma.$CollaPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Colla that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CollaFindFirstOrThrowArgs} args - Arguments to find a Colla
+     * @example
+     * // Get one Colla
+     * const colla = await prisma.colla.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends CollaFindFirstOrThrowArgs>(args?: SelectSubset<T, CollaFindFirstOrThrowArgs<ExtArgs>>): Prisma__CollaClient<$Result.GetResult<Prisma.$CollaPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Collas that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CollaFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Collas
+     * const collas = await prisma.colla.findMany()
+     * 
+     * // Get first 10 Collas
+     * const collas = await prisma.colla.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const collaWithIdOnly = await prisma.colla.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends CollaFindManyArgs>(args?: SelectSubset<T, CollaFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CollaPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Colla.
+     * @param {CollaCreateArgs} args - Arguments to create a Colla.
+     * @example
+     * // Create one Colla
+     * const Colla = await prisma.colla.create({
+     *   data: {
+     *     // ... data to create a Colla
+     *   }
+     * })
+     * 
+     */
+    create<T extends CollaCreateArgs>(args: SelectSubset<T, CollaCreateArgs<ExtArgs>>): Prisma__CollaClient<$Result.GetResult<Prisma.$CollaPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Collas.
+     * @param {CollaCreateManyArgs} args - Arguments to create many Collas.
+     * @example
+     * // Create many Collas
+     * const colla = await prisma.colla.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends CollaCreateManyArgs>(args?: SelectSubset<T, CollaCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Collas and returns the data saved in the database.
+     * @param {CollaCreateManyAndReturnArgs} args - Arguments to create many Collas.
+     * @example
+     * // Create many Collas
+     * const colla = await prisma.colla.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Collas and only return the `id`
+     * const collaWithIdOnly = await prisma.colla.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends CollaCreateManyAndReturnArgs>(args?: SelectSubset<T, CollaCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CollaPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Colla.
+     * @param {CollaDeleteArgs} args - Arguments to delete one Colla.
+     * @example
+     * // Delete one Colla
+     * const Colla = await prisma.colla.delete({
+     *   where: {
+     *     // ... filter to delete one Colla
+     *   }
+     * })
+     * 
+     */
+    delete<T extends CollaDeleteArgs>(args: SelectSubset<T, CollaDeleteArgs<ExtArgs>>): Prisma__CollaClient<$Result.GetResult<Prisma.$CollaPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Colla.
+     * @param {CollaUpdateArgs} args - Arguments to update one Colla.
+     * @example
+     * // Update one Colla
+     * const colla = await prisma.colla.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends CollaUpdateArgs>(args: SelectSubset<T, CollaUpdateArgs<ExtArgs>>): Prisma__CollaClient<$Result.GetResult<Prisma.$CollaPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Collas.
+     * @param {CollaDeleteManyArgs} args - Arguments to filter Collas to delete.
+     * @example
+     * // Delete a few Collas
+     * const { count } = await prisma.colla.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends CollaDeleteManyArgs>(args?: SelectSubset<T, CollaDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Collas.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CollaUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Collas
+     * const colla = await prisma.colla.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends CollaUpdateManyArgs>(args: SelectSubset<T, CollaUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Collas and returns the data updated in the database.
+     * @param {CollaUpdateManyAndReturnArgs} args - Arguments to update many Collas.
+     * @example
+     * // Update many Collas
+     * const colla = await prisma.colla.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Collas and only return the `id`
+     * const collaWithIdOnly = await prisma.colla.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends CollaUpdateManyAndReturnArgs>(args: SelectSubset<T, CollaUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CollaPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Colla.
+     * @param {CollaUpsertArgs} args - Arguments to update or create a Colla.
+     * @example
+     * // Update or create a Colla
+     * const colla = await prisma.colla.upsert({
+     *   create: {
+     *     // ... data to create a Colla
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Colla we want to update
+     *   }
+     * })
+     */
+    upsert<T extends CollaUpsertArgs>(args: SelectSubset<T, CollaUpsertArgs<ExtArgs>>): Prisma__CollaClient<$Result.GetResult<Prisma.$CollaPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Collas.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CollaCountArgs} args - Arguments to filter Collas to count.
+     * @example
+     * // Count the number of Collas
+     * const count = await prisma.colla.count({
+     *   where: {
+     *     // ... the filter for the Collas we want to count
+     *   }
+     * })
+    **/
+    count<T extends CollaCountArgs>(
+      args?: Subset<T, CollaCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], CollaCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Colla.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CollaAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends CollaAggregateArgs>(args: Subset<T, CollaAggregateArgs>): Prisma.PrismaPromise<GetCollaAggregateType<T>>
+
+    /**
+     * Group by Colla.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CollaGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends CollaGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: CollaGroupByArgs['orderBy'] }
+        : { orderBy?: CollaGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, CollaGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetCollaGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the Colla model
+   */
+  readonly fields: CollaFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for Colla.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__CollaClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    castells<T extends Colla$castellsArgs<ExtArgs> = {}>(args?: Subset<T, Colla$castellsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CastellPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    fotos<T extends Colla$fotosArgs<ExtArgs> = {}>(args?: Subset<T, Colla$fotosArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FotoPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    actuacions<T extends Colla$actuacionsArgs<ExtArgs> = {}>(args?: Subset<T, Colla$actuacionsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ActuacioPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the Colla model
+   */
+  interface CollaFieldRefs {
+    readonly id: FieldRef<"Colla", 'Int'>
+    readonly name: FieldRef<"Colla", 'String'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * Colla findUnique
+   */
+  export type CollaFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Colla
+     */
+    select?: CollaSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Colla
+     */
+    omit?: CollaOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CollaInclude<ExtArgs> | null
+    /**
+     * Filter, which Colla to fetch.
+     */
+    where: CollaWhereUniqueInput
+  }
+
+  /**
+   * Colla findUniqueOrThrow
+   */
+  export type CollaFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Colla
+     */
+    select?: CollaSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Colla
+     */
+    omit?: CollaOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CollaInclude<ExtArgs> | null
+    /**
+     * Filter, which Colla to fetch.
+     */
+    where: CollaWhereUniqueInput
+  }
+
+  /**
+   * Colla findFirst
+   */
+  export type CollaFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Colla
+     */
+    select?: CollaSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Colla
+     */
+    omit?: CollaOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CollaInclude<ExtArgs> | null
+    /**
+     * Filter, which Colla to fetch.
+     */
+    where?: CollaWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Collas to fetch.
+     */
+    orderBy?: CollaOrderByWithRelationInput | CollaOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Collas.
+     */
+    cursor?: CollaWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Collas from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Collas.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Collas.
+     */
+    distinct?: CollaScalarFieldEnum | CollaScalarFieldEnum[]
+  }
+
+  /**
+   * Colla findFirstOrThrow
+   */
+  export type CollaFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Colla
+     */
+    select?: CollaSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Colla
+     */
+    omit?: CollaOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CollaInclude<ExtArgs> | null
+    /**
+     * Filter, which Colla to fetch.
+     */
+    where?: CollaWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Collas to fetch.
+     */
+    orderBy?: CollaOrderByWithRelationInput | CollaOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Collas.
+     */
+    cursor?: CollaWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Collas from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Collas.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Collas.
+     */
+    distinct?: CollaScalarFieldEnum | CollaScalarFieldEnum[]
+  }
+
+  /**
+   * Colla findMany
+   */
+  export type CollaFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Colla
+     */
+    select?: CollaSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Colla
+     */
+    omit?: CollaOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CollaInclude<ExtArgs> | null
+    /**
+     * Filter, which Collas to fetch.
+     */
+    where?: CollaWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Collas to fetch.
+     */
+    orderBy?: CollaOrderByWithRelationInput | CollaOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing Collas.
+     */
+    cursor?: CollaWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Collas from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Collas.
+     */
+    skip?: number
+    distinct?: CollaScalarFieldEnum | CollaScalarFieldEnum[]
+  }
+
+  /**
+   * Colla create
+   */
+  export type CollaCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Colla
+     */
+    select?: CollaSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Colla
+     */
+    omit?: CollaOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CollaInclude<ExtArgs> | null
+    /**
+     * The data needed to create a Colla.
+     */
+    data: XOR<CollaCreateInput, CollaUncheckedCreateInput>
+  }
+
+  /**
+   * Colla createMany
+   */
+  export type CollaCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many Collas.
+     */
+    data: CollaCreateManyInput | CollaCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Colla createManyAndReturn
+   */
+  export type CollaCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Colla
+     */
+    select?: CollaSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Colla
+     */
+    omit?: CollaOmit<ExtArgs> | null
+    /**
+     * The data used to create many Collas.
+     */
+    data: CollaCreateManyInput | CollaCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Colla update
+   */
+  export type CollaUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Colla
+     */
+    select?: CollaSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Colla
+     */
+    omit?: CollaOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CollaInclude<ExtArgs> | null
+    /**
+     * The data needed to update a Colla.
+     */
+    data: XOR<CollaUpdateInput, CollaUncheckedUpdateInput>
+    /**
+     * Choose, which Colla to update.
+     */
+    where: CollaWhereUniqueInput
+  }
+
+  /**
+   * Colla updateMany
+   */
+  export type CollaUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update Collas.
+     */
+    data: XOR<CollaUpdateManyMutationInput, CollaUncheckedUpdateManyInput>
+    /**
+     * Filter which Collas to update
+     */
+    where?: CollaWhereInput
+    /**
+     * Limit how many Collas to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Colla updateManyAndReturn
+   */
+  export type CollaUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Colla
+     */
+    select?: CollaSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Colla
+     */
+    omit?: CollaOmit<ExtArgs> | null
+    /**
+     * The data used to update Collas.
+     */
+    data: XOR<CollaUpdateManyMutationInput, CollaUncheckedUpdateManyInput>
+    /**
+     * Filter which Collas to update
+     */
+    where?: CollaWhereInput
+    /**
+     * Limit how many Collas to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Colla upsert
+   */
+  export type CollaUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Colla
+     */
+    select?: CollaSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Colla
+     */
+    omit?: CollaOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CollaInclude<ExtArgs> | null
+    /**
+     * The filter to search for the Colla to update in case it exists.
+     */
+    where: CollaWhereUniqueInput
+    /**
+     * In case the Colla found by the `where` argument doesn't exist, create a new Colla with this data.
+     */
+    create: XOR<CollaCreateInput, CollaUncheckedCreateInput>
+    /**
+     * In case the Colla was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<CollaUpdateInput, CollaUncheckedUpdateInput>
+  }
+
+  /**
+   * Colla delete
+   */
+  export type CollaDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Colla
+     */
+    select?: CollaSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Colla
+     */
+    omit?: CollaOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CollaInclude<ExtArgs> | null
+    /**
+     * Filter which Colla to delete.
+     */
+    where: CollaWhereUniqueInput
+  }
+
+  /**
+   * Colla deleteMany
+   */
+  export type CollaDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Collas to delete
+     */
+    where?: CollaWhereInput
+    /**
+     * Limit how many Collas to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * Colla.castells
+   */
+  export type Colla$castellsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Castell
+     */
+    select?: CastellSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Castell
+     */
+    omit?: CastellOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CastellInclude<ExtArgs> | null
+    where?: CastellWhereInput
+    orderBy?: CastellOrderByWithRelationInput | CastellOrderByWithRelationInput[]
+    cursor?: CastellWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: CastellScalarFieldEnum | CastellScalarFieldEnum[]
+  }
+
+  /**
+   * Colla.fotos
+   */
+  export type Colla$fotosArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Foto
+     */
+    select?: FotoSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Foto
+     */
+    omit?: FotoOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FotoInclude<ExtArgs> | null
+    where?: FotoWhereInput
+    orderBy?: FotoOrderByWithRelationInput | FotoOrderByWithRelationInput[]
+    cursor?: FotoWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: FotoScalarFieldEnum | FotoScalarFieldEnum[]
+  }
+
+  /**
+   * Colla.actuacions
+   */
+  export type Colla$actuacionsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Actuacio
+     */
+    select?: ActuacioSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Actuacio
+     */
+    omit?: ActuacioOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ActuacioInclude<ExtArgs> | null
+    where?: ActuacioWhereInput
+    orderBy?: ActuacioOrderByWithRelationInput | ActuacioOrderByWithRelationInput[]
+    cursor?: ActuacioWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: ActuacioScalarFieldEnum | ActuacioScalarFieldEnum[]
+  }
+
+  /**
+   * Colla without action
+   */
+  export type CollaDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Colla
+     */
+    select?: CollaSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Colla
+     */
+    omit?: CollaOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CollaInclude<ExtArgs> | null
+  }
+
+
+  /**
    * Enums
    */
 
@@ -8329,7 +9658,8 @@ export namespace Prisma {
     id: 'id',
     nom: 'nom',
     actuacioId: 'actuacioId',
-    resultat: 'resultat'
+    resultat: 'resultat',
+    collaId: 'collaId'
   };
 
   export type CastellScalarFieldEnum = (typeof CastellScalarFieldEnum)[keyof typeof CastellScalarFieldEnum]
@@ -8353,7 +9683,8 @@ export namespace Prisma {
     autorId: 'autorId',
     mainFoto: 'mainFoto',
     actuacioId: 'actuacioId',
-    castellId: 'castellId'
+    castellId: 'castellId',
+    collaId: 'collaId'
   };
 
   export type FotoScalarFieldEnum = (typeof FotoScalarFieldEnum)[keyof typeof FotoScalarFieldEnum]
@@ -8365,6 +9696,14 @@ export namespace Prisma {
   };
 
   export type TemporadaScalarFieldEnum = (typeof TemporadaScalarFieldEnum)[keyof typeof TemporadaScalarFieldEnum]
+
+
+  export const CollaScalarFieldEnum: {
+    id: 'id',
+    name: 'name'
+  };
+
+  export type CollaScalarFieldEnum = (typeof CollaScalarFieldEnum)[keyof typeof CollaScalarFieldEnum]
 
 
   export const SortOrder: {
@@ -8474,10 +9813,11 @@ export namespace Prisma {
     nom?: StringFilter<"Actuacio"> | string
     temporadaId?: IntFilter<"Actuacio"> | number
     cronicaId?: IntNullableFilter<"Actuacio"> | number | null
-    castells?: CastellListRelationFilter
-    fotos?: FotoListRelationFilter
     temporada?: XOR<TemporadaScalarRelationFilter, TemporadaWhereInput>
+    castells?: CastellListRelationFilter
     cronica?: XOR<CronicaNullableScalarRelationFilter, CronicaWhereInput> | null
+    fotos?: FotoListRelationFilter
+    colles?: CollaListRelationFilter
   }
 
   export type ActuacioOrderByWithRelationInput = {
@@ -8489,10 +9829,11 @@ export namespace Prisma {
     nom?: SortOrder
     temporadaId?: SortOrder
     cronicaId?: SortOrderInput | SortOrder
-    castells?: CastellOrderByRelationAggregateInput
-    fotos?: FotoOrderByRelationAggregateInput
     temporada?: TemporadaOrderByWithRelationInput
+    castells?: CastellOrderByRelationAggregateInput
     cronica?: CronicaOrderByWithRelationInput
+    fotos?: FotoOrderByRelationAggregateInput
+    colles?: CollaOrderByRelationAggregateInput
   }
 
   export type ActuacioWhereUniqueInput = Prisma.AtLeast<{
@@ -8507,10 +9848,11 @@ export namespace Prisma {
     nom?: StringFilter<"Actuacio"> | string
     temporadaId?: IntFilter<"Actuacio"> | number
     cronicaId?: IntNullableFilter<"Actuacio"> | number | null
-    castells?: CastellListRelationFilter
-    fotos?: FotoListRelationFilter
     temporada?: XOR<TemporadaScalarRelationFilter, TemporadaWhereInput>
+    castells?: CastellListRelationFilter
     cronica?: XOR<CronicaNullableScalarRelationFilter, CronicaWhereInput> | null
+    fotos?: FotoListRelationFilter
+    colles?: CollaListRelationFilter
   }, "id">
 
   export type ActuacioOrderByWithAggregationInput = {
@@ -8553,8 +9895,8 @@ export namespace Prisma {
     Text?: StringFilter<"Cronica"> | string
     autorId?: IntFilter<"Cronica"> | number
     actuacioId?: IntFilter<"Cronica"> | number
-    autor?: XOR<UsuariScalarRelationFilter, UsuariWhereInput>
     actuacio?: XOR<ActuacioScalarRelationFilter, ActuacioWhereInput>
+    autor?: XOR<UsuariScalarRelationFilter, UsuariWhereInput>
   }
 
   export type CronicaOrderByWithRelationInput = {
@@ -8564,8 +9906,8 @@ export namespace Prisma {
     Text?: SortOrder
     autorId?: SortOrder
     actuacioId?: SortOrder
-    autor?: UsuariOrderByWithRelationInput
     actuacio?: ActuacioOrderByWithRelationInput
+    autor?: UsuariOrderByWithRelationInput
   }
 
   export type CronicaWhereUniqueInput = Prisma.AtLeast<{
@@ -8578,8 +9920,8 @@ export namespace Prisma {
     Titol?: StringFilter<"Cronica"> | string
     Text?: StringFilter<"Cronica"> | string
     autorId?: IntFilter<"Cronica"> | number
-    autor?: XOR<UsuariScalarRelationFilter, UsuariWhereInput>
     actuacio?: XOR<ActuacioScalarRelationFilter, ActuacioWhereInput>
+    autor?: XOR<UsuariScalarRelationFilter, UsuariWhereInput>
   }, "id" | "actuacioId">
 
   export type CronicaOrderByWithAggregationInput = {
@@ -8616,7 +9958,9 @@ export namespace Prisma {
     nom?: StringFilter<"Castell"> | string
     actuacioId?: IntFilter<"Castell"> | number
     resultat?: StringFilter<"Castell"> | string
+    collaId?: IntFilter<"Castell"> | number
     actuacio?: XOR<ActuacioScalarRelationFilter, ActuacioWhereInput>
+    colla?: XOR<CollaScalarRelationFilter, CollaWhereInput>
     fotos?: FotoListRelationFilter
   }
 
@@ -8625,7 +9969,9 @@ export namespace Prisma {
     nom?: SortOrder
     actuacioId?: SortOrder
     resultat?: SortOrder
+    collaId?: SortOrder
     actuacio?: ActuacioOrderByWithRelationInput
+    colla?: CollaOrderByWithRelationInput
     fotos?: FotoOrderByRelationAggregateInput
   }
 
@@ -8637,7 +9983,9 @@ export namespace Prisma {
     nom?: StringFilter<"Castell"> | string
     actuacioId?: IntFilter<"Castell"> | number
     resultat?: StringFilter<"Castell"> | string
+    collaId?: IntFilter<"Castell"> | number
     actuacio?: XOR<ActuacioScalarRelationFilter, ActuacioWhereInput>
+    colla?: XOR<CollaScalarRelationFilter, CollaWhereInput>
     fotos?: FotoListRelationFilter
   }, "id">
 
@@ -8646,6 +9994,7 @@ export namespace Prisma {
     nom?: SortOrder
     actuacioId?: SortOrder
     resultat?: SortOrder
+    collaId?: SortOrder
     _count?: CastellCountOrderByAggregateInput
     _avg?: CastellAvgOrderByAggregateInput
     _max?: CastellMaxOrderByAggregateInput
@@ -8661,6 +10010,7 @@ export namespace Prisma {
     nom?: StringWithAggregatesFilter<"Castell"> | string
     actuacioId?: IntWithAggregatesFilter<"Castell"> | number
     resultat?: StringWithAggregatesFilter<"Castell"> | string
+    collaId?: IntWithAggregatesFilter<"Castell"> | number
   }
 
   export type UsuariWhereInput = {
@@ -8671,8 +10021,8 @@ export namespace Prisma {
     correu?: StringFilter<"Usuari"> | string
     contrassenya?: StringFilter<"Usuari"> | string
     nom?: StringFilter<"Usuari"> | string
-    fotos?: FotoListRelationFilter
     croniques?: CronicaListRelationFilter
+    fotos?: FotoListRelationFilter
   }
 
   export type UsuariOrderByWithRelationInput = {
@@ -8680,8 +10030,8 @@ export namespace Prisma {
     correu?: SortOrder
     contrassenya?: SortOrder
     nom?: SortOrder
-    fotos?: FotoOrderByRelationAggregateInput
     croniques?: CronicaOrderByRelationAggregateInput
+    fotos?: FotoOrderByRelationAggregateInput
   }
 
   export type UsuariWhereUniqueInput = Prisma.AtLeast<{
@@ -8692,8 +10042,8 @@ export namespace Prisma {
     NOT?: UsuariWhereInput | UsuariWhereInput[]
     contrassenya?: StringFilter<"Usuari"> | string
     nom?: StringFilter<"Usuari"> | string
-    fotos?: FotoListRelationFilter
     croniques?: CronicaListRelationFilter
+    fotos?: FotoListRelationFilter
   }, "id" | "correu">
 
   export type UsuariOrderByWithAggregationInput = {
@@ -8730,9 +10080,11 @@ export namespace Prisma {
     mainFoto?: BoolFilter<"Foto"> | boolean
     actuacioId?: IntFilter<"Foto"> | number
     castellId?: IntFilter<"Foto"> | number
-    autor?: XOR<UsuariScalarRelationFilter, UsuariWhereInput>
+    collaId?: IntFilter<"Foto"> | number
     actuacio?: XOR<ActuacioScalarRelationFilter, ActuacioWhereInput>
-    castell?: XOR<CastellNullableScalarRelationFilter, CastellWhereInput> | null
+    autor?: XOR<UsuariScalarRelationFilter, UsuariWhereInput>
+    castell?: XOR<CastellScalarRelationFilter, CastellWhereInput>
+    colla?: XOR<CollaScalarRelationFilter, CollaWhereInput>
   }
 
   export type FotoOrderByWithRelationInput = {
@@ -8744,9 +10096,11 @@ export namespace Prisma {
     mainFoto?: SortOrder
     actuacioId?: SortOrder
     castellId?: SortOrder
-    autor?: UsuariOrderByWithRelationInput
+    collaId?: SortOrder
     actuacio?: ActuacioOrderByWithRelationInput
+    autor?: UsuariOrderByWithRelationInput
     castell?: CastellOrderByWithRelationInput
+    colla?: CollaOrderByWithRelationInput
   }
 
   export type FotoWhereUniqueInput = Prisma.AtLeast<{
@@ -8761,9 +10115,11 @@ export namespace Prisma {
     mainFoto?: BoolFilter<"Foto"> | boolean
     actuacioId?: IntFilter<"Foto"> | number
     castellId?: IntFilter<"Foto"> | number
-    autor?: XOR<UsuariScalarRelationFilter, UsuariWhereInput>
+    collaId?: IntFilter<"Foto"> | number
     actuacio?: XOR<ActuacioScalarRelationFilter, ActuacioWhereInput>
-    castell?: XOR<CastellNullableScalarRelationFilter, CastellWhereInput> | null
+    autor?: XOR<UsuariScalarRelationFilter, UsuariWhereInput>
+    castell?: XOR<CastellScalarRelationFilter, CastellWhereInput>
+    colla?: XOR<CollaScalarRelationFilter, CollaWhereInput>
   }, "id">
 
   export type FotoOrderByWithAggregationInput = {
@@ -8775,6 +10131,7 @@ export namespace Prisma {
     mainFoto?: SortOrder
     actuacioId?: SortOrder
     castellId?: SortOrder
+    collaId?: SortOrder
     _count?: FotoCountOrderByAggregateInput
     _avg?: FotoAvgOrderByAggregateInput
     _max?: FotoMaxOrderByAggregateInput
@@ -8794,6 +10151,7 @@ export namespace Prisma {
     mainFoto?: BoolWithAggregatesFilter<"Foto"> | boolean
     actuacioId?: IntWithAggregatesFilter<"Foto"> | number
     castellId?: IntWithAggregatesFilter<"Foto"> | number
+    collaId?: IntWithAggregatesFilter<"Foto"> | number
   }
 
   export type TemporadaWhereInput = {
@@ -8838,6 +10196,54 @@ export namespace Prisma {
     year?: IntWithAggregatesFilter<"Temporada"> | number
   }
 
+  export type CollaWhereInput = {
+    AND?: CollaWhereInput | CollaWhereInput[]
+    OR?: CollaWhereInput[]
+    NOT?: CollaWhereInput | CollaWhereInput[]
+    id?: IntFilter<"Colla"> | number
+    name?: StringFilter<"Colla"> | string
+    castells?: CastellListRelationFilter
+    fotos?: FotoListRelationFilter
+    actuacions?: ActuacioListRelationFilter
+  }
+
+  export type CollaOrderByWithRelationInput = {
+    id?: SortOrder
+    name?: SortOrder
+    castells?: CastellOrderByRelationAggregateInput
+    fotos?: FotoOrderByRelationAggregateInput
+    actuacions?: ActuacioOrderByRelationAggregateInput
+  }
+
+  export type CollaWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    name?: string
+    AND?: CollaWhereInput | CollaWhereInput[]
+    OR?: CollaWhereInput[]
+    NOT?: CollaWhereInput | CollaWhereInput[]
+    castells?: CastellListRelationFilter
+    fotos?: FotoListRelationFilter
+    actuacions?: ActuacioListRelationFilter
+  }, "id" | "name">
+
+  export type CollaOrderByWithAggregationInput = {
+    id?: SortOrder
+    name?: SortOrder
+    _count?: CollaCountOrderByAggregateInput
+    _avg?: CollaAvgOrderByAggregateInput
+    _max?: CollaMaxOrderByAggregateInput
+    _min?: CollaMinOrderByAggregateInput
+    _sum?: CollaSumOrderByAggregateInput
+  }
+
+  export type CollaScalarWhereWithAggregatesInput = {
+    AND?: CollaScalarWhereWithAggregatesInput | CollaScalarWhereWithAggregatesInput[]
+    OR?: CollaScalarWhereWithAggregatesInput[]
+    NOT?: CollaScalarWhereWithAggregatesInput | CollaScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"Colla"> | number
+    name?: StringWithAggregatesFilter<"Colla"> | string
+  }
+
   export type ActuacioCreateInput = {
     data: Date | string
     dataHora?: Date | string | null
@@ -8845,10 +10251,11 @@ export namespace Prisma {
     ciutat: string
     nom: string
     cronicaId?: number | null
-    castells?: CastellCreateNestedManyWithoutActuacioInput
-    fotos?: FotoCreateNestedManyWithoutActuacioInput
     temporada: TemporadaCreateNestedOneWithoutActuacionsInput
+    castells?: CastellCreateNestedManyWithoutActuacioInput
     cronica?: CronicaCreateNestedOneWithoutActuacioInput
+    fotos?: FotoCreateNestedManyWithoutActuacioInput
+    colles?: CollaCreateNestedManyWithoutActuacionsInput
   }
 
   export type ActuacioUncheckedCreateInput = {
@@ -8861,8 +10268,9 @@ export namespace Prisma {
     temporadaId: number
     cronicaId?: number | null
     castells?: CastellUncheckedCreateNestedManyWithoutActuacioInput
-    fotos?: FotoUncheckedCreateNestedManyWithoutActuacioInput
     cronica?: CronicaUncheckedCreateNestedOneWithoutActuacioInput
+    fotos?: FotoUncheckedCreateNestedManyWithoutActuacioInput
+    colles?: CollaUncheckedCreateNestedManyWithoutActuacionsInput
   }
 
   export type ActuacioUpdateInput = {
@@ -8872,10 +10280,11 @@ export namespace Prisma {
     ciutat?: StringFieldUpdateOperationsInput | string
     nom?: StringFieldUpdateOperationsInput | string
     cronicaId?: NullableIntFieldUpdateOperationsInput | number | null
-    castells?: CastellUpdateManyWithoutActuacioNestedInput
-    fotos?: FotoUpdateManyWithoutActuacioNestedInput
     temporada?: TemporadaUpdateOneRequiredWithoutActuacionsNestedInput
+    castells?: CastellUpdateManyWithoutActuacioNestedInput
     cronica?: CronicaUpdateOneWithoutActuacioNestedInput
+    fotos?: FotoUpdateManyWithoutActuacioNestedInput
+    colles?: CollaUpdateManyWithoutActuacionsNestedInput
   }
 
   export type ActuacioUncheckedUpdateInput = {
@@ -8888,8 +10297,9 @@ export namespace Prisma {
     temporadaId?: IntFieldUpdateOperationsInput | number
     cronicaId?: NullableIntFieldUpdateOperationsInput | number | null
     castells?: CastellUncheckedUpdateManyWithoutActuacioNestedInput
-    fotos?: FotoUncheckedUpdateManyWithoutActuacioNestedInput
     cronica?: CronicaUncheckedUpdateOneWithoutActuacioNestedInput
+    fotos?: FotoUncheckedUpdateManyWithoutActuacioNestedInput
+    colles?: CollaUncheckedUpdateManyWithoutActuacionsNestedInput
   }
 
   export type ActuacioCreateManyInput = {
@@ -8927,8 +10337,8 @@ export namespace Prisma {
     created?: Date | string
     Titol: string
     Text: string
-    autor: UsuariCreateNestedOneWithoutCroniquesInput
     actuacio: ActuacioCreateNestedOneWithoutCronicaInput
+    autor: UsuariCreateNestedOneWithoutCroniquesInput
   }
 
   export type CronicaUncheckedCreateInput = {
@@ -8944,8 +10354,8 @@ export namespace Prisma {
     created?: DateTimeFieldUpdateOperationsInput | Date | string
     Titol?: StringFieldUpdateOperationsInput | string
     Text?: StringFieldUpdateOperationsInput | string
-    autor?: UsuariUpdateOneRequiredWithoutCroniquesNestedInput
     actuacio?: ActuacioUpdateOneRequiredWithoutCronicaNestedInput
+    autor?: UsuariUpdateOneRequiredWithoutCroniquesNestedInput
   }
 
   export type CronicaUncheckedUpdateInput = {
@@ -8985,6 +10395,7 @@ export namespace Prisma {
     nom: string
     resultat: string
     actuacio: ActuacioCreateNestedOneWithoutCastellsInput
+    colla: CollaCreateNestedOneWithoutCastellsInput
     fotos?: FotoCreateNestedManyWithoutCastellInput
   }
 
@@ -8993,6 +10404,7 @@ export namespace Prisma {
     nom: string
     actuacioId: number
     resultat: string
+    collaId: number
     fotos?: FotoUncheckedCreateNestedManyWithoutCastellInput
   }
 
@@ -9000,6 +10412,7 @@ export namespace Prisma {
     nom?: StringFieldUpdateOperationsInput | string
     resultat?: StringFieldUpdateOperationsInput | string
     actuacio?: ActuacioUpdateOneRequiredWithoutCastellsNestedInput
+    colla?: CollaUpdateOneRequiredWithoutCastellsNestedInput
     fotos?: FotoUpdateManyWithoutCastellNestedInput
   }
 
@@ -9008,6 +10421,7 @@ export namespace Prisma {
     nom?: StringFieldUpdateOperationsInput | string
     actuacioId?: IntFieldUpdateOperationsInput | number
     resultat?: StringFieldUpdateOperationsInput | string
+    collaId?: IntFieldUpdateOperationsInput | number
     fotos?: FotoUncheckedUpdateManyWithoutCastellNestedInput
   }
 
@@ -9016,6 +10430,7 @@ export namespace Prisma {
     nom: string
     actuacioId: number
     resultat: string
+    collaId: number
   }
 
   export type CastellUpdateManyMutationInput = {
@@ -9028,14 +10443,15 @@ export namespace Prisma {
     nom?: StringFieldUpdateOperationsInput | string
     actuacioId?: IntFieldUpdateOperationsInput | number
     resultat?: StringFieldUpdateOperationsInput | string
+    collaId?: IntFieldUpdateOperationsInput | number
   }
 
   export type UsuariCreateInput = {
     correu: string
     contrassenya: string
     nom: string
-    fotos?: FotoCreateNestedManyWithoutAutorInput
     croniques?: CronicaCreateNestedManyWithoutAutorInput
+    fotos?: FotoCreateNestedManyWithoutAutorInput
   }
 
   export type UsuariUncheckedCreateInput = {
@@ -9043,16 +10459,16 @@ export namespace Prisma {
     correu: string
     contrassenya: string
     nom: string
-    fotos?: FotoUncheckedCreateNestedManyWithoutAutorInput
     croniques?: CronicaUncheckedCreateNestedManyWithoutAutorInput
+    fotos?: FotoUncheckedCreateNestedManyWithoutAutorInput
   }
 
   export type UsuariUpdateInput = {
     correu?: StringFieldUpdateOperationsInput | string
     contrassenya?: StringFieldUpdateOperationsInput | string
     nom?: StringFieldUpdateOperationsInput | string
-    fotos?: FotoUpdateManyWithoutAutorNestedInput
     croniques?: CronicaUpdateManyWithoutAutorNestedInput
+    fotos?: FotoUpdateManyWithoutAutorNestedInput
   }
 
   export type UsuariUncheckedUpdateInput = {
@@ -9060,8 +10476,8 @@ export namespace Prisma {
     correu?: StringFieldUpdateOperationsInput | string
     contrassenya?: StringFieldUpdateOperationsInput | string
     nom?: StringFieldUpdateOperationsInput | string
-    fotos?: FotoUncheckedUpdateManyWithoutAutorNestedInput
     croniques?: CronicaUncheckedUpdateManyWithoutAutorNestedInput
+    fotos?: FotoUncheckedUpdateManyWithoutAutorNestedInput
   }
 
   export type UsuariCreateManyInput = {
@@ -9089,9 +10505,10 @@ export namespace Prisma {
     name: string
     url?: string | null
     mainFoto?: boolean
-    autor: UsuariCreateNestedOneWithoutFotosInput
     actuacio: ActuacioCreateNestedOneWithoutFotosInput
-    castell?: CastellCreateNestedOneWithoutFotosInput
+    autor: UsuariCreateNestedOneWithoutFotosInput
+    castell: CastellCreateNestedOneWithoutFotosInput
+    colla: CollaCreateNestedOneWithoutFotosInput
   }
 
   export type FotoUncheckedCreateInput = {
@@ -9103,6 +10520,7 @@ export namespace Prisma {
     mainFoto?: boolean
     actuacioId: number
     castellId: number
+    collaId: number
   }
 
   export type FotoUpdateInput = {
@@ -9110,9 +10528,10 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     url?: NullableStringFieldUpdateOperationsInput | string | null
     mainFoto?: BoolFieldUpdateOperationsInput | boolean
-    autor?: UsuariUpdateOneRequiredWithoutFotosNestedInput
     actuacio?: ActuacioUpdateOneRequiredWithoutFotosNestedInput
-    castell?: CastellUpdateOneWithoutFotosNestedInput
+    autor?: UsuariUpdateOneRequiredWithoutFotosNestedInput
+    castell?: CastellUpdateOneRequiredWithoutFotosNestedInput
+    colla?: CollaUpdateOneRequiredWithoutFotosNestedInput
   }
 
   export type FotoUncheckedUpdateInput = {
@@ -9124,6 +10543,7 @@ export namespace Prisma {
     mainFoto?: BoolFieldUpdateOperationsInput | boolean
     actuacioId?: IntFieldUpdateOperationsInput | number
     castellId?: IntFieldUpdateOperationsInput | number
+    collaId?: IntFieldUpdateOperationsInput | number
   }
 
   export type FotoCreateManyInput = {
@@ -9135,6 +10555,7 @@ export namespace Prisma {
     mainFoto?: boolean
     actuacioId: number
     castellId: number
+    collaId: number
   }
 
   export type FotoUpdateManyMutationInput = {
@@ -9153,6 +10574,7 @@ export namespace Prisma {
     mainFoto?: BoolFieldUpdateOperationsInput | boolean
     actuacioId?: IntFieldUpdateOperationsInput | number
     castellId?: IntFieldUpdateOperationsInput | number
+    collaId?: IntFieldUpdateOperationsInput | number
   }
 
   export type TemporadaCreateInput = {
@@ -9189,6 +10611,53 @@ export namespace Prisma {
   export type TemporadaUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     year?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type CollaCreateInput = {
+    id: number
+    name: string
+    castells?: CastellCreateNestedManyWithoutCollaInput
+    fotos?: FotoCreateNestedManyWithoutCollaInput
+    actuacions?: ActuacioCreateNestedManyWithoutCollesInput
+  }
+
+  export type CollaUncheckedCreateInput = {
+    id: number
+    name: string
+    castells?: CastellUncheckedCreateNestedManyWithoutCollaInput
+    fotos?: FotoUncheckedCreateNestedManyWithoutCollaInput
+    actuacions?: ActuacioUncheckedCreateNestedManyWithoutCollesInput
+  }
+
+  export type CollaUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: StringFieldUpdateOperationsInput | string
+    castells?: CastellUpdateManyWithoutCollaNestedInput
+    fotos?: FotoUpdateManyWithoutCollaNestedInput
+    actuacions?: ActuacioUpdateManyWithoutCollesNestedInput
+  }
+
+  export type CollaUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: StringFieldUpdateOperationsInput | string
+    castells?: CastellUncheckedUpdateManyWithoutCollaNestedInput
+    fotos?: FotoUncheckedUpdateManyWithoutCollaNestedInput
+    actuacions?: ActuacioUncheckedUpdateManyWithoutCollesNestedInput
+  }
+
+  export type CollaCreateManyInput = {
+    id: number
+    name: string
+  }
+
+  export type CollaUpdateManyMutationInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type CollaUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: StringFieldUpdateOperationsInput | string
   }
 
   export type IntFilter<$PrismaModel = never> = {
@@ -9265,10 +10734,20 @@ export namespace Prisma {
     not?: NestedIntNullableFilter<$PrismaModel> | number | null
   }
 
+  export type TemporadaScalarRelationFilter = {
+    is?: TemporadaWhereInput
+    isNot?: TemporadaWhereInput
+  }
+
   export type CastellListRelationFilter = {
     every?: CastellWhereInput
     some?: CastellWhereInput
     none?: CastellWhereInput
+  }
+
+  export type CronicaNullableScalarRelationFilter = {
+    is?: CronicaWhereInput | null
+    isNot?: CronicaWhereInput | null
   }
 
   export type FotoListRelationFilter = {
@@ -9277,14 +10756,10 @@ export namespace Prisma {
     none?: FotoWhereInput
   }
 
-  export type TemporadaScalarRelationFilter = {
-    is?: TemporadaWhereInput
-    isNot?: TemporadaWhereInput
-  }
-
-  export type CronicaNullableScalarRelationFilter = {
-    is?: CronicaWhereInput | null
-    isNot?: CronicaWhereInput | null
+  export type CollaListRelationFilter = {
+    every?: CollaWhereInput
+    some?: CollaWhereInput
+    none?: CollaWhereInput
   }
 
   export type SortOrderInput = {
@@ -9297,6 +10772,10 @@ export namespace Prisma {
   }
 
   export type FotoOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type CollaOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -9441,14 +10920,14 @@ export namespace Prisma {
     _max?: NestedIntNullableFilter<$PrismaModel>
   }
 
-  export type UsuariScalarRelationFilter = {
-    is?: UsuariWhereInput
-    isNot?: UsuariWhereInput
-  }
-
   export type ActuacioScalarRelationFilter = {
     is?: ActuacioWhereInput
     isNot?: ActuacioWhereInput
+  }
+
+  export type UsuariScalarRelationFilter = {
+    is?: UsuariWhereInput
+    isNot?: UsuariWhereInput
   }
 
   export type CronicaCountOrderByAggregateInput = {
@@ -9490,16 +10969,23 @@ export namespace Prisma {
     actuacioId?: SortOrder
   }
 
+  export type CollaScalarRelationFilter = {
+    is?: CollaWhereInput
+    isNot?: CollaWhereInput
+  }
+
   export type CastellCountOrderByAggregateInput = {
     id?: SortOrder
     nom?: SortOrder
     actuacioId?: SortOrder
     resultat?: SortOrder
+    collaId?: SortOrder
   }
 
   export type CastellAvgOrderByAggregateInput = {
     id?: SortOrder
     actuacioId?: SortOrder
+    collaId?: SortOrder
   }
 
   export type CastellMaxOrderByAggregateInput = {
@@ -9507,6 +10993,7 @@ export namespace Prisma {
     nom?: SortOrder
     actuacioId?: SortOrder
     resultat?: SortOrder
+    collaId?: SortOrder
   }
 
   export type CastellMinOrderByAggregateInput = {
@@ -9514,11 +11001,13 @@ export namespace Prisma {
     nom?: SortOrder
     actuacioId?: SortOrder
     resultat?: SortOrder
+    collaId?: SortOrder
   }
 
   export type CastellSumOrderByAggregateInput = {
     id?: SortOrder
     actuacioId?: SortOrder
+    collaId?: SortOrder
   }
 
   export type CronicaListRelationFilter = {
@@ -9565,9 +11054,9 @@ export namespace Prisma {
     not?: NestedBoolFilter<$PrismaModel> | boolean
   }
 
-  export type CastellNullableScalarRelationFilter = {
-    is?: CastellWhereInput | null
-    isNot?: CastellWhereInput | null
+  export type CastellScalarRelationFilter = {
+    is?: CastellWhereInput
+    isNot?: CastellWhereInput
   }
 
   export type FotoCountOrderByAggregateInput = {
@@ -9579,6 +11068,7 @@ export namespace Prisma {
     mainFoto?: SortOrder
     actuacioId?: SortOrder
     castellId?: SortOrder
+    collaId?: SortOrder
   }
 
   export type FotoAvgOrderByAggregateInput = {
@@ -9586,6 +11076,7 @@ export namespace Prisma {
     autorId?: SortOrder
     actuacioId?: SortOrder
     castellId?: SortOrder
+    collaId?: SortOrder
   }
 
   export type FotoMaxOrderByAggregateInput = {
@@ -9597,6 +11088,7 @@ export namespace Prisma {
     mainFoto?: SortOrder
     actuacioId?: SortOrder
     castellId?: SortOrder
+    collaId?: SortOrder
   }
 
   export type FotoMinOrderByAggregateInput = {
@@ -9608,6 +11100,7 @@ export namespace Prisma {
     mainFoto?: SortOrder
     actuacioId?: SortOrder
     castellId?: SortOrder
+    collaId?: SortOrder
   }
 
   export type FotoSumOrderByAggregateInput = {
@@ -9615,6 +11108,7 @@ export namespace Prisma {
     autorId?: SortOrder
     actuacioId?: SortOrder
     castellId?: SortOrder
+    collaId?: SortOrder
   }
 
   export type BoolWithAggregatesFilter<$PrismaModel = never> = {
@@ -9660,11 +11154,46 @@ export namespace Prisma {
     year?: SortOrder
   }
 
+  export type CollaCountOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+  }
+
+  export type CollaAvgOrderByAggregateInput = {
+    id?: SortOrder
+  }
+
+  export type CollaMaxOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+  }
+
+  export type CollaMinOrderByAggregateInput = {
+    id?: SortOrder
+    name?: SortOrder
+  }
+
+  export type CollaSumOrderByAggregateInput = {
+    id?: SortOrder
+  }
+
+  export type TemporadaCreateNestedOneWithoutActuacionsInput = {
+    create?: XOR<TemporadaCreateWithoutActuacionsInput, TemporadaUncheckedCreateWithoutActuacionsInput>
+    connectOrCreate?: TemporadaCreateOrConnectWithoutActuacionsInput
+    connect?: TemporadaWhereUniqueInput
+  }
+
   export type CastellCreateNestedManyWithoutActuacioInput = {
     create?: XOR<CastellCreateWithoutActuacioInput, CastellUncheckedCreateWithoutActuacioInput> | CastellCreateWithoutActuacioInput[] | CastellUncheckedCreateWithoutActuacioInput[]
     connectOrCreate?: CastellCreateOrConnectWithoutActuacioInput | CastellCreateOrConnectWithoutActuacioInput[]
     createMany?: CastellCreateManyActuacioInputEnvelope
     connect?: CastellWhereUniqueInput | CastellWhereUniqueInput[]
+  }
+
+  export type CronicaCreateNestedOneWithoutActuacioInput = {
+    create?: XOR<CronicaCreateWithoutActuacioInput, CronicaUncheckedCreateWithoutActuacioInput>
+    connectOrCreate?: CronicaCreateOrConnectWithoutActuacioInput
+    connect?: CronicaWhereUniqueInput
   }
 
   export type FotoCreateNestedManyWithoutActuacioInput = {
@@ -9674,16 +11203,10 @@ export namespace Prisma {
     connect?: FotoWhereUniqueInput | FotoWhereUniqueInput[]
   }
 
-  export type TemporadaCreateNestedOneWithoutActuacionsInput = {
-    create?: XOR<TemporadaCreateWithoutActuacionsInput, TemporadaUncheckedCreateWithoutActuacionsInput>
-    connectOrCreate?: TemporadaCreateOrConnectWithoutActuacionsInput
-    connect?: TemporadaWhereUniqueInput
-  }
-
-  export type CronicaCreateNestedOneWithoutActuacioInput = {
-    create?: XOR<CronicaCreateWithoutActuacioInput, CronicaUncheckedCreateWithoutActuacioInput>
-    connectOrCreate?: CronicaCreateOrConnectWithoutActuacioInput
-    connect?: CronicaWhereUniqueInput
+  export type CollaCreateNestedManyWithoutActuacionsInput = {
+    create?: XOR<CollaCreateWithoutActuacionsInput, CollaUncheckedCreateWithoutActuacionsInput> | CollaCreateWithoutActuacionsInput[] | CollaUncheckedCreateWithoutActuacionsInput[]
+    connectOrCreate?: CollaCreateOrConnectWithoutActuacionsInput | CollaCreateOrConnectWithoutActuacionsInput[]
+    connect?: CollaWhereUniqueInput | CollaWhereUniqueInput[]
   }
 
   export type CastellUncheckedCreateNestedManyWithoutActuacioInput = {
@@ -9693,6 +11216,12 @@ export namespace Prisma {
     connect?: CastellWhereUniqueInput | CastellWhereUniqueInput[]
   }
 
+  export type CronicaUncheckedCreateNestedOneWithoutActuacioInput = {
+    create?: XOR<CronicaCreateWithoutActuacioInput, CronicaUncheckedCreateWithoutActuacioInput>
+    connectOrCreate?: CronicaCreateOrConnectWithoutActuacioInput
+    connect?: CronicaWhereUniqueInput
+  }
+
   export type FotoUncheckedCreateNestedManyWithoutActuacioInput = {
     create?: XOR<FotoCreateWithoutActuacioInput, FotoUncheckedCreateWithoutActuacioInput> | FotoCreateWithoutActuacioInput[] | FotoUncheckedCreateWithoutActuacioInput[]
     connectOrCreate?: FotoCreateOrConnectWithoutActuacioInput | FotoCreateOrConnectWithoutActuacioInput[]
@@ -9700,10 +11229,10 @@ export namespace Prisma {
     connect?: FotoWhereUniqueInput | FotoWhereUniqueInput[]
   }
 
-  export type CronicaUncheckedCreateNestedOneWithoutActuacioInput = {
-    create?: XOR<CronicaCreateWithoutActuacioInput, CronicaUncheckedCreateWithoutActuacioInput>
-    connectOrCreate?: CronicaCreateOrConnectWithoutActuacioInput
-    connect?: CronicaWhereUniqueInput
+  export type CollaUncheckedCreateNestedManyWithoutActuacionsInput = {
+    create?: XOR<CollaCreateWithoutActuacionsInput, CollaUncheckedCreateWithoutActuacionsInput> | CollaCreateWithoutActuacionsInput[] | CollaUncheckedCreateWithoutActuacionsInput[]
+    connectOrCreate?: CollaCreateOrConnectWithoutActuacionsInput | CollaCreateOrConnectWithoutActuacionsInput[]
+    connect?: CollaWhereUniqueInput | CollaWhereUniqueInput[]
   }
 
   export type DateTimeFieldUpdateOperationsInput = {
@@ -9730,6 +11259,14 @@ export namespace Prisma {
     divide?: number
   }
 
+  export type TemporadaUpdateOneRequiredWithoutActuacionsNestedInput = {
+    create?: XOR<TemporadaCreateWithoutActuacionsInput, TemporadaUncheckedCreateWithoutActuacionsInput>
+    connectOrCreate?: TemporadaCreateOrConnectWithoutActuacionsInput
+    upsert?: TemporadaUpsertWithoutActuacionsInput
+    connect?: TemporadaWhereUniqueInput
+    update?: XOR<XOR<TemporadaUpdateToOneWithWhereWithoutActuacionsInput, TemporadaUpdateWithoutActuacionsInput>, TemporadaUncheckedUpdateWithoutActuacionsInput>
+  }
+
   export type CastellUpdateManyWithoutActuacioNestedInput = {
     create?: XOR<CastellCreateWithoutActuacioInput, CastellUncheckedCreateWithoutActuacioInput> | CastellCreateWithoutActuacioInput[] | CastellUncheckedCreateWithoutActuacioInput[]
     connectOrCreate?: CastellCreateOrConnectWithoutActuacioInput | CastellCreateOrConnectWithoutActuacioInput[]
@@ -9742,6 +11279,16 @@ export namespace Prisma {
     update?: CastellUpdateWithWhereUniqueWithoutActuacioInput | CastellUpdateWithWhereUniqueWithoutActuacioInput[]
     updateMany?: CastellUpdateManyWithWhereWithoutActuacioInput | CastellUpdateManyWithWhereWithoutActuacioInput[]
     deleteMany?: CastellScalarWhereInput | CastellScalarWhereInput[]
+  }
+
+  export type CronicaUpdateOneWithoutActuacioNestedInput = {
+    create?: XOR<CronicaCreateWithoutActuacioInput, CronicaUncheckedCreateWithoutActuacioInput>
+    connectOrCreate?: CronicaCreateOrConnectWithoutActuacioInput
+    upsert?: CronicaUpsertWithoutActuacioInput
+    disconnect?: CronicaWhereInput | boolean
+    delete?: CronicaWhereInput | boolean
+    connect?: CronicaWhereUniqueInput
+    update?: XOR<XOR<CronicaUpdateToOneWithWhereWithoutActuacioInput, CronicaUpdateWithoutActuacioInput>, CronicaUncheckedUpdateWithoutActuacioInput>
   }
 
   export type FotoUpdateManyWithoutActuacioNestedInput = {
@@ -9758,22 +11305,17 @@ export namespace Prisma {
     deleteMany?: FotoScalarWhereInput | FotoScalarWhereInput[]
   }
 
-  export type TemporadaUpdateOneRequiredWithoutActuacionsNestedInput = {
-    create?: XOR<TemporadaCreateWithoutActuacionsInput, TemporadaUncheckedCreateWithoutActuacionsInput>
-    connectOrCreate?: TemporadaCreateOrConnectWithoutActuacionsInput
-    upsert?: TemporadaUpsertWithoutActuacionsInput
-    connect?: TemporadaWhereUniqueInput
-    update?: XOR<XOR<TemporadaUpdateToOneWithWhereWithoutActuacionsInput, TemporadaUpdateWithoutActuacionsInput>, TemporadaUncheckedUpdateWithoutActuacionsInput>
-  }
-
-  export type CronicaUpdateOneWithoutActuacioNestedInput = {
-    create?: XOR<CronicaCreateWithoutActuacioInput, CronicaUncheckedCreateWithoutActuacioInput>
-    connectOrCreate?: CronicaCreateOrConnectWithoutActuacioInput
-    upsert?: CronicaUpsertWithoutActuacioInput
-    disconnect?: CronicaWhereInput | boolean
-    delete?: CronicaWhereInput | boolean
-    connect?: CronicaWhereUniqueInput
-    update?: XOR<XOR<CronicaUpdateToOneWithWhereWithoutActuacioInput, CronicaUpdateWithoutActuacioInput>, CronicaUncheckedUpdateWithoutActuacioInput>
+  export type CollaUpdateManyWithoutActuacionsNestedInput = {
+    create?: XOR<CollaCreateWithoutActuacionsInput, CollaUncheckedCreateWithoutActuacionsInput> | CollaCreateWithoutActuacionsInput[] | CollaUncheckedCreateWithoutActuacionsInput[]
+    connectOrCreate?: CollaCreateOrConnectWithoutActuacionsInput | CollaCreateOrConnectWithoutActuacionsInput[]
+    upsert?: CollaUpsertWithWhereUniqueWithoutActuacionsInput | CollaUpsertWithWhereUniqueWithoutActuacionsInput[]
+    set?: CollaWhereUniqueInput | CollaWhereUniqueInput[]
+    disconnect?: CollaWhereUniqueInput | CollaWhereUniqueInput[]
+    delete?: CollaWhereUniqueInput | CollaWhereUniqueInput[]
+    connect?: CollaWhereUniqueInput | CollaWhereUniqueInput[]
+    update?: CollaUpdateWithWhereUniqueWithoutActuacionsInput | CollaUpdateWithWhereUniqueWithoutActuacionsInput[]
+    updateMany?: CollaUpdateManyWithWhereWithoutActuacionsInput | CollaUpdateManyWithWhereWithoutActuacionsInput[]
+    deleteMany?: CollaScalarWhereInput | CollaScalarWhereInput[]
   }
 
   export type IntFieldUpdateOperationsInput = {
@@ -9798,6 +11340,16 @@ export namespace Prisma {
     deleteMany?: CastellScalarWhereInput | CastellScalarWhereInput[]
   }
 
+  export type CronicaUncheckedUpdateOneWithoutActuacioNestedInput = {
+    create?: XOR<CronicaCreateWithoutActuacioInput, CronicaUncheckedCreateWithoutActuacioInput>
+    connectOrCreate?: CronicaCreateOrConnectWithoutActuacioInput
+    upsert?: CronicaUpsertWithoutActuacioInput
+    disconnect?: CronicaWhereInput | boolean
+    delete?: CronicaWhereInput | boolean
+    connect?: CronicaWhereUniqueInput
+    update?: XOR<XOR<CronicaUpdateToOneWithWhereWithoutActuacioInput, CronicaUpdateWithoutActuacioInput>, CronicaUncheckedUpdateWithoutActuacioInput>
+  }
+
   export type FotoUncheckedUpdateManyWithoutActuacioNestedInput = {
     create?: XOR<FotoCreateWithoutActuacioInput, FotoUncheckedCreateWithoutActuacioInput> | FotoCreateWithoutActuacioInput[] | FotoUncheckedCreateWithoutActuacioInput[]
     connectOrCreate?: FotoCreateOrConnectWithoutActuacioInput | FotoCreateOrConnectWithoutActuacioInput[]
@@ -9812,20 +11364,17 @@ export namespace Prisma {
     deleteMany?: FotoScalarWhereInput | FotoScalarWhereInput[]
   }
 
-  export type CronicaUncheckedUpdateOneWithoutActuacioNestedInput = {
-    create?: XOR<CronicaCreateWithoutActuacioInput, CronicaUncheckedCreateWithoutActuacioInput>
-    connectOrCreate?: CronicaCreateOrConnectWithoutActuacioInput
-    upsert?: CronicaUpsertWithoutActuacioInput
-    disconnect?: CronicaWhereInput | boolean
-    delete?: CronicaWhereInput | boolean
-    connect?: CronicaWhereUniqueInput
-    update?: XOR<XOR<CronicaUpdateToOneWithWhereWithoutActuacioInput, CronicaUpdateWithoutActuacioInput>, CronicaUncheckedUpdateWithoutActuacioInput>
-  }
-
-  export type UsuariCreateNestedOneWithoutCroniquesInput = {
-    create?: XOR<UsuariCreateWithoutCroniquesInput, UsuariUncheckedCreateWithoutCroniquesInput>
-    connectOrCreate?: UsuariCreateOrConnectWithoutCroniquesInput
-    connect?: UsuariWhereUniqueInput
+  export type CollaUncheckedUpdateManyWithoutActuacionsNestedInput = {
+    create?: XOR<CollaCreateWithoutActuacionsInput, CollaUncheckedCreateWithoutActuacionsInput> | CollaCreateWithoutActuacionsInput[] | CollaUncheckedCreateWithoutActuacionsInput[]
+    connectOrCreate?: CollaCreateOrConnectWithoutActuacionsInput | CollaCreateOrConnectWithoutActuacionsInput[]
+    upsert?: CollaUpsertWithWhereUniqueWithoutActuacionsInput | CollaUpsertWithWhereUniqueWithoutActuacionsInput[]
+    set?: CollaWhereUniqueInput | CollaWhereUniqueInput[]
+    disconnect?: CollaWhereUniqueInput | CollaWhereUniqueInput[]
+    delete?: CollaWhereUniqueInput | CollaWhereUniqueInput[]
+    connect?: CollaWhereUniqueInput | CollaWhereUniqueInput[]
+    update?: CollaUpdateWithWhereUniqueWithoutActuacionsInput | CollaUpdateWithWhereUniqueWithoutActuacionsInput[]
+    updateMany?: CollaUpdateManyWithWhereWithoutActuacionsInput | CollaUpdateManyWithWhereWithoutActuacionsInput[]
+    deleteMany?: CollaScalarWhereInput | CollaScalarWhereInput[]
   }
 
   export type ActuacioCreateNestedOneWithoutCronicaInput = {
@@ -9834,12 +11383,10 @@ export namespace Prisma {
     connect?: ActuacioWhereUniqueInput
   }
 
-  export type UsuariUpdateOneRequiredWithoutCroniquesNestedInput = {
+  export type UsuariCreateNestedOneWithoutCroniquesInput = {
     create?: XOR<UsuariCreateWithoutCroniquesInput, UsuariUncheckedCreateWithoutCroniquesInput>
     connectOrCreate?: UsuariCreateOrConnectWithoutCroniquesInput
-    upsert?: UsuariUpsertWithoutCroniquesInput
     connect?: UsuariWhereUniqueInput
-    update?: XOR<XOR<UsuariUpdateToOneWithWhereWithoutCroniquesInput, UsuariUpdateWithoutCroniquesInput>, UsuariUncheckedUpdateWithoutCroniquesInput>
   }
 
   export type ActuacioUpdateOneRequiredWithoutCronicaNestedInput = {
@@ -9850,10 +11397,24 @@ export namespace Prisma {
     update?: XOR<XOR<ActuacioUpdateToOneWithWhereWithoutCronicaInput, ActuacioUpdateWithoutCronicaInput>, ActuacioUncheckedUpdateWithoutCronicaInput>
   }
 
+  export type UsuariUpdateOneRequiredWithoutCroniquesNestedInput = {
+    create?: XOR<UsuariCreateWithoutCroniquesInput, UsuariUncheckedCreateWithoutCroniquesInput>
+    connectOrCreate?: UsuariCreateOrConnectWithoutCroniquesInput
+    upsert?: UsuariUpsertWithoutCroniquesInput
+    connect?: UsuariWhereUniqueInput
+    update?: XOR<XOR<UsuariUpdateToOneWithWhereWithoutCroniquesInput, UsuariUpdateWithoutCroniquesInput>, UsuariUncheckedUpdateWithoutCroniquesInput>
+  }
+
   export type ActuacioCreateNestedOneWithoutCastellsInput = {
     create?: XOR<ActuacioCreateWithoutCastellsInput, ActuacioUncheckedCreateWithoutCastellsInput>
     connectOrCreate?: ActuacioCreateOrConnectWithoutCastellsInput
     connect?: ActuacioWhereUniqueInput
+  }
+
+  export type CollaCreateNestedOneWithoutCastellsInput = {
+    create?: XOR<CollaCreateWithoutCastellsInput, CollaUncheckedCreateWithoutCastellsInput>
+    connectOrCreate?: CollaCreateOrConnectWithoutCastellsInput
+    connect?: CollaWhereUniqueInput
   }
 
   export type FotoCreateNestedManyWithoutCastellInput = {
@@ -9876,6 +11437,14 @@ export namespace Prisma {
     upsert?: ActuacioUpsertWithoutCastellsInput
     connect?: ActuacioWhereUniqueInput
     update?: XOR<XOR<ActuacioUpdateToOneWithWhereWithoutCastellsInput, ActuacioUpdateWithoutCastellsInput>, ActuacioUncheckedUpdateWithoutCastellsInput>
+  }
+
+  export type CollaUpdateOneRequiredWithoutCastellsNestedInput = {
+    create?: XOR<CollaCreateWithoutCastellsInput, CollaUncheckedCreateWithoutCastellsInput>
+    connectOrCreate?: CollaCreateOrConnectWithoutCastellsInput
+    upsert?: CollaUpsertWithoutCastellsInput
+    connect?: CollaWhereUniqueInput
+    update?: XOR<XOR<CollaUpdateToOneWithWhereWithoutCastellsInput, CollaUpdateWithoutCastellsInput>, CollaUncheckedUpdateWithoutCastellsInput>
   }
 
   export type FotoUpdateManyWithoutCastellNestedInput = {
@@ -9906,13 +11475,6 @@ export namespace Prisma {
     deleteMany?: FotoScalarWhereInput | FotoScalarWhereInput[]
   }
 
-  export type FotoCreateNestedManyWithoutAutorInput = {
-    create?: XOR<FotoCreateWithoutAutorInput, FotoUncheckedCreateWithoutAutorInput> | FotoCreateWithoutAutorInput[] | FotoUncheckedCreateWithoutAutorInput[]
-    connectOrCreate?: FotoCreateOrConnectWithoutAutorInput | FotoCreateOrConnectWithoutAutorInput[]
-    createMany?: FotoCreateManyAutorInputEnvelope
-    connect?: FotoWhereUniqueInput | FotoWhereUniqueInput[]
-  }
-
   export type CronicaCreateNestedManyWithoutAutorInput = {
     create?: XOR<CronicaCreateWithoutAutorInput, CronicaUncheckedCreateWithoutAutorInput> | CronicaCreateWithoutAutorInput[] | CronicaUncheckedCreateWithoutAutorInput[]
     connectOrCreate?: CronicaCreateOrConnectWithoutAutorInput | CronicaCreateOrConnectWithoutAutorInput[]
@@ -9920,7 +11482,7 @@ export namespace Prisma {
     connect?: CronicaWhereUniqueInput | CronicaWhereUniqueInput[]
   }
 
-  export type FotoUncheckedCreateNestedManyWithoutAutorInput = {
+  export type FotoCreateNestedManyWithoutAutorInput = {
     create?: XOR<FotoCreateWithoutAutorInput, FotoUncheckedCreateWithoutAutorInput> | FotoCreateWithoutAutorInput[] | FotoUncheckedCreateWithoutAutorInput[]
     connectOrCreate?: FotoCreateOrConnectWithoutAutorInput | FotoCreateOrConnectWithoutAutorInput[]
     createMany?: FotoCreateManyAutorInputEnvelope
@@ -9934,18 +11496,11 @@ export namespace Prisma {
     connect?: CronicaWhereUniqueInput | CronicaWhereUniqueInput[]
   }
 
-  export type FotoUpdateManyWithoutAutorNestedInput = {
+  export type FotoUncheckedCreateNestedManyWithoutAutorInput = {
     create?: XOR<FotoCreateWithoutAutorInput, FotoUncheckedCreateWithoutAutorInput> | FotoCreateWithoutAutorInput[] | FotoUncheckedCreateWithoutAutorInput[]
     connectOrCreate?: FotoCreateOrConnectWithoutAutorInput | FotoCreateOrConnectWithoutAutorInput[]
-    upsert?: FotoUpsertWithWhereUniqueWithoutAutorInput | FotoUpsertWithWhereUniqueWithoutAutorInput[]
     createMany?: FotoCreateManyAutorInputEnvelope
-    set?: FotoWhereUniqueInput | FotoWhereUniqueInput[]
-    disconnect?: FotoWhereUniqueInput | FotoWhereUniqueInput[]
-    delete?: FotoWhereUniqueInput | FotoWhereUniqueInput[]
     connect?: FotoWhereUniqueInput | FotoWhereUniqueInput[]
-    update?: FotoUpdateWithWhereUniqueWithoutAutorInput | FotoUpdateWithWhereUniqueWithoutAutorInput[]
-    updateMany?: FotoUpdateManyWithWhereWithoutAutorInput | FotoUpdateManyWithWhereWithoutAutorInput[]
-    deleteMany?: FotoScalarWhereInput | FotoScalarWhereInput[]
   }
 
   export type CronicaUpdateManyWithoutAutorNestedInput = {
@@ -9962,7 +11517,7 @@ export namespace Prisma {
     deleteMany?: CronicaScalarWhereInput | CronicaScalarWhereInput[]
   }
 
-  export type FotoUncheckedUpdateManyWithoutAutorNestedInput = {
+  export type FotoUpdateManyWithoutAutorNestedInput = {
     create?: XOR<FotoCreateWithoutAutorInput, FotoUncheckedCreateWithoutAutorInput> | FotoCreateWithoutAutorInput[] | FotoUncheckedCreateWithoutAutorInput[]
     connectOrCreate?: FotoCreateOrConnectWithoutAutorInput | FotoCreateOrConnectWithoutAutorInput[]
     upsert?: FotoUpsertWithWhereUniqueWithoutAutorInput | FotoUpsertWithWhereUniqueWithoutAutorInput[]
@@ -9990,10 +11545,18 @@ export namespace Prisma {
     deleteMany?: CronicaScalarWhereInput | CronicaScalarWhereInput[]
   }
 
-  export type UsuariCreateNestedOneWithoutFotosInput = {
-    create?: XOR<UsuariCreateWithoutFotosInput, UsuariUncheckedCreateWithoutFotosInput>
-    connectOrCreate?: UsuariCreateOrConnectWithoutFotosInput
-    connect?: UsuariWhereUniqueInput
+  export type FotoUncheckedUpdateManyWithoutAutorNestedInput = {
+    create?: XOR<FotoCreateWithoutAutorInput, FotoUncheckedCreateWithoutAutorInput> | FotoCreateWithoutAutorInput[] | FotoUncheckedCreateWithoutAutorInput[]
+    connectOrCreate?: FotoCreateOrConnectWithoutAutorInput | FotoCreateOrConnectWithoutAutorInput[]
+    upsert?: FotoUpsertWithWhereUniqueWithoutAutorInput | FotoUpsertWithWhereUniqueWithoutAutorInput[]
+    createMany?: FotoCreateManyAutorInputEnvelope
+    set?: FotoWhereUniqueInput | FotoWhereUniqueInput[]
+    disconnect?: FotoWhereUniqueInput | FotoWhereUniqueInput[]
+    delete?: FotoWhereUniqueInput | FotoWhereUniqueInput[]
+    connect?: FotoWhereUniqueInput | FotoWhereUniqueInput[]
+    update?: FotoUpdateWithWhereUniqueWithoutAutorInput | FotoUpdateWithWhereUniqueWithoutAutorInput[]
+    updateMany?: FotoUpdateManyWithWhereWithoutAutorInput | FotoUpdateManyWithWhereWithoutAutorInput[]
+    deleteMany?: FotoScalarWhereInput | FotoScalarWhereInput[]
   }
 
   export type ActuacioCreateNestedOneWithoutFotosInput = {
@@ -10002,22 +11565,26 @@ export namespace Prisma {
     connect?: ActuacioWhereUniqueInput
   }
 
+  export type UsuariCreateNestedOneWithoutFotosInput = {
+    create?: XOR<UsuariCreateWithoutFotosInput, UsuariUncheckedCreateWithoutFotosInput>
+    connectOrCreate?: UsuariCreateOrConnectWithoutFotosInput
+    connect?: UsuariWhereUniqueInput
+  }
+
   export type CastellCreateNestedOneWithoutFotosInput = {
     create?: XOR<CastellCreateWithoutFotosInput, CastellUncheckedCreateWithoutFotosInput>
     connectOrCreate?: CastellCreateOrConnectWithoutFotosInput
     connect?: CastellWhereUniqueInput
   }
 
-  export type BoolFieldUpdateOperationsInput = {
-    set?: boolean
+  export type CollaCreateNestedOneWithoutFotosInput = {
+    create?: XOR<CollaCreateWithoutFotosInput, CollaUncheckedCreateWithoutFotosInput>
+    connectOrCreate?: CollaCreateOrConnectWithoutFotosInput
+    connect?: CollaWhereUniqueInput
   }
 
-  export type UsuariUpdateOneRequiredWithoutFotosNestedInput = {
-    create?: XOR<UsuariCreateWithoutFotosInput, UsuariUncheckedCreateWithoutFotosInput>
-    connectOrCreate?: UsuariCreateOrConnectWithoutFotosInput
-    upsert?: UsuariUpsertWithoutFotosInput
-    connect?: UsuariWhereUniqueInput
-    update?: XOR<XOR<UsuariUpdateToOneWithWhereWithoutFotosInput, UsuariUpdateWithoutFotosInput>, UsuariUncheckedUpdateWithoutFotosInput>
+  export type BoolFieldUpdateOperationsInput = {
+    set?: boolean
   }
 
   export type ActuacioUpdateOneRequiredWithoutFotosNestedInput = {
@@ -10028,14 +11595,28 @@ export namespace Prisma {
     update?: XOR<XOR<ActuacioUpdateToOneWithWhereWithoutFotosInput, ActuacioUpdateWithoutFotosInput>, ActuacioUncheckedUpdateWithoutFotosInput>
   }
 
-  export type CastellUpdateOneWithoutFotosNestedInput = {
+  export type UsuariUpdateOneRequiredWithoutFotosNestedInput = {
+    create?: XOR<UsuariCreateWithoutFotosInput, UsuariUncheckedCreateWithoutFotosInput>
+    connectOrCreate?: UsuariCreateOrConnectWithoutFotosInput
+    upsert?: UsuariUpsertWithoutFotosInput
+    connect?: UsuariWhereUniqueInput
+    update?: XOR<XOR<UsuariUpdateToOneWithWhereWithoutFotosInput, UsuariUpdateWithoutFotosInput>, UsuariUncheckedUpdateWithoutFotosInput>
+  }
+
+  export type CastellUpdateOneRequiredWithoutFotosNestedInput = {
     create?: XOR<CastellCreateWithoutFotosInput, CastellUncheckedCreateWithoutFotosInput>
     connectOrCreate?: CastellCreateOrConnectWithoutFotosInput
     upsert?: CastellUpsertWithoutFotosInput
-    disconnect?: CastellWhereInput | boolean
-    delete?: CastellWhereInput | boolean
     connect?: CastellWhereUniqueInput
     update?: XOR<XOR<CastellUpdateToOneWithWhereWithoutFotosInput, CastellUpdateWithoutFotosInput>, CastellUncheckedUpdateWithoutFotosInput>
+  }
+
+  export type CollaUpdateOneRequiredWithoutFotosNestedInput = {
+    create?: XOR<CollaCreateWithoutFotosInput, CollaUncheckedCreateWithoutFotosInput>
+    connectOrCreate?: CollaCreateOrConnectWithoutFotosInput
+    upsert?: CollaUpsertWithoutFotosInput
+    connect?: CollaWhereUniqueInput
+    update?: XOR<XOR<CollaUpdateToOneWithWhereWithoutFotosInput, CollaUpdateWithoutFotosInput>, CollaUncheckedUpdateWithoutFotosInput>
   }
 
   export type ActuacioCreateNestedManyWithoutTemporadaInput = {
@@ -10077,6 +11658,128 @@ export namespace Prisma {
     connect?: ActuacioWhereUniqueInput | ActuacioWhereUniqueInput[]
     update?: ActuacioUpdateWithWhereUniqueWithoutTemporadaInput | ActuacioUpdateWithWhereUniqueWithoutTemporadaInput[]
     updateMany?: ActuacioUpdateManyWithWhereWithoutTemporadaInput | ActuacioUpdateManyWithWhereWithoutTemporadaInput[]
+    deleteMany?: ActuacioScalarWhereInput | ActuacioScalarWhereInput[]
+  }
+
+  export type CastellCreateNestedManyWithoutCollaInput = {
+    create?: XOR<CastellCreateWithoutCollaInput, CastellUncheckedCreateWithoutCollaInput> | CastellCreateWithoutCollaInput[] | CastellUncheckedCreateWithoutCollaInput[]
+    connectOrCreate?: CastellCreateOrConnectWithoutCollaInput | CastellCreateOrConnectWithoutCollaInput[]
+    createMany?: CastellCreateManyCollaInputEnvelope
+    connect?: CastellWhereUniqueInput | CastellWhereUniqueInput[]
+  }
+
+  export type FotoCreateNestedManyWithoutCollaInput = {
+    create?: XOR<FotoCreateWithoutCollaInput, FotoUncheckedCreateWithoutCollaInput> | FotoCreateWithoutCollaInput[] | FotoUncheckedCreateWithoutCollaInput[]
+    connectOrCreate?: FotoCreateOrConnectWithoutCollaInput | FotoCreateOrConnectWithoutCollaInput[]
+    createMany?: FotoCreateManyCollaInputEnvelope
+    connect?: FotoWhereUniqueInput | FotoWhereUniqueInput[]
+  }
+
+  export type ActuacioCreateNestedManyWithoutCollesInput = {
+    create?: XOR<ActuacioCreateWithoutCollesInput, ActuacioUncheckedCreateWithoutCollesInput> | ActuacioCreateWithoutCollesInput[] | ActuacioUncheckedCreateWithoutCollesInput[]
+    connectOrCreate?: ActuacioCreateOrConnectWithoutCollesInput | ActuacioCreateOrConnectWithoutCollesInput[]
+    connect?: ActuacioWhereUniqueInput | ActuacioWhereUniqueInput[]
+  }
+
+  export type CastellUncheckedCreateNestedManyWithoutCollaInput = {
+    create?: XOR<CastellCreateWithoutCollaInput, CastellUncheckedCreateWithoutCollaInput> | CastellCreateWithoutCollaInput[] | CastellUncheckedCreateWithoutCollaInput[]
+    connectOrCreate?: CastellCreateOrConnectWithoutCollaInput | CastellCreateOrConnectWithoutCollaInput[]
+    createMany?: CastellCreateManyCollaInputEnvelope
+    connect?: CastellWhereUniqueInput | CastellWhereUniqueInput[]
+  }
+
+  export type FotoUncheckedCreateNestedManyWithoutCollaInput = {
+    create?: XOR<FotoCreateWithoutCollaInput, FotoUncheckedCreateWithoutCollaInput> | FotoCreateWithoutCollaInput[] | FotoUncheckedCreateWithoutCollaInput[]
+    connectOrCreate?: FotoCreateOrConnectWithoutCollaInput | FotoCreateOrConnectWithoutCollaInput[]
+    createMany?: FotoCreateManyCollaInputEnvelope
+    connect?: FotoWhereUniqueInput | FotoWhereUniqueInput[]
+  }
+
+  export type ActuacioUncheckedCreateNestedManyWithoutCollesInput = {
+    create?: XOR<ActuacioCreateWithoutCollesInput, ActuacioUncheckedCreateWithoutCollesInput> | ActuacioCreateWithoutCollesInput[] | ActuacioUncheckedCreateWithoutCollesInput[]
+    connectOrCreate?: ActuacioCreateOrConnectWithoutCollesInput | ActuacioCreateOrConnectWithoutCollesInput[]
+    connect?: ActuacioWhereUniqueInput | ActuacioWhereUniqueInput[]
+  }
+
+  export type CastellUpdateManyWithoutCollaNestedInput = {
+    create?: XOR<CastellCreateWithoutCollaInput, CastellUncheckedCreateWithoutCollaInput> | CastellCreateWithoutCollaInput[] | CastellUncheckedCreateWithoutCollaInput[]
+    connectOrCreate?: CastellCreateOrConnectWithoutCollaInput | CastellCreateOrConnectWithoutCollaInput[]
+    upsert?: CastellUpsertWithWhereUniqueWithoutCollaInput | CastellUpsertWithWhereUniqueWithoutCollaInput[]
+    createMany?: CastellCreateManyCollaInputEnvelope
+    set?: CastellWhereUniqueInput | CastellWhereUniqueInput[]
+    disconnect?: CastellWhereUniqueInput | CastellWhereUniqueInput[]
+    delete?: CastellWhereUniqueInput | CastellWhereUniqueInput[]
+    connect?: CastellWhereUniqueInput | CastellWhereUniqueInput[]
+    update?: CastellUpdateWithWhereUniqueWithoutCollaInput | CastellUpdateWithWhereUniqueWithoutCollaInput[]
+    updateMany?: CastellUpdateManyWithWhereWithoutCollaInput | CastellUpdateManyWithWhereWithoutCollaInput[]
+    deleteMany?: CastellScalarWhereInput | CastellScalarWhereInput[]
+  }
+
+  export type FotoUpdateManyWithoutCollaNestedInput = {
+    create?: XOR<FotoCreateWithoutCollaInput, FotoUncheckedCreateWithoutCollaInput> | FotoCreateWithoutCollaInput[] | FotoUncheckedCreateWithoutCollaInput[]
+    connectOrCreate?: FotoCreateOrConnectWithoutCollaInput | FotoCreateOrConnectWithoutCollaInput[]
+    upsert?: FotoUpsertWithWhereUniqueWithoutCollaInput | FotoUpsertWithWhereUniqueWithoutCollaInput[]
+    createMany?: FotoCreateManyCollaInputEnvelope
+    set?: FotoWhereUniqueInput | FotoWhereUniqueInput[]
+    disconnect?: FotoWhereUniqueInput | FotoWhereUniqueInput[]
+    delete?: FotoWhereUniqueInput | FotoWhereUniqueInput[]
+    connect?: FotoWhereUniqueInput | FotoWhereUniqueInput[]
+    update?: FotoUpdateWithWhereUniqueWithoutCollaInput | FotoUpdateWithWhereUniqueWithoutCollaInput[]
+    updateMany?: FotoUpdateManyWithWhereWithoutCollaInput | FotoUpdateManyWithWhereWithoutCollaInput[]
+    deleteMany?: FotoScalarWhereInput | FotoScalarWhereInput[]
+  }
+
+  export type ActuacioUpdateManyWithoutCollesNestedInput = {
+    create?: XOR<ActuacioCreateWithoutCollesInput, ActuacioUncheckedCreateWithoutCollesInput> | ActuacioCreateWithoutCollesInput[] | ActuacioUncheckedCreateWithoutCollesInput[]
+    connectOrCreate?: ActuacioCreateOrConnectWithoutCollesInput | ActuacioCreateOrConnectWithoutCollesInput[]
+    upsert?: ActuacioUpsertWithWhereUniqueWithoutCollesInput | ActuacioUpsertWithWhereUniqueWithoutCollesInput[]
+    set?: ActuacioWhereUniqueInput | ActuacioWhereUniqueInput[]
+    disconnect?: ActuacioWhereUniqueInput | ActuacioWhereUniqueInput[]
+    delete?: ActuacioWhereUniqueInput | ActuacioWhereUniqueInput[]
+    connect?: ActuacioWhereUniqueInput | ActuacioWhereUniqueInput[]
+    update?: ActuacioUpdateWithWhereUniqueWithoutCollesInput | ActuacioUpdateWithWhereUniqueWithoutCollesInput[]
+    updateMany?: ActuacioUpdateManyWithWhereWithoutCollesInput | ActuacioUpdateManyWithWhereWithoutCollesInput[]
+    deleteMany?: ActuacioScalarWhereInput | ActuacioScalarWhereInput[]
+  }
+
+  export type CastellUncheckedUpdateManyWithoutCollaNestedInput = {
+    create?: XOR<CastellCreateWithoutCollaInput, CastellUncheckedCreateWithoutCollaInput> | CastellCreateWithoutCollaInput[] | CastellUncheckedCreateWithoutCollaInput[]
+    connectOrCreate?: CastellCreateOrConnectWithoutCollaInput | CastellCreateOrConnectWithoutCollaInput[]
+    upsert?: CastellUpsertWithWhereUniqueWithoutCollaInput | CastellUpsertWithWhereUniqueWithoutCollaInput[]
+    createMany?: CastellCreateManyCollaInputEnvelope
+    set?: CastellWhereUniqueInput | CastellWhereUniqueInput[]
+    disconnect?: CastellWhereUniqueInput | CastellWhereUniqueInput[]
+    delete?: CastellWhereUniqueInput | CastellWhereUniqueInput[]
+    connect?: CastellWhereUniqueInput | CastellWhereUniqueInput[]
+    update?: CastellUpdateWithWhereUniqueWithoutCollaInput | CastellUpdateWithWhereUniqueWithoutCollaInput[]
+    updateMany?: CastellUpdateManyWithWhereWithoutCollaInput | CastellUpdateManyWithWhereWithoutCollaInput[]
+    deleteMany?: CastellScalarWhereInput | CastellScalarWhereInput[]
+  }
+
+  export type FotoUncheckedUpdateManyWithoutCollaNestedInput = {
+    create?: XOR<FotoCreateWithoutCollaInput, FotoUncheckedCreateWithoutCollaInput> | FotoCreateWithoutCollaInput[] | FotoUncheckedCreateWithoutCollaInput[]
+    connectOrCreate?: FotoCreateOrConnectWithoutCollaInput | FotoCreateOrConnectWithoutCollaInput[]
+    upsert?: FotoUpsertWithWhereUniqueWithoutCollaInput | FotoUpsertWithWhereUniqueWithoutCollaInput[]
+    createMany?: FotoCreateManyCollaInputEnvelope
+    set?: FotoWhereUniqueInput | FotoWhereUniqueInput[]
+    disconnect?: FotoWhereUniqueInput | FotoWhereUniqueInput[]
+    delete?: FotoWhereUniqueInput | FotoWhereUniqueInput[]
+    connect?: FotoWhereUniqueInput | FotoWhereUniqueInput[]
+    update?: FotoUpdateWithWhereUniqueWithoutCollaInput | FotoUpdateWithWhereUniqueWithoutCollaInput[]
+    updateMany?: FotoUpdateManyWithWhereWithoutCollaInput | FotoUpdateManyWithWhereWithoutCollaInput[]
+    deleteMany?: FotoScalarWhereInput | FotoScalarWhereInput[]
+  }
+
+  export type ActuacioUncheckedUpdateManyWithoutCollesNestedInput = {
+    create?: XOR<ActuacioCreateWithoutCollesInput, ActuacioUncheckedCreateWithoutCollesInput> | ActuacioCreateWithoutCollesInput[] | ActuacioUncheckedCreateWithoutCollesInput[]
+    connectOrCreate?: ActuacioCreateOrConnectWithoutCollesInput | ActuacioCreateOrConnectWithoutCollesInput[]
+    upsert?: ActuacioUpsertWithWhereUniqueWithoutCollesInput | ActuacioUpsertWithWhereUniqueWithoutCollesInput[]
+    set?: ActuacioWhereUniqueInput | ActuacioWhereUniqueInput[]
+    disconnect?: ActuacioWhereUniqueInput | ActuacioWhereUniqueInput[]
+    delete?: ActuacioWhereUniqueInput | ActuacioWhereUniqueInput[]
+    connect?: ActuacioWhereUniqueInput | ActuacioWhereUniqueInput[]
+    update?: ActuacioUpdateWithWhereUniqueWithoutCollesInput | ActuacioUpdateWithWhereUniqueWithoutCollesInput[]
+    updateMany?: ActuacioUpdateManyWithWhereWithoutCollesInput | ActuacioUpdateManyWithWhereWithoutCollesInput[]
     deleteMany?: ActuacioScalarWhereInput | ActuacioScalarWhereInput[]
   }
 
@@ -10281,58 +11984,6 @@ export namespace Prisma {
     _max?: NestedBoolFilter<$PrismaModel>
   }
 
-  export type CastellCreateWithoutActuacioInput = {
-    nom: string
-    resultat: string
-    fotos?: FotoCreateNestedManyWithoutCastellInput
-  }
-
-  export type CastellUncheckedCreateWithoutActuacioInput = {
-    id?: number
-    nom: string
-    resultat: string
-    fotos?: FotoUncheckedCreateNestedManyWithoutCastellInput
-  }
-
-  export type CastellCreateOrConnectWithoutActuacioInput = {
-    where: CastellWhereUniqueInput
-    create: XOR<CastellCreateWithoutActuacioInput, CastellUncheckedCreateWithoutActuacioInput>
-  }
-
-  export type CastellCreateManyActuacioInputEnvelope = {
-    data: CastellCreateManyActuacioInput | CastellCreateManyActuacioInput[]
-    skipDuplicates?: boolean
-  }
-
-  export type FotoCreateWithoutActuacioInput = {
-    created?: Date | string
-    name: string
-    url?: string | null
-    mainFoto?: boolean
-    autor: UsuariCreateNestedOneWithoutFotosInput
-    castell?: CastellCreateNestedOneWithoutFotosInput
-  }
-
-  export type FotoUncheckedCreateWithoutActuacioInput = {
-    id?: number
-    created?: Date | string
-    name: string
-    url?: string | null
-    autorId: number
-    mainFoto?: boolean
-    castellId: number
-  }
-
-  export type FotoCreateOrConnectWithoutActuacioInput = {
-    where: FotoWhereUniqueInput
-    create: XOR<FotoCreateWithoutActuacioInput, FotoUncheckedCreateWithoutActuacioInput>
-  }
-
-  export type FotoCreateManyActuacioInputEnvelope = {
-    data: FotoCreateManyActuacioInput | FotoCreateManyActuacioInput[]
-    skipDuplicates?: boolean
-  }
-
   export type TemporadaCreateWithoutActuacionsInput = {
     year: number
   }
@@ -10345,6 +11996,31 @@ export namespace Prisma {
   export type TemporadaCreateOrConnectWithoutActuacionsInput = {
     where: TemporadaWhereUniqueInput
     create: XOR<TemporadaCreateWithoutActuacionsInput, TemporadaUncheckedCreateWithoutActuacionsInput>
+  }
+
+  export type CastellCreateWithoutActuacioInput = {
+    nom: string
+    resultat: string
+    colla: CollaCreateNestedOneWithoutCastellsInput
+    fotos?: FotoCreateNestedManyWithoutCastellInput
+  }
+
+  export type CastellUncheckedCreateWithoutActuacioInput = {
+    id?: number
+    nom: string
+    resultat: string
+    collaId: number
+    fotos?: FotoUncheckedCreateNestedManyWithoutCastellInput
+  }
+
+  export type CastellCreateOrConnectWithoutActuacioInput = {
+    where: CastellWhereUniqueInput
+    create: XOR<CastellCreateWithoutActuacioInput, CastellUncheckedCreateWithoutActuacioInput>
+  }
+
+  export type CastellCreateManyActuacioInputEnvelope = {
+    data: CastellCreateManyActuacioInput | CastellCreateManyActuacioInput[]
+    skipDuplicates?: boolean
   }
 
   export type CronicaCreateWithoutActuacioInput = {
@@ -10365,6 +12041,76 @@ export namespace Prisma {
   export type CronicaCreateOrConnectWithoutActuacioInput = {
     where: CronicaWhereUniqueInput
     create: XOR<CronicaCreateWithoutActuacioInput, CronicaUncheckedCreateWithoutActuacioInput>
+  }
+
+  export type FotoCreateWithoutActuacioInput = {
+    created?: Date | string
+    name: string
+    url?: string | null
+    mainFoto?: boolean
+    autor: UsuariCreateNestedOneWithoutFotosInput
+    castell: CastellCreateNestedOneWithoutFotosInput
+    colla: CollaCreateNestedOneWithoutFotosInput
+  }
+
+  export type FotoUncheckedCreateWithoutActuacioInput = {
+    id?: number
+    created?: Date | string
+    name: string
+    url?: string | null
+    autorId: number
+    mainFoto?: boolean
+    castellId: number
+    collaId: number
+  }
+
+  export type FotoCreateOrConnectWithoutActuacioInput = {
+    where: FotoWhereUniqueInput
+    create: XOR<FotoCreateWithoutActuacioInput, FotoUncheckedCreateWithoutActuacioInput>
+  }
+
+  export type FotoCreateManyActuacioInputEnvelope = {
+    data: FotoCreateManyActuacioInput | FotoCreateManyActuacioInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type CollaCreateWithoutActuacionsInput = {
+    id: number
+    name: string
+    castells?: CastellCreateNestedManyWithoutCollaInput
+    fotos?: FotoCreateNestedManyWithoutCollaInput
+  }
+
+  export type CollaUncheckedCreateWithoutActuacionsInput = {
+    id: number
+    name: string
+    castells?: CastellUncheckedCreateNestedManyWithoutCollaInput
+    fotos?: FotoUncheckedCreateNestedManyWithoutCollaInput
+  }
+
+  export type CollaCreateOrConnectWithoutActuacionsInput = {
+    where: CollaWhereUniqueInput
+    create: XOR<CollaCreateWithoutActuacionsInput, CollaUncheckedCreateWithoutActuacionsInput>
+  }
+
+  export type TemporadaUpsertWithoutActuacionsInput = {
+    update: XOR<TemporadaUpdateWithoutActuacionsInput, TemporadaUncheckedUpdateWithoutActuacionsInput>
+    create: XOR<TemporadaCreateWithoutActuacionsInput, TemporadaUncheckedCreateWithoutActuacionsInput>
+    where?: TemporadaWhereInput
+  }
+
+  export type TemporadaUpdateToOneWithWhereWithoutActuacionsInput = {
+    where?: TemporadaWhereInput
+    data: XOR<TemporadaUpdateWithoutActuacionsInput, TemporadaUncheckedUpdateWithoutActuacionsInput>
+  }
+
+  export type TemporadaUpdateWithoutActuacionsInput = {
+    year?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type TemporadaUncheckedUpdateWithoutActuacionsInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    year?: IntFieldUpdateOperationsInput | number
   }
 
   export type CastellUpsertWithWhereUniqueWithoutActuacioInput = {
@@ -10391,6 +12137,33 @@ export namespace Prisma {
     nom?: StringFilter<"Castell"> | string
     actuacioId?: IntFilter<"Castell"> | number
     resultat?: StringFilter<"Castell"> | string
+    collaId?: IntFilter<"Castell"> | number
+  }
+
+  export type CronicaUpsertWithoutActuacioInput = {
+    update: XOR<CronicaUpdateWithoutActuacioInput, CronicaUncheckedUpdateWithoutActuacioInput>
+    create: XOR<CronicaCreateWithoutActuacioInput, CronicaUncheckedCreateWithoutActuacioInput>
+    where?: CronicaWhereInput
+  }
+
+  export type CronicaUpdateToOneWithWhereWithoutActuacioInput = {
+    where?: CronicaWhereInput
+    data: XOR<CronicaUpdateWithoutActuacioInput, CronicaUncheckedUpdateWithoutActuacioInput>
+  }
+
+  export type CronicaUpdateWithoutActuacioInput = {
+    created?: DateTimeFieldUpdateOperationsInput | Date | string
+    Titol?: StringFieldUpdateOperationsInput | string
+    Text?: StringFieldUpdateOperationsInput | string
+    autor?: UsuariUpdateOneRequiredWithoutCroniquesNestedInput
+  }
+
+  export type CronicaUncheckedUpdateWithoutActuacioInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    created?: DateTimeFieldUpdateOperationsInput | Date | string
+    Titol?: StringFieldUpdateOperationsInput | string
+    Text?: StringFieldUpdateOperationsInput | string
+    autorId?: IntFieldUpdateOperationsInput | number
   }
 
   export type FotoUpsertWithWhereUniqueWithoutActuacioInput = {
@@ -10421,52 +12194,63 @@ export namespace Prisma {
     mainFoto?: BoolFilter<"Foto"> | boolean
     actuacioId?: IntFilter<"Foto"> | number
     castellId?: IntFilter<"Foto"> | number
+    collaId?: IntFilter<"Foto"> | number
   }
 
-  export type TemporadaUpsertWithoutActuacionsInput = {
-    update: XOR<TemporadaUpdateWithoutActuacionsInput, TemporadaUncheckedUpdateWithoutActuacionsInput>
-    create: XOR<TemporadaCreateWithoutActuacionsInput, TemporadaUncheckedCreateWithoutActuacionsInput>
-    where?: TemporadaWhereInput
+  export type CollaUpsertWithWhereUniqueWithoutActuacionsInput = {
+    where: CollaWhereUniqueInput
+    update: XOR<CollaUpdateWithoutActuacionsInput, CollaUncheckedUpdateWithoutActuacionsInput>
+    create: XOR<CollaCreateWithoutActuacionsInput, CollaUncheckedCreateWithoutActuacionsInput>
   }
 
-  export type TemporadaUpdateToOneWithWhereWithoutActuacionsInput = {
-    where?: TemporadaWhereInput
-    data: XOR<TemporadaUpdateWithoutActuacionsInput, TemporadaUncheckedUpdateWithoutActuacionsInput>
+  export type CollaUpdateWithWhereUniqueWithoutActuacionsInput = {
+    where: CollaWhereUniqueInput
+    data: XOR<CollaUpdateWithoutActuacionsInput, CollaUncheckedUpdateWithoutActuacionsInput>
   }
 
-  export type TemporadaUpdateWithoutActuacionsInput = {
-    year?: IntFieldUpdateOperationsInput | number
+  export type CollaUpdateManyWithWhereWithoutActuacionsInput = {
+    where: CollaScalarWhereInput
+    data: XOR<CollaUpdateManyMutationInput, CollaUncheckedUpdateManyWithoutActuacionsInput>
   }
 
-  export type TemporadaUncheckedUpdateWithoutActuacionsInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    year?: IntFieldUpdateOperationsInput | number
+  export type CollaScalarWhereInput = {
+    AND?: CollaScalarWhereInput | CollaScalarWhereInput[]
+    OR?: CollaScalarWhereInput[]
+    NOT?: CollaScalarWhereInput | CollaScalarWhereInput[]
+    id?: IntFilter<"Colla"> | number
+    name?: StringFilter<"Colla"> | string
   }
 
-  export type CronicaUpsertWithoutActuacioInput = {
-    update: XOR<CronicaUpdateWithoutActuacioInput, CronicaUncheckedUpdateWithoutActuacioInput>
-    create: XOR<CronicaCreateWithoutActuacioInput, CronicaUncheckedCreateWithoutActuacioInput>
-    where?: CronicaWhereInput
+  export type ActuacioCreateWithoutCronicaInput = {
+    data: Date | string
+    dataHora?: Date | string | null
+    lloc?: string | null
+    ciutat: string
+    nom: string
+    cronicaId?: number | null
+    temporada: TemporadaCreateNestedOneWithoutActuacionsInput
+    castells?: CastellCreateNestedManyWithoutActuacioInput
+    fotos?: FotoCreateNestedManyWithoutActuacioInput
+    colles?: CollaCreateNestedManyWithoutActuacionsInput
   }
 
-  export type CronicaUpdateToOneWithWhereWithoutActuacioInput = {
-    where?: CronicaWhereInput
-    data: XOR<CronicaUpdateWithoutActuacioInput, CronicaUncheckedUpdateWithoutActuacioInput>
+  export type ActuacioUncheckedCreateWithoutCronicaInput = {
+    id?: number
+    data: Date | string
+    dataHora?: Date | string | null
+    lloc?: string | null
+    ciutat: string
+    nom: string
+    temporadaId: number
+    cronicaId?: number | null
+    castells?: CastellUncheckedCreateNestedManyWithoutActuacioInput
+    fotos?: FotoUncheckedCreateNestedManyWithoutActuacioInput
+    colles?: CollaUncheckedCreateNestedManyWithoutActuacionsInput
   }
 
-  export type CronicaUpdateWithoutActuacioInput = {
-    created?: DateTimeFieldUpdateOperationsInput | Date | string
-    Titol?: StringFieldUpdateOperationsInput | string
-    Text?: StringFieldUpdateOperationsInput | string
-    autor?: UsuariUpdateOneRequiredWithoutCroniquesNestedInput
-  }
-
-  export type CronicaUncheckedUpdateWithoutActuacioInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    created?: DateTimeFieldUpdateOperationsInput | Date | string
-    Titol?: StringFieldUpdateOperationsInput | string
-    Text?: StringFieldUpdateOperationsInput | string
-    autorId?: IntFieldUpdateOperationsInput | number
+  export type ActuacioCreateOrConnectWithoutCronicaInput = {
+    where: ActuacioWhereUniqueInput
+    create: XOR<ActuacioCreateWithoutCronicaInput, ActuacioUncheckedCreateWithoutCronicaInput>
   }
 
   export type UsuariCreateWithoutCroniquesInput = {
@@ -10489,34 +12273,42 @@ export namespace Prisma {
     create: XOR<UsuariCreateWithoutCroniquesInput, UsuariUncheckedCreateWithoutCroniquesInput>
   }
 
-  export type ActuacioCreateWithoutCronicaInput = {
-    data: Date | string
-    dataHora?: Date | string | null
-    lloc?: string | null
-    ciutat: string
-    nom: string
-    cronicaId?: number | null
-    castells?: CastellCreateNestedManyWithoutActuacioInput
-    fotos?: FotoCreateNestedManyWithoutActuacioInput
-    temporada: TemporadaCreateNestedOneWithoutActuacionsInput
-  }
-
-  export type ActuacioUncheckedCreateWithoutCronicaInput = {
-    id?: number
-    data: Date | string
-    dataHora?: Date | string | null
-    lloc?: string | null
-    ciutat: string
-    nom: string
-    temporadaId: number
-    cronicaId?: number | null
-    castells?: CastellUncheckedCreateNestedManyWithoutActuacioInput
-    fotos?: FotoUncheckedCreateNestedManyWithoutActuacioInput
-  }
-
-  export type ActuacioCreateOrConnectWithoutCronicaInput = {
-    where: ActuacioWhereUniqueInput
+  export type ActuacioUpsertWithoutCronicaInput = {
+    update: XOR<ActuacioUpdateWithoutCronicaInput, ActuacioUncheckedUpdateWithoutCronicaInput>
     create: XOR<ActuacioCreateWithoutCronicaInput, ActuacioUncheckedCreateWithoutCronicaInput>
+    where?: ActuacioWhereInput
+  }
+
+  export type ActuacioUpdateToOneWithWhereWithoutCronicaInput = {
+    where?: ActuacioWhereInput
+    data: XOR<ActuacioUpdateWithoutCronicaInput, ActuacioUncheckedUpdateWithoutCronicaInput>
+  }
+
+  export type ActuacioUpdateWithoutCronicaInput = {
+    data?: DateTimeFieldUpdateOperationsInput | Date | string
+    dataHora?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lloc?: NullableStringFieldUpdateOperationsInput | string | null
+    ciutat?: StringFieldUpdateOperationsInput | string
+    nom?: StringFieldUpdateOperationsInput | string
+    cronicaId?: NullableIntFieldUpdateOperationsInput | number | null
+    temporada?: TemporadaUpdateOneRequiredWithoutActuacionsNestedInput
+    castells?: CastellUpdateManyWithoutActuacioNestedInput
+    fotos?: FotoUpdateManyWithoutActuacioNestedInput
+    colles?: CollaUpdateManyWithoutActuacionsNestedInput
+  }
+
+  export type ActuacioUncheckedUpdateWithoutCronicaInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    data?: DateTimeFieldUpdateOperationsInput | Date | string
+    dataHora?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lloc?: NullableStringFieldUpdateOperationsInput | string | null
+    ciutat?: StringFieldUpdateOperationsInput | string
+    nom?: StringFieldUpdateOperationsInput | string
+    temporadaId?: IntFieldUpdateOperationsInput | number
+    cronicaId?: NullableIntFieldUpdateOperationsInput | number | null
+    castells?: CastellUncheckedUpdateManyWithoutActuacioNestedInput
+    fotos?: FotoUncheckedUpdateManyWithoutActuacioNestedInput
+    colles?: CollaUncheckedUpdateManyWithoutActuacionsNestedInput
   }
 
   export type UsuariUpsertWithoutCroniquesInput = {
@@ -10545,42 +12337,6 @@ export namespace Prisma {
     fotos?: FotoUncheckedUpdateManyWithoutAutorNestedInput
   }
 
-  export type ActuacioUpsertWithoutCronicaInput = {
-    update: XOR<ActuacioUpdateWithoutCronicaInput, ActuacioUncheckedUpdateWithoutCronicaInput>
-    create: XOR<ActuacioCreateWithoutCronicaInput, ActuacioUncheckedCreateWithoutCronicaInput>
-    where?: ActuacioWhereInput
-  }
-
-  export type ActuacioUpdateToOneWithWhereWithoutCronicaInput = {
-    where?: ActuacioWhereInput
-    data: XOR<ActuacioUpdateWithoutCronicaInput, ActuacioUncheckedUpdateWithoutCronicaInput>
-  }
-
-  export type ActuacioUpdateWithoutCronicaInput = {
-    data?: DateTimeFieldUpdateOperationsInput | Date | string
-    dataHora?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    lloc?: NullableStringFieldUpdateOperationsInput | string | null
-    ciutat?: StringFieldUpdateOperationsInput | string
-    nom?: StringFieldUpdateOperationsInput | string
-    cronicaId?: NullableIntFieldUpdateOperationsInput | number | null
-    castells?: CastellUpdateManyWithoutActuacioNestedInput
-    fotos?: FotoUpdateManyWithoutActuacioNestedInput
-    temporada?: TemporadaUpdateOneRequiredWithoutActuacionsNestedInput
-  }
-
-  export type ActuacioUncheckedUpdateWithoutCronicaInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    data?: DateTimeFieldUpdateOperationsInput | Date | string
-    dataHora?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    lloc?: NullableStringFieldUpdateOperationsInput | string | null
-    ciutat?: StringFieldUpdateOperationsInput | string
-    nom?: StringFieldUpdateOperationsInput | string
-    temporadaId?: IntFieldUpdateOperationsInput | number
-    cronicaId?: NullableIntFieldUpdateOperationsInput | number | null
-    castells?: CastellUncheckedUpdateManyWithoutActuacioNestedInput
-    fotos?: FotoUncheckedUpdateManyWithoutActuacioNestedInput
-  }
-
   export type ActuacioCreateWithoutCastellsInput = {
     data: Date | string
     dataHora?: Date | string | null
@@ -10588,9 +12344,10 @@ export namespace Prisma {
     ciutat: string
     nom: string
     cronicaId?: number | null
-    fotos?: FotoCreateNestedManyWithoutActuacioInput
     temporada: TemporadaCreateNestedOneWithoutActuacionsInput
     cronica?: CronicaCreateNestedOneWithoutActuacioInput
+    fotos?: FotoCreateNestedManyWithoutActuacioInput
+    colles?: CollaCreateNestedManyWithoutActuacionsInput
   }
 
   export type ActuacioUncheckedCreateWithoutCastellsInput = {
@@ -10602,8 +12359,9 @@ export namespace Prisma {
     nom: string
     temporadaId: number
     cronicaId?: number | null
-    fotos?: FotoUncheckedCreateNestedManyWithoutActuacioInput
     cronica?: CronicaUncheckedCreateNestedOneWithoutActuacioInput
+    fotos?: FotoUncheckedCreateNestedManyWithoutActuacioInput
+    colles?: CollaUncheckedCreateNestedManyWithoutActuacionsInput
   }
 
   export type ActuacioCreateOrConnectWithoutCastellsInput = {
@@ -10611,13 +12369,33 @@ export namespace Prisma {
     create: XOR<ActuacioCreateWithoutCastellsInput, ActuacioUncheckedCreateWithoutCastellsInput>
   }
 
+  export type CollaCreateWithoutCastellsInput = {
+    id: number
+    name: string
+    fotos?: FotoCreateNestedManyWithoutCollaInput
+    actuacions?: ActuacioCreateNestedManyWithoutCollesInput
+  }
+
+  export type CollaUncheckedCreateWithoutCastellsInput = {
+    id: number
+    name: string
+    fotos?: FotoUncheckedCreateNestedManyWithoutCollaInput
+    actuacions?: ActuacioUncheckedCreateNestedManyWithoutCollesInput
+  }
+
+  export type CollaCreateOrConnectWithoutCastellsInput = {
+    where: CollaWhereUniqueInput
+    create: XOR<CollaCreateWithoutCastellsInput, CollaUncheckedCreateWithoutCastellsInput>
+  }
+
   export type FotoCreateWithoutCastellInput = {
     created?: Date | string
     name: string
     url?: string | null
     mainFoto?: boolean
-    autor: UsuariCreateNestedOneWithoutFotosInput
     actuacio: ActuacioCreateNestedOneWithoutFotosInput
+    autor: UsuariCreateNestedOneWithoutFotosInput
+    colla: CollaCreateNestedOneWithoutFotosInput
   }
 
   export type FotoUncheckedCreateWithoutCastellInput = {
@@ -10628,6 +12406,7 @@ export namespace Prisma {
     autorId: number
     mainFoto?: boolean
     actuacioId: number
+    collaId: number
   }
 
   export type FotoCreateOrConnectWithoutCastellInput = {
@@ -10658,9 +12437,10 @@ export namespace Prisma {
     ciutat?: StringFieldUpdateOperationsInput | string
     nom?: StringFieldUpdateOperationsInput | string
     cronicaId?: NullableIntFieldUpdateOperationsInput | number | null
-    fotos?: FotoUpdateManyWithoutActuacioNestedInput
     temporada?: TemporadaUpdateOneRequiredWithoutActuacionsNestedInput
     cronica?: CronicaUpdateOneWithoutActuacioNestedInput
+    fotos?: FotoUpdateManyWithoutActuacioNestedInput
+    colles?: CollaUpdateManyWithoutActuacionsNestedInput
   }
 
   export type ActuacioUncheckedUpdateWithoutCastellsInput = {
@@ -10672,8 +12452,34 @@ export namespace Prisma {
     nom?: StringFieldUpdateOperationsInput | string
     temporadaId?: IntFieldUpdateOperationsInput | number
     cronicaId?: NullableIntFieldUpdateOperationsInput | number | null
-    fotos?: FotoUncheckedUpdateManyWithoutActuacioNestedInput
     cronica?: CronicaUncheckedUpdateOneWithoutActuacioNestedInput
+    fotos?: FotoUncheckedUpdateManyWithoutActuacioNestedInput
+    colles?: CollaUncheckedUpdateManyWithoutActuacionsNestedInput
+  }
+
+  export type CollaUpsertWithoutCastellsInput = {
+    update: XOR<CollaUpdateWithoutCastellsInput, CollaUncheckedUpdateWithoutCastellsInput>
+    create: XOR<CollaCreateWithoutCastellsInput, CollaUncheckedCreateWithoutCastellsInput>
+    where?: CollaWhereInput
+  }
+
+  export type CollaUpdateToOneWithWhereWithoutCastellsInput = {
+    where?: CollaWhereInput
+    data: XOR<CollaUpdateWithoutCastellsInput, CollaUncheckedUpdateWithoutCastellsInput>
+  }
+
+  export type CollaUpdateWithoutCastellsInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: StringFieldUpdateOperationsInput | string
+    fotos?: FotoUpdateManyWithoutCollaNestedInput
+    actuacions?: ActuacioUpdateManyWithoutCollesNestedInput
+  }
+
+  export type CollaUncheckedUpdateWithoutCastellsInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: StringFieldUpdateOperationsInput | string
+    fotos?: FotoUncheckedUpdateManyWithoutCollaNestedInput
+    actuacions?: ActuacioUncheckedUpdateManyWithoutCollesNestedInput
   }
 
   export type FotoUpsertWithWhereUniqueWithoutCastellInput = {
@@ -10690,35 +12496,6 @@ export namespace Prisma {
   export type FotoUpdateManyWithWhereWithoutCastellInput = {
     where: FotoScalarWhereInput
     data: XOR<FotoUpdateManyMutationInput, FotoUncheckedUpdateManyWithoutCastellInput>
-  }
-
-  export type FotoCreateWithoutAutorInput = {
-    created?: Date | string
-    name: string
-    url?: string | null
-    mainFoto?: boolean
-    actuacio: ActuacioCreateNestedOneWithoutFotosInput
-    castell?: CastellCreateNestedOneWithoutFotosInput
-  }
-
-  export type FotoUncheckedCreateWithoutAutorInput = {
-    id?: number
-    created?: Date | string
-    name: string
-    url?: string | null
-    mainFoto?: boolean
-    actuacioId: number
-    castellId: number
-  }
-
-  export type FotoCreateOrConnectWithoutAutorInput = {
-    where: FotoWhereUniqueInput
-    create: XOR<FotoCreateWithoutAutorInput, FotoUncheckedCreateWithoutAutorInput>
-  }
-
-  export type FotoCreateManyAutorInputEnvelope = {
-    data: FotoCreateManyAutorInput | FotoCreateManyAutorInput[]
-    skipDuplicates?: boolean
   }
 
   export type CronicaCreateWithoutAutorInput = {
@@ -10746,20 +12523,35 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
-  export type FotoUpsertWithWhereUniqueWithoutAutorInput = {
+  export type FotoCreateWithoutAutorInput = {
+    created?: Date | string
+    name: string
+    url?: string | null
+    mainFoto?: boolean
+    actuacio: ActuacioCreateNestedOneWithoutFotosInput
+    castell: CastellCreateNestedOneWithoutFotosInput
+    colla: CollaCreateNestedOneWithoutFotosInput
+  }
+
+  export type FotoUncheckedCreateWithoutAutorInput = {
+    id?: number
+    created?: Date | string
+    name: string
+    url?: string | null
+    mainFoto?: boolean
+    actuacioId: number
+    castellId: number
+    collaId: number
+  }
+
+  export type FotoCreateOrConnectWithoutAutorInput = {
     where: FotoWhereUniqueInput
-    update: XOR<FotoUpdateWithoutAutorInput, FotoUncheckedUpdateWithoutAutorInput>
     create: XOR<FotoCreateWithoutAutorInput, FotoUncheckedCreateWithoutAutorInput>
   }
 
-  export type FotoUpdateWithWhereUniqueWithoutAutorInput = {
-    where: FotoWhereUniqueInput
-    data: XOR<FotoUpdateWithoutAutorInput, FotoUncheckedUpdateWithoutAutorInput>
-  }
-
-  export type FotoUpdateManyWithWhereWithoutAutorInput = {
-    where: FotoScalarWhereInput
-    data: XOR<FotoUpdateManyMutationInput, FotoUncheckedUpdateManyWithoutAutorInput>
+  export type FotoCreateManyAutorInputEnvelope = {
+    data: FotoCreateManyAutorInput | FotoCreateManyAutorInput[]
+    skipDuplicates?: boolean
   }
 
   export type CronicaUpsertWithWhereUniqueWithoutAutorInput = {
@@ -10790,6 +12582,54 @@ export namespace Prisma {
     actuacioId?: IntFilter<"Cronica"> | number
   }
 
+  export type FotoUpsertWithWhereUniqueWithoutAutorInput = {
+    where: FotoWhereUniqueInput
+    update: XOR<FotoUpdateWithoutAutorInput, FotoUncheckedUpdateWithoutAutorInput>
+    create: XOR<FotoCreateWithoutAutorInput, FotoUncheckedCreateWithoutAutorInput>
+  }
+
+  export type FotoUpdateWithWhereUniqueWithoutAutorInput = {
+    where: FotoWhereUniqueInput
+    data: XOR<FotoUpdateWithoutAutorInput, FotoUncheckedUpdateWithoutAutorInput>
+  }
+
+  export type FotoUpdateManyWithWhereWithoutAutorInput = {
+    where: FotoScalarWhereInput
+    data: XOR<FotoUpdateManyMutationInput, FotoUncheckedUpdateManyWithoutAutorInput>
+  }
+
+  export type ActuacioCreateWithoutFotosInput = {
+    data: Date | string
+    dataHora?: Date | string | null
+    lloc?: string | null
+    ciutat: string
+    nom: string
+    cronicaId?: number | null
+    temporada: TemporadaCreateNestedOneWithoutActuacionsInput
+    castells?: CastellCreateNestedManyWithoutActuacioInput
+    cronica?: CronicaCreateNestedOneWithoutActuacioInput
+    colles?: CollaCreateNestedManyWithoutActuacionsInput
+  }
+
+  export type ActuacioUncheckedCreateWithoutFotosInput = {
+    id?: number
+    data: Date | string
+    dataHora?: Date | string | null
+    lloc?: string | null
+    ciutat: string
+    nom: string
+    temporadaId: number
+    cronicaId?: number | null
+    castells?: CastellUncheckedCreateNestedManyWithoutActuacioInput
+    cronica?: CronicaUncheckedCreateNestedOneWithoutActuacioInput
+    colles?: CollaUncheckedCreateNestedManyWithoutActuacionsInput
+  }
+
+  export type ActuacioCreateOrConnectWithoutFotosInput = {
+    where: ActuacioWhereUniqueInput
+    create: XOR<ActuacioCreateWithoutFotosInput, ActuacioUncheckedCreateWithoutFotosInput>
+  }
+
   export type UsuariCreateWithoutFotosInput = {
     correu: string
     contrassenya: string
@@ -10810,40 +12650,11 @@ export namespace Prisma {
     create: XOR<UsuariCreateWithoutFotosInput, UsuariUncheckedCreateWithoutFotosInput>
   }
 
-  export type ActuacioCreateWithoutFotosInput = {
-    data: Date | string
-    dataHora?: Date | string | null
-    lloc?: string | null
-    ciutat: string
-    nom: string
-    cronicaId?: number | null
-    castells?: CastellCreateNestedManyWithoutActuacioInput
-    temporada: TemporadaCreateNestedOneWithoutActuacionsInput
-    cronica?: CronicaCreateNestedOneWithoutActuacioInput
-  }
-
-  export type ActuacioUncheckedCreateWithoutFotosInput = {
-    id?: number
-    data: Date | string
-    dataHora?: Date | string | null
-    lloc?: string | null
-    ciutat: string
-    nom: string
-    temporadaId: number
-    cronicaId?: number | null
-    castells?: CastellUncheckedCreateNestedManyWithoutActuacioInput
-    cronica?: CronicaUncheckedCreateNestedOneWithoutActuacioInput
-  }
-
-  export type ActuacioCreateOrConnectWithoutFotosInput = {
-    where: ActuacioWhereUniqueInput
-    create: XOR<ActuacioCreateWithoutFotosInput, ActuacioUncheckedCreateWithoutFotosInput>
-  }
-
   export type CastellCreateWithoutFotosInput = {
     nom: string
     resultat: string
     actuacio: ActuacioCreateNestedOneWithoutCastellsInput
+    colla: CollaCreateNestedOneWithoutCastellsInput
   }
 
   export type CastellUncheckedCreateWithoutFotosInput = {
@@ -10851,11 +12662,69 @@ export namespace Prisma {
     nom: string
     actuacioId: number
     resultat: string
+    collaId: number
   }
 
   export type CastellCreateOrConnectWithoutFotosInput = {
     where: CastellWhereUniqueInput
     create: XOR<CastellCreateWithoutFotosInput, CastellUncheckedCreateWithoutFotosInput>
+  }
+
+  export type CollaCreateWithoutFotosInput = {
+    id: number
+    name: string
+    castells?: CastellCreateNestedManyWithoutCollaInput
+    actuacions?: ActuacioCreateNestedManyWithoutCollesInput
+  }
+
+  export type CollaUncheckedCreateWithoutFotosInput = {
+    id: number
+    name: string
+    castells?: CastellUncheckedCreateNestedManyWithoutCollaInput
+    actuacions?: ActuacioUncheckedCreateNestedManyWithoutCollesInput
+  }
+
+  export type CollaCreateOrConnectWithoutFotosInput = {
+    where: CollaWhereUniqueInput
+    create: XOR<CollaCreateWithoutFotosInput, CollaUncheckedCreateWithoutFotosInput>
+  }
+
+  export type ActuacioUpsertWithoutFotosInput = {
+    update: XOR<ActuacioUpdateWithoutFotosInput, ActuacioUncheckedUpdateWithoutFotosInput>
+    create: XOR<ActuacioCreateWithoutFotosInput, ActuacioUncheckedCreateWithoutFotosInput>
+    where?: ActuacioWhereInput
+  }
+
+  export type ActuacioUpdateToOneWithWhereWithoutFotosInput = {
+    where?: ActuacioWhereInput
+    data: XOR<ActuacioUpdateWithoutFotosInput, ActuacioUncheckedUpdateWithoutFotosInput>
+  }
+
+  export type ActuacioUpdateWithoutFotosInput = {
+    data?: DateTimeFieldUpdateOperationsInput | Date | string
+    dataHora?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lloc?: NullableStringFieldUpdateOperationsInput | string | null
+    ciutat?: StringFieldUpdateOperationsInput | string
+    nom?: StringFieldUpdateOperationsInput | string
+    cronicaId?: NullableIntFieldUpdateOperationsInput | number | null
+    temporada?: TemporadaUpdateOneRequiredWithoutActuacionsNestedInput
+    castells?: CastellUpdateManyWithoutActuacioNestedInput
+    cronica?: CronicaUpdateOneWithoutActuacioNestedInput
+    colles?: CollaUpdateManyWithoutActuacionsNestedInput
+  }
+
+  export type ActuacioUncheckedUpdateWithoutFotosInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    data?: DateTimeFieldUpdateOperationsInput | Date | string
+    dataHora?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lloc?: NullableStringFieldUpdateOperationsInput | string | null
+    ciutat?: StringFieldUpdateOperationsInput | string
+    nom?: StringFieldUpdateOperationsInput | string
+    temporadaId?: IntFieldUpdateOperationsInput | number
+    cronicaId?: NullableIntFieldUpdateOperationsInput | number | null
+    castells?: CastellUncheckedUpdateManyWithoutActuacioNestedInput
+    cronica?: CronicaUncheckedUpdateOneWithoutActuacioNestedInput
+    colles?: CollaUncheckedUpdateManyWithoutActuacionsNestedInput
   }
 
   export type UsuariUpsertWithoutFotosInput = {
@@ -10884,42 +12753,6 @@ export namespace Prisma {
     croniques?: CronicaUncheckedUpdateManyWithoutAutorNestedInput
   }
 
-  export type ActuacioUpsertWithoutFotosInput = {
-    update: XOR<ActuacioUpdateWithoutFotosInput, ActuacioUncheckedUpdateWithoutFotosInput>
-    create: XOR<ActuacioCreateWithoutFotosInput, ActuacioUncheckedCreateWithoutFotosInput>
-    where?: ActuacioWhereInput
-  }
-
-  export type ActuacioUpdateToOneWithWhereWithoutFotosInput = {
-    where?: ActuacioWhereInput
-    data: XOR<ActuacioUpdateWithoutFotosInput, ActuacioUncheckedUpdateWithoutFotosInput>
-  }
-
-  export type ActuacioUpdateWithoutFotosInput = {
-    data?: DateTimeFieldUpdateOperationsInput | Date | string
-    dataHora?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    lloc?: NullableStringFieldUpdateOperationsInput | string | null
-    ciutat?: StringFieldUpdateOperationsInput | string
-    nom?: StringFieldUpdateOperationsInput | string
-    cronicaId?: NullableIntFieldUpdateOperationsInput | number | null
-    castells?: CastellUpdateManyWithoutActuacioNestedInput
-    temporada?: TemporadaUpdateOneRequiredWithoutActuacionsNestedInput
-    cronica?: CronicaUpdateOneWithoutActuacioNestedInput
-  }
-
-  export type ActuacioUncheckedUpdateWithoutFotosInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    data?: DateTimeFieldUpdateOperationsInput | Date | string
-    dataHora?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    lloc?: NullableStringFieldUpdateOperationsInput | string | null
-    ciutat?: StringFieldUpdateOperationsInput | string
-    nom?: StringFieldUpdateOperationsInput | string
-    temporadaId?: IntFieldUpdateOperationsInput | number
-    cronicaId?: NullableIntFieldUpdateOperationsInput | number | null
-    castells?: CastellUncheckedUpdateManyWithoutActuacioNestedInput
-    cronica?: CronicaUncheckedUpdateOneWithoutActuacioNestedInput
-  }
-
   export type CastellUpsertWithoutFotosInput = {
     update: XOR<CastellUpdateWithoutFotosInput, CastellUncheckedUpdateWithoutFotosInput>
     create: XOR<CastellCreateWithoutFotosInput, CastellUncheckedCreateWithoutFotosInput>
@@ -10935,6 +12768,7 @@ export namespace Prisma {
     nom?: StringFieldUpdateOperationsInput | string
     resultat?: StringFieldUpdateOperationsInput | string
     actuacio?: ActuacioUpdateOneRequiredWithoutCastellsNestedInput
+    colla?: CollaUpdateOneRequiredWithoutCastellsNestedInput
   }
 
   export type CastellUncheckedUpdateWithoutFotosInput = {
@@ -10942,6 +12776,32 @@ export namespace Prisma {
     nom?: StringFieldUpdateOperationsInput | string
     actuacioId?: IntFieldUpdateOperationsInput | number
     resultat?: StringFieldUpdateOperationsInput | string
+    collaId?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type CollaUpsertWithoutFotosInput = {
+    update: XOR<CollaUpdateWithoutFotosInput, CollaUncheckedUpdateWithoutFotosInput>
+    create: XOR<CollaCreateWithoutFotosInput, CollaUncheckedCreateWithoutFotosInput>
+    where?: CollaWhereInput
+  }
+
+  export type CollaUpdateToOneWithWhereWithoutFotosInput = {
+    where?: CollaWhereInput
+    data: XOR<CollaUpdateWithoutFotosInput, CollaUncheckedUpdateWithoutFotosInput>
+  }
+
+  export type CollaUpdateWithoutFotosInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: StringFieldUpdateOperationsInput | string
+    castells?: CastellUpdateManyWithoutCollaNestedInput
+    actuacions?: ActuacioUpdateManyWithoutCollesNestedInput
+  }
+
+  export type CollaUncheckedUpdateWithoutFotosInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: StringFieldUpdateOperationsInput | string
+    castells?: CastellUncheckedUpdateManyWithoutCollaNestedInput
+    actuacions?: ActuacioUncheckedUpdateManyWithoutCollesNestedInput
   }
 
   export type ActuacioCreateWithoutTemporadaInput = {
@@ -10952,8 +12812,9 @@ export namespace Prisma {
     nom: string
     cronicaId?: number | null
     castells?: CastellCreateNestedManyWithoutActuacioInput
-    fotos?: FotoCreateNestedManyWithoutActuacioInput
     cronica?: CronicaCreateNestedOneWithoutActuacioInput
+    fotos?: FotoCreateNestedManyWithoutActuacioInput
+    colles?: CollaCreateNestedManyWithoutActuacionsInput
   }
 
   export type ActuacioUncheckedCreateWithoutTemporadaInput = {
@@ -10965,8 +12826,9 @@ export namespace Prisma {
     nom: string
     cronicaId?: number | null
     castells?: CastellUncheckedCreateNestedManyWithoutActuacioInput
-    fotos?: FotoUncheckedCreateNestedManyWithoutActuacioInput
     cronica?: CronicaUncheckedCreateNestedOneWithoutActuacioInput
+    fotos?: FotoUncheckedCreateNestedManyWithoutActuacioInput
+    colles?: CollaUncheckedCreateNestedManyWithoutActuacionsInput
   }
 
   export type ActuacioCreateOrConnectWithoutTemporadaInput = {
@@ -11009,10 +12871,147 @@ export namespace Prisma {
     cronicaId?: IntNullableFilter<"Actuacio"> | number | null
   }
 
+  export type CastellCreateWithoutCollaInput = {
+    nom: string
+    resultat: string
+    actuacio: ActuacioCreateNestedOneWithoutCastellsInput
+    fotos?: FotoCreateNestedManyWithoutCastellInput
+  }
+
+  export type CastellUncheckedCreateWithoutCollaInput = {
+    id?: number
+    nom: string
+    actuacioId: number
+    resultat: string
+    fotos?: FotoUncheckedCreateNestedManyWithoutCastellInput
+  }
+
+  export type CastellCreateOrConnectWithoutCollaInput = {
+    where: CastellWhereUniqueInput
+    create: XOR<CastellCreateWithoutCollaInput, CastellUncheckedCreateWithoutCollaInput>
+  }
+
+  export type CastellCreateManyCollaInputEnvelope = {
+    data: CastellCreateManyCollaInput | CastellCreateManyCollaInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type FotoCreateWithoutCollaInput = {
+    created?: Date | string
+    name: string
+    url?: string | null
+    mainFoto?: boolean
+    actuacio: ActuacioCreateNestedOneWithoutFotosInput
+    autor: UsuariCreateNestedOneWithoutFotosInput
+    castell: CastellCreateNestedOneWithoutFotosInput
+  }
+
+  export type FotoUncheckedCreateWithoutCollaInput = {
+    id?: number
+    created?: Date | string
+    name: string
+    url?: string | null
+    autorId: number
+    mainFoto?: boolean
+    actuacioId: number
+    castellId: number
+  }
+
+  export type FotoCreateOrConnectWithoutCollaInput = {
+    where: FotoWhereUniqueInput
+    create: XOR<FotoCreateWithoutCollaInput, FotoUncheckedCreateWithoutCollaInput>
+  }
+
+  export type FotoCreateManyCollaInputEnvelope = {
+    data: FotoCreateManyCollaInput | FotoCreateManyCollaInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type ActuacioCreateWithoutCollesInput = {
+    data: Date | string
+    dataHora?: Date | string | null
+    lloc?: string | null
+    ciutat: string
+    nom: string
+    cronicaId?: number | null
+    temporada: TemporadaCreateNestedOneWithoutActuacionsInput
+    castells?: CastellCreateNestedManyWithoutActuacioInput
+    cronica?: CronicaCreateNestedOneWithoutActuacioInput
+    fotos?: FotoCreateNestedManyWithoutActuacioInput
+  }
+
+  export type ActuacioUncheckedCreateWithoutCollesInput = {
+    id?: number
+    data: Date | string
+    dataHora?: Date | string | null
+    lloc?: string | null
+    ciutat: string
+    nom: string
+    temporadaId: number
+    cronicaId?: number | null
+    castells?: CastellUncheckedCreateNestedManyWithoutActuacioInput
+    cronica?: CronicaUncheckedCreateNestedOneWithoutActuacioInput
+    fotos?: FotoUncheckedCreateNestedManyWithoutActuacioInput
+  }
+
+  export type ActuacioCreateOrConnectWithoutCollesInput = {
+    where: ActuacioWhereUniqueInput
+    create: XOR<ActuacioCreateWithoutCollesInput, ActuacioUncheckedCreateWithoutCollesInput>
+  }
+
+  export type CastellUpsertWithWhereUniqueWithoutCollaInput = {
+    where: CastellWhereUniqueInput
+    update: XOR<CastellUpdateWithoutCollaInput, CastellUncheckedUpdateWithoutCollaInput>
+    create: XOR<CastellCreateWithoutCollaInput, CastellUncheckedCreateWithoutCollaInput>
+  }
+
+  export type CastellUpdateWithWhereUniqueWithoutCollaInput = {
+    where: CastellWhereUniqueInput
+    data: XOR<CastellUpdateWithoutCollaInput, CastellUncheckedUpdateWithoutCollaInput>
+  }
+
+  export type CastellUpdateManyWithWhereWithoutCollaInput = {
+    where: CastellScalarWhereInput
+    data: XOR<CastellUpdateManyMutationInput, CastellUncheckedUpdateManyWithoutCollaInput>
+  }
+
+  export type FotoUpsertWithWhereUniqueWithoutCollaInput = {
+    where: FotoWhereUniqueInput
+    update: XOR<FotoUpdateWithoutCollaInput, FotoUncheckedUpdateWithoutCollaInput>
+    create: XOR<FotoCreateWithoutCollaInput, FotoUncheckedCreateWithoutCollaInput>
+  }
+
+  export type FotoUpdateWithWhereUniqueWithoutCollaInput = {
+    where: FotoWhereUniqueInput
+    data: XOR<FotoUpdateWithoutCollaInput, FotoUncheckedUpdateWithoutCollaInput>
+  }
+
+  export type FotoUpdateManyWithWhereWithoutCollaInput = {
+    where: FotoScalarWhereInput
+    data: XOR<FotoUpdateManyMutationInput, FotoUncheckedUpdateManyWithoutCollaInput>
+  }
+
+  export type ActuacioUpsertWithWhereUniqueWithoutCollesInput = {
+    where: ActuacioWhereUniqueInput
+    update: XOR<ActuacioUpdateWithoutCollesInput, ActuacioUncheckedUpdateWithoutCollesInput>
+    create: XOR<ActuacioCreateWithoutCollesInput, ActuacioUncheckedCreateWithoutCollesInput>
+  }
+
+  export type ActuacioUpdateWithWhereUniqueWithoutCollesInput = {
+    where: ActuacioWhereUniqueInput
+    data: XOR<ActuacioUpdateWithoutCollesInput, ActuacioUncheckedUpdateWithoutCollesInput>
+  }
+
+  export type ActuacioUpdateManyWithWhereWithoutCollesInput = {
+    where: ActuacioScalarWhereInput
+    data: XOR<ActuacioUpdateManyMutationInput, ActuacioUncheckedUpdateManyWithoutCollesInput>
+  }
+
   export type CastellCreateManyActuacioInput = {
     id?: number
     nom: string
     resultat: string
+    collaId: number
   }
 
   export type FotoCreateManyActuacioInput = {
@@ -11023,11 +13022,13 @@ export namespace Prisma {
     autorId: number
     mainFoto?: boolean
     castellId: number
+    collaId: number
   }
 
   export type CastellUpdateWithoutActuacioInput = {
     nom?: StringFieldUpdateOperationsInput | string
     resultat?: StringFieldUpdateOperationsInput | string
+    colla?: CollaUpdateOneRequiredWithoutCastellsNestedInput
     fotos?: FotoUpdateManyWithoutCastellNestedInput
   }
 
@@ -11035,6 +13036,7 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     nom?: StringFieldUpdateOperationsInput | string
     resultat?: StringFieldUpdateOperationsInput | string
+    collaId?: IntFieldUpdateOperationsInput | number
     fotos?: FotoUncheckedUpdateManyWithoutCastellNestedInput
   }
 
@@ -11042,6 +13044,7 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     nom?: StringFieldUpdateOperationsInput | string
     resultat?: StringFieldUpdateOperationsInput | string
+    collaId?: IntFieldUpdateOperationsInput | number
   }
 
   export type FotoUpdateWithoutActuacioInput = {
@@ -11050,7 +13053,8 @@ export namespace Prisma {
     url?: NullableStringFieldUpdateOperationsInput | string | null
     mainFoto?: BoolFieldUpdateOperationsInput | boolean
     autor?: UsuariUpdateOneRequiredWithoutFotosNestedInput
-    castell?: CastellUpdateOneWithoutFotosNestedInput
+    castell?: CastellUpdateOneRequiredWithoutFotosNestedInput
+    colla?: CollaUpdateOneRequiredWithoutFotosNestedInput
   }
 
   export type FotoUncheckedUpdateWithoutActuacioInput = {
@@ -11061,6 +13065,7 @@ export namespace Prisma {
     autorId?: IntFieldUpdateOperationsInput | number
     mainFoto?: BoolFieldUpdateOperationsInput | boolean
     castellId?: IntFieldUpdateOperationsInput | number
+    collaId?: IntFieldUpdateOperationsInput | number
   }
 
   export type FotoUncheckedUpdateManyWithoutActuacioInput = {
@@ -11071,6 +13076,26 @@ export namespace Prisma {
     autorId?: IntFieldUpdateOperationsInput | number
     mainFoto?: BoolFieldUpdateOperationsInput | boolean
     castellId?: IntFieldUpdateOperationsInput | number
+    collaId?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type CollaUpdateWithoutActuacionsInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: StringFieldUpdateOperationsInput | string
+    castells?: CastellUpdateManyWithoutCollaNestedInput
+    fotos?: FotoUpdateManyWithoutCollaNestedInput
+  }
+
+  export type CollaUncheckedUpdateWithoutActuacionsInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: StringFieldUpdateOperationsInput | string
+    castells?: CastellUncheckedUpdateManyWithoutCollaNestedInput
+    fotos?: FotoUncheckedUpdateManyWithoutCollaNestedInput
+  }
+
+  export type CollaUncheckedUpdateManyWithoutActuacionsInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    name?: StringFieldUpdateOperationsInput | string
   }
 
   export type FotoCreateManyCastellInput = {
@@ -11081,6 +13106,7 @@ export namespace Prisma {
     autorId: number
     mainFoto?: boolean
     actuacioId: number
+    collaId: number
   }
 
   export type FotoUpdateWithoutCastellInput = {
@@ -11088,8 +13114,9 @@ export namespace Prisma {
     name?: StringFieldUpdateOperationsInput | string
     url?: NullableStringFieldUpdateOperationsInput | string | null
     mainFoto?: BoolFieldUpdateOperationsInput | boolean
-    autor?: UsuariUpdateOneRequiredWithoutFotosNestedInput
     actuacio?: ActuacioUpdateOneRequiredWithoutFotosNestedInput
+    autor?: UsuariUpdateOneRequiredWithoutFotosNestedInput
+    colla?: CollaUpdateOneRequiredWithoutFotosNestedInput
   }
 
   export type FotoUncheckedUpdateWithoutCastellInput = {
@@ -11100,6 +13127,7 @@ export namespace Prisma {
     autorId?: IntFieldUpdateOperationsInput | number
     mainFoto?: BoolFieldUpdateOperationsInput | boolean
     actuacioId?: IntFieldUpdateOperationsInput | number
+    collaId?: IntFieldUpdateOperationsInput | number
   }
 
   export type FotoUncheckedUpdateManyWithoutCastellInput = {
@@ -11110,16 +13138,7 @@ export namespace Prisma {
     autorId?: IntFieldUpdateOperationsInput | number
     mainFoto?: BoolFieldUpdateOperationsInput | boolean
     actuacioId?: IntFieldUpdateOperationsInput | number
-  }
-
-  export type FotoCreateManyAutorInput = {
-    id?: number
-    created?: Date | string
-    name: string
-    url?: string | null
-    mainFoto?: boolean
-    actuacioId: number
-    castellId: number
+    collaId?: IntFieldUpdateOperationsInput | number
   }
 
   export type CronicaCreateManyAutorInput = {
@@ -11130,33 +13149,15 @@ export namespace Prisma {
     actuacioId: number
   }
 
-  export type FotoUpdateWithoutAutorInput = {
-    created?: DateTimeFieldUpdateOperationsInput | Date | string
-    name?: StringFieldUpdateOperationsInput | string
-    url?: NullableStringFieldUpdateOperationsInput | string | null
-    mainFoto?: BoolFieldUpdateOperationsInput | boolean
-    actuacio?: ActuacioUpdateOneRequiredWithoutFotosNestedInput
-    castell?: CastellUpdateOneWithoutFotosNestedInput
-  }
-
-  export type FotoUncheckedUpdateWithoutAutorInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    created?: DateTimeFieldUpdateOperationsInput | Date | string
-    name?: StringFieldUpdateOperationsInput | string
-    url?: NullableStringFieldUpdateOperationsInput | string | null
-    mainFoto?: BoolFieldUpdateOperationsInput | boolean
-    actuacioId?: IntFieldUpdateOperationsInput | number
-    castellId?: IntFieldUpdateOperationsInput | number
-  }
-
-  export type FotoUncheckedUpdateManyWithoutAutorInput = {
-    id?: IntFieldUpdateOperationsInput | number
-    created?: DateTimeFieldUpdateOperationsInput | Date | string
-    name?: StringFieldUpdateOperationsInput | string
-    url?: NullableStringFieldUpdateOperationsInput | string | null
-    mainFoto?: BoolFieldUpdateOperationsInput | boolean
-    actuacioId?: IntFieldUpdateOperationsInput | number
-    castellId?: IntFieldUpdateOperationsInput | number
+  export type FotoCreateManyAutorInput = {
+    id?: number
+    created?: Date | string
+    name: string
+    url?: string | null
+    mainFoto?: boolean
+    actuacioId: number
+    castellId: number
+    collaId: number
   }
 
   export type CronicaUpdateWithoutAutorInput = {
@@ -11182,6 +13183,38 @@ export namespace Prisma {
     actuacioId?: IntFieldUpdateOperationsInput | number
   }
 
+  export type FotoUpdateWithoutAutorInput = {
+    created?: DateTimeFieldUpdateOperationsInput | Date | string
+    name?: StringFieldUpdateOperationsInput | string
+    url?: NullableStringFieldUpdateOperationsInput | string | null
+    mainFoto?: BoolFieldUpdateOperationsInput | boolean
+    actuacio?: ActuacioUpdateOneRequiredWithoutFotosNestedInput
+    castell?: CastellUpdateOneRequiredWithoutFotosNestedInput
+    colla?: CollaUpdateOneRequiredWithoutFotosNestedInput
+  }
+
+  export type FotoUncheckedUpdateWithoutAutorInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    created?: DateTimeFieldUpdateOperationsInput | Date | string
+    name?: StringFieldUpdateOperationsInput | string
+    url?: NullableStringFieldUpdateOperationsInput | string | null
+    mainFoto?: BoolFieldUpdateOperationsInput | boolean
+    actuacioId?: IntFieldUpdateOperationsInput | number
+    castellId?: IntFieldUpdateOperationsInput | number
+    collaId?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type FotoUncheckedUpdateManyWithoutAutorInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    created?: DateTimeFieldUpdateOperationsInput | Date | string
+    name?: StringFieldUpdateOperationsInput | string
+    url?: NullableStringFieldUpdateOperationsInput | string | null
+    mainFoto?: BoolFieldUpdateOperationsInput | boolean
+    actuacioId?: IntFieldUpdateOperationsInput | number
+    castellId?: IntFieldUpdateOperationsInput | number
+    collaId?: IntFieldUpdateOperationsInput | number
+  }
+
   export type ActuacioCreateManyTemporadaInput = {
     id?: number
     data: Date | string
@@ -11200,8 +13233,9 @@ export namespace Prisma {
     nom?: StringFieldUpdateOperationsInput | string
     cronicaId?: NullableIntFieldUpdateOperationsInput | number | null
     castells?: CastellUpdateManyWithoutActuacioNestedInput
-    fotos?: FotoUpdateManyWithoutActuacioNestedInput
     cronica?: CronicaUpdateOneWithoutActuacioNestedInput
+    fotos?: FotoUpdateManyWithoutActuacioNestedInput
+    colles?: CollaUpdateManyWithoutActuacionsNestedInput
   }
 
   export type ActuacioUncheckedUpdateWithoutTemporadaInput = {
@@ -11213,8 +13247,9 @@ export namespace Prisma {
     nom?: StringFieldUpdateOperationsInput | string
     cronicaId?: NullableIntFieldUpdateOperationsInput | number | null
     castells?: CastellUncheckedUpdateManyWithoutActuacioNestedInput
-    fotos?: FotoUncheckedUpdateManyWithoutActuacioNestedInput
     cronica?: CronicaUncheckedUpdateOneWithoutActuacioNestedInput
+    fotos?: FotoUncheckedUpdateManyWithoutActuacioNestedInput
+    colles?: CollaUncheckedUpdateManyWithoutActuacionsNestedInput
   }
 
   export type ActuacioUncheckedUpdateManyWithoutTemporadaInput = {
@@ -11224,6 +13259,116 @@ export namespace Prisma {
     lloc?: NullableStringFieldUpdateOperationsInput | string | null
     ciutat?: StringFieldUpdateOperationsInput | string
     nom?: StringFieldUpdateOperationsInput | string
+    cronicaId?: NullableIntFieldUpdateOperationsInput | number | null
+  }
+
+  export type CastellCreateManyCollaInput = {
+    id?: number
+    nom: string
+    actuacioId: number
+    resultat: string
+  }
+
+  export type FotoCreateManyCollaInput = {
+    id?: number
+    created?: Date | string
+    name: string
+    url?: string | null
+    autorId: number
+    mainFoto?: boolean
+    actuacioId: number
+    castellId: number
+  }
+
+  export type CastellUpdateWithoutCollaInput = {
+    nom?: StringFieldUpdateOperationsInput | string
+    resultat?: StringFieldUpdateOperationsInput | string
+    actuacio?: ActuacioUpdateOneRequiredWithoutCastellsNestedInput
+    fotos?: FotoUpdateManyWithoutCastellNestedInput
+  }
+
+  export type CastellUncheckedUpdateWithoutCollaInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    nom?: StringFieldUpdateOperationsInput | string
+    actuacioId?: IntFieldUpdateOperationsInput | number
+    resultat?: StringFieldUpdateOperationsInput | string
+    fotos?: FotoUncheckedUpdateManyWithoutCastellNestedInput
+  }
+
+  export type CastellUncheckedUpdateManyWithoutCollaInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    nom?: StringFieldUpdateOperationsInput | string
+    actuacioId?: IntFieldUpdateOperationsInput | number
+    resultat?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type FotoUpdateWithoutCollaInput = {
+    created?: DateTimeFieldUpdateOperationsInput | Date | string
+    name?: StringFieldUpdateOperationsInput | string
+    url?: NullableStringFieldUpdateOperationsInput | string | null
+    mainFoto?: BoolFieldUpdateOperationsInput | boolean
+    actuacio?: ActuacioUpdateOneRequiredWithoutFotosNestedInput
+    autor?: UsuariUpdateOneRequiredWithoutFotosNestedInput
+    castell?: CastellUpdateOneRequiredWithoutFotosNestedInput
+  }
+
+  export type FotoUncheckedUpdateWithoutCollaInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    created?: DateTimeFieldUpdateOperationsInput | Date | string
+    name?: StringFieldUpdateOperationsInput | string
+    url?: NullableStringFieldUpdateOperationsInput | string | null
+    autorId?: IntFieldUpdateOperationsInput | number
+    mainFoto?: BoolFieldUpdateOperationsInput | boolean
+    actuacioId?: IntFieldUpdateOperationsInput | number
+    castellId?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type FotoUncheckedUpdateManyWithoutCollaInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    created?: DateTimeFieldUpdateOperationsInput | Date | string
+    name?: StringFieldUpdateOperationsInput | string
+    url?: NullableStringFieldUpdateOperationsInput | string | null
+    autorId?: IntFieldUpdateOperationsInput | number
+    mainFoto?: BoolFieldUpdateOperationsInput | boolean
+    actuacioId?: IntFieldUpdateOperationsInput | number
+    castellId?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type ActuacioUpdateWithoutCollesInput = {
+    data?: DateTimeFieldUpdateOperationsInput | Date | string
+    dataHora?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lloc?: NullableStringFieldUpdateOperationsInput | string | null
+    ciutat?: StringFieldUpdateOperationsInput | string
+    nom?: StringFieldUpdateOperationsInput | string
+    cronicaId?: NullableIntFieldUpdateOperationsInput | number | null
+    temporada?: TemporadaUpdateOneRequiredWithoutActuacionsNestedInput
+    castells?: CastellUpdateManyWithoutActuacioNestedInput
+    cronica?: CronicaUpdateOneWithoutActuacioNestedInput
+    fotos?: FotoUpdateManyWithoutActuacioNestedInput
+  }
+
+  export type ActuacioUncheckedUpdateWithoutCollesInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    data?: DateTimeFieldUpdateOperationsInput | Date | string
+    dataHora?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lloc?: NullableStringFieldUpdateOperationsInput | string | null
+    ciutat?: StringFieldUpdateOperationsInput | string
+    nom?: StringFieldUpdateOperationsInput | string
+    temporadaId?: IntFieldUpdateOperationsInput | number
+    cronicaId?: NullableIntFieldUpdateOperationsInput | number | null
+    castells?: CastellUncheckedUpdateManyWithoutActuacioNestedInput
+    cronica?: CronicaUncheckedUpdateOneWithoutActuacioNestedInput
+    fotos?: FotoUncheckedUpdateManyWithoutActuacioNestedInput
+  }
+
+  export type ActuacioUncheckedUpdateManyWithoutCollesInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    data?: DateTimeFieldUpdateOperationsInput | Date | string
+    dataHora?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    lloc?: NullableStringFieldUpdateOperationsInput | string | null
+    ciutat?: StringFieldUpdateOperationsInput | string
+    nom?: StringFieldUpdateOperationsInput | string
+    temporadaId?: IntFieldUpdateOperationsInput | number
     cronicaId?: NullableIntFieldUpdateOperationsInput | number | null
   }
 

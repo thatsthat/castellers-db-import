@@ -1451,7 +1451,7 @@ Pde4 (Descarregat)
 Pde4 (Descarregat)
 Diada de la Colla Castellera La Bisbal del Penedès
 15/07/2023
-18.00
+18:00
 Carrer Doctor Robert
 La Bisbal del Penedès
 Colles i resultats
@@ -1546,7 +1546,7 @@ Pde4 (Descarregat)
 Pde4 (Descarregat)
 Diada de les Roses a Sant Feliu de Llobregat
 14/05/2023
-12.00
+12:00
 Plaça Lluis Companys
 Sant Feliu de Llobregat
 Colles i resultats
@@ -2404,7 +2404,7 @@ Pde4 (Descarregat)
 Pde4 (Descarregat)
 Diada 40 aniversari de l'ACPC a Castelldefels
 21/05/2022
-18.00
+18:00
 Plaça de l'Església
 Castelldefels
 Colles i resultats
@@ -2436,7 +2436,7 @@ Pde4 (Descarregat)
 Pde4 (Descarregat)
 28è Aniversari dels Castellers d'Esparreguera
 08/05/2022
-12.00
+12:00
 Plaça de la Pagesia
 Esparreguera
 Colles i resultats
@@ -3054,7 +3054,7 @@ Pde4 (Descarregat)
 Pde4 (Descarregat)
 Diada de la Colla Castellera La Bisbal del Penedès
 20/07/2019
-18.00
+18:00
 Carrer Doctor Robert
 La Bisbal del Penedès
 Colles i resultats
@@ -3189,7 +3189,7 @@ Pde4 (Descarregat)
 Pde4 (Descarregat)
 XXXVII Aniversari de l'ACPC a Castelldefels
 25/05/2019
-18.00
+18:00
 Castelldefels
 Colles i resultats
 Castellers de Castelldefels
@@ -3315,7 +3315,7 @@ Colla Castellera Jove de Barcelona
 4de7 (Descarregat)
 Diada de la Primavera a Cornellà de Llobregat
 06/04/2019
-18.00
+18:00
 Plaça Ajuntament
 Cornellà de Llobregat
 Colles i resultats
@@ -3364,7 +3364,7 @@ Castellers de Mollet
 Pde4 (Descarregat)
 Diada dels Fillols
 17/03/2019
-12.00
+12:00
 Antiga Fàbrica Estrella Damm
 Barcelona
 Colles i resultats

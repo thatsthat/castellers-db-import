@@ -21,15 +21,22 @@ const temporades = [
   await prisma.temporada.create({
     data: { id: i + 1, year: y },
   });
-}); */
+});
+
+for (var nom in colles) {
+  await prisma.colla.create({
+    data: { name: nom, id: colles[nom] },
+  });
+} */
 
 var actuacions = [];
 var castells = [];
 var actuacio = {};
 var castell = {};
 var previousLine = null;
-var indexActuacions = 822;
+var indexActuacions = 1;
 var currentCollaId = null;
+var collesActuacio = [];
 
 const rl = createInterface({
   input: createReadStream("data3.txt"),
@@ -50,13 +57,15 @@ rl.on("line", (line) => {
     const [day, month, year] = isDate[0].split("/");
     const d2 = year + "-" + month + "-" + day;
     if ("data" in actuacio) {
-      actuacio.castells = castells;
+      //actuacio.castells = castells;
+      actuacio.colles = { connect: collesActuacio };
       actuacions.push(actuacio);
-      indexActuacions -= 1;
+      indexActuacions += 1;
     }
     actuacio = {};
+    collesActuacio = [];
     actuacio.nom = previousLine;
-    castells = [];
+    //castells = [];
     //console.log(d2);
     actuacio.data = d2;
     actuacio.id = indexActuacions;
@@ -66,8 +75,9 @@ rl.on("line", (line) => {
     actuacio.dataHora = actuacio.data + "T" + isHour[0] + ":00Z";
   } else if (isColla) {
     currentCollaId = colles[line];
+    collesActuacio.push({ id: currentCollaId });
     // Desa la colla anterior (si n'hi ha)
-    if (!(previousLine === "Colles i resultats")) actuacio.castells = castells;
+    //if (!(previousLine === "Colles i resultats")) actuacio.castells = castells;
   } else if (isCastell) {
     castell.nom = isCastell[0].match(castellNameRegex)[0];
     const tmp = isCastell[0].match(castellResultRegex)[0];
@@ -89,5 +99,19 @@ rl.on("line", (line) => {
 });
 
 rl.on("close", async () => {
-  console.log(actuacions);
+  const count = await prisma.castell.createMany({
+    data: castells,
+  });
+  console.log(count);
+  /*
+  for (let i = 0; i < actuacions.length; i++) {
+    actuacions[i].data = actuacions[i].data + "T00:00:00Z";
+    const count = await prisma.actuacio.create({
+      data: actuacions[i],
+    });
+    setTimeout(() => {
+      console.log(actuacions[i].id);
+    }, 1000);
+  }
+  */
 });

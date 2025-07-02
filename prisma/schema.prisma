@@ -9,29 +9,30 @@ datasource db {
 }
 
 model Actuacio {
-  id            Int       @id @default(autoincrement())
-  data          DateTime  @db.Date
-  dataHora      DateTime?
-  lloc          String?
-  ciutat        String
-  nom           String
-  castells      Castell[] @relation("castellsActuacio")
-  fotos         Foto[]    @relation("fotosActuacio")
-  temporada     Temporada @relation("actuacionsTemporada", fields: [temporadaId], references: [id])
-  temporadaId   Int
-  cronica       Cronica?   @relation("cronicaActuacio")
-  cronicaId     Int?
+  id          Int       @id @default(autoincrement())
+  data        DateTime  @db.Date
+  dataHora    DateTime?
+  lloc        String?
+  ciutat      String
+  nom         String
+  temporadaId Int
+  cronicaId   Int?
+  temporada   Temporada @relation("actuacionsTemporada", fields: [temporadaId], references: [id])
+  castells    Castell[] @relation("castellsActuacio")
+  cronica     Cronica?  @relation("cronicaActuacio")
+  fotos       Foto[]    @relation("fotosActuacio")
+  colles      Colla[]   @relation("collesActuacio")
 }
 
 model Cronica {
-  id            Int      @id @default(autoincrement())
-  created       DateTime @default(now())
-  Titol         String   @db.VarChar(255)
-  Text          String
-  autor         Usuari   @relation("croniquesAfegides", fields: [autorId], references: [id])
-  autorId       Int
-  actuacio      Actuacio @relation("cronicaActuacio", fields: [actuacioId], references: [id])
-  actuacioId    Int      @unique
+  id         Int      @id @default(autoincrement())
+  created    DateTime @default(now())
+  Titol      String   @db.VarChar(255)
+  Text       String
+  autorId    Int
+  actuacioId Int      @unique
+  actuacio   Actuacio @relation("cronicaActuacio", fields: [actuacioId], references: [id])
+  autor      Usuari   @relation("croniquesAfegides", fields: [autorId], references: [id])
 }
 
 model Castell {
@@ -39,35 +40,47 @@ model Castell {
   nom        String
   actuacioId Int
   resultat   String
+  collaId    Int
   actuacio   Actuacio @relation("castellsActuacio", fields: [actuacioId], references: [id])
+  colla      Colla    @relation("castellsColla", fields: [collaId], references: [id])
   fotos      Foto[]   @relation("fotosCastell")
 }
 
 model Usuari {
-  id                Int         @id @default(autoincrement())
-  correu            String      @unique
-  contrassenya      String
-  nom               String
-  fotos             Foto[]      @relation("fotosAfegides")
-  croniques         Cronica[]   @relation("croniquesAfegides")
+  id           Int       @id @default(autoincrement())
+  correu       String    @unique
+  contrassenya String
+  nom          String
+  croniques    Cronica[] @relation("croniquesAfegides")
+  fotos        Foto[]    @relation("fotosAfegides")
 }
 
 model Foto {
-  id            Int      @id @default(autoincrement())
-  created       DateTime @default(now())
-  name          String   @db.VarChar(255)
-  url           String?
-  autor         Usuari   @relation("fotosAfegides", fields: [autorId], references: [id])
-  autorId       Int
-  mainFoto      Boolean  @default(false)
-  actuacio      Actuacio @relation("fotosActuacio", fields: [actuacioId], references: [id])
-  actuacioId    Int
-  castell       Castell? @relation("fotosCastell", fields: [castellId], references: [id])
-  castellId     Int
+  id         Int      @id @default(autoincrement())
+  created    DateTime @default(now())
+  name       String   @db.VarChar(255)
+  url        String?
+  autorId    Int
+  mainFoto   Boolean  @default(false)
+  actuacioId Int
+  castellId  Int
+  collaId    Int
+  actuacio   Actuacio @relation("fotosActuacio", fields: [actuacioId], references: [id])
+  autor      Usuari   @relation("fotosAfegides", fields: [autorId], references: [id])
+  castell    Castell  @relation("fotosCastell", fields: [castellId], references: [id])
+  colla      Colla    @relation("fotosColla", fields: [collaId], references: [id])
 }
 
 model Temporada {
- id            Int          @id @default(autoincrement())
- year          Int          @unique
- actuacions    Actuacio[]   @relation("actuacionsTemporada")
+  id         Int        @id @default(autoincrement())
+  year       Int        @unique
+  actuacions Actuacio[] @relation("actuacionsTemporada")
+}
+
+model Colla {
+  id         Int        @id
+  name       String     @unique
+  castells   Castell[]  @relation("castellsColla")
+  fotos      Foto[]     @relation("fotosColla")
+  actuacions Actuacio[] @relation("collesActuacio")
 }

@@ -144,7 +144,8 @@ exports.Prisma.CastellScalarFieldEnum = {
   id: 'id',
   nom: 'nom',
   actuacioId: 'actuacioId',
-  resultat: 'resultat'
+  resultat: 'resultat',
+  collaId: 'collaId'
 };
 
 exports.Prisma.UsuariScalarFieldEnum = {
@@ -162,12 +163,18 @@ exports.Prisma.FotoScalarFieldEnum = {
   autorId: 'autorId',
   mainFoto: 'mainFoto',
   actuacioId: 'actuacioId',
-  castellId: 'castellId'
+  castellId: 'castellId',
+  collaId: 'collaId'
 };
 
 exports.Prisma.TemporadaScalarFieldEnum = {
   id: 'id',
   year: 'year'
+};
+
+exports.Prisma.CollaScalarFieldEnum = {
+  id: 'id',
+  name: 'name'
 };
 
 exports.Prisma.SortOrder = {
@@ -192,7 +199,8 @@ exports.Prisma.ModelName = {
   Castell: 'Castell',
   Usuari: 'Usuari',
   Foto: 'Foto',
-  Temporada: 'Temporada'
+  Temporada: 'Temporada',
+  Colla: 'Colla'
 };
 
 /**
